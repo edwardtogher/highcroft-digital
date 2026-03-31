@@ -1,0 +1,1104 @@
+---
+// Ideal Electrical Solutions — Preview Page
+// Built by Highcroft Digital
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ideal Electrical Solutions — Liverpool Electricians</title>
+  <meta name="description" content="NICEIC approved electricians in Liverpool. 30+ years experience. Emergency callouts, EICR certificates, house rewires, EV charger installations. 220+ five-star reviews." />
+  <meta property="og:title" content="Ideal Electrical Solutions — Your New Site" />
+  <meta property="og:description" content="A modern, professional website for Ideal Electrical Solutions. NICEIC approved electricians serving Liverpool and the North West." />
+  <meta property="og:image" content="https://us1-photo.nextdoor.com/business_logo/63/4c/634c68f7fcbfe8d333d1ad4ad63c20a5.png" />
+  <meta property="og:url" content="https://highcroftdigital.com/preview/ideal-electrical" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1a3453;
+      --navy-light: #234568;
+      --green: #4fad2b;
+      --green-light: #62c33d;
+      --green-glow: rgba(79, 173, 43, 0.15);
+      --charcoal: #111820;
+      --slate: #3a424d;
+      --gray: #687279;
+      --silver: #9ca6ad;
+      --mist: #f0f2f4;
+      --cloud: #f7f8f9;
+      --white: #fefefe;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--slate);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* --- NAV --- */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(254,254,254,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      transition: padding 0.3s ease;
+    }
+
+    .nav.scrolled { padding: 0.75rem 2rem; }
+
+    .nav-logo {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--slate);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      background: var(--green) !important;
+      color: var(--white) !important;
+      padding: 0.6rem 1.5rem !important;
+      border-radius: 2px;
+      font-size: 0.8rem !important;
+      letter-spacing: 0.06em !important;
+      text-transform: uppercase;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--green-light) !important; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--charcoal);
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* --- HERO --- */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(4rem, 8vw, 8rem);
+      padding-top: 7rem;
+    }
+
+    .hero-est {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 2rem;
+    }
+
+    .hero-est::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--green);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      color: var(--gray);
+      max-width: 420px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--green);
+      color: var(--white);
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: 2px;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 1rem 0;
+      transition: color 0.2s;
+    }
+
+    .btn-secondary:hover { color: var(--green); }
+
+    .btn-secondary svg {
+      transition: transform 0.2s;
+    }
+
+    .btn-secondary:hover svg {
+      transform: translateX(3px);
+    }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30%;
+      background: linear-gradient(to top, rgba(26,52,83,0.25), transparent);
+    }
+
+    /* --- STATS BAR --- */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--navy);
+    }
+
+    .stat {
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .stat:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 25%;
+      height: 50%;
+      width: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--silver);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* --- SERVICES --- */
+    .services {
+      padding: clamp(4rem, 10vw, 8rem) clamp(2rem, 6vw, 6rem);
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--navy);
+      line-height: 1.15;
+      max-width: 560px;
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+    }
+
+    .section-sub {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin-bottom: 4rem;
+      line-height: 1.7;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--mist);
+      border: 1px solid var(--mist);
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: clamp(2rem, 4vw, 3rem);
+      position: relative;
+      transition: background 0.3s ease;
+    }
+
+    .service-card:hover {
+      background: var(--cloud);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1.5rem;
+      color: var(--green);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 0.85rem;
+      font-weight: 400;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .service-number {
+      position: absolute;
+      top: clamp(1.5rem, 3vw, 2rem);
+      right: clamp(1.5rem, 3vw, 2rem);
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--mist);
+      line-height: 1;
+      user-select: none;
+    }
+
+    /* --- WHY CHOOSE --- */
+    .why {
+      background: var(--navy);
+      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .why .section-label { color: var(--green); }
+
+    .why .section-heading {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .why-text {
+      color: var(--silver);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 400px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .trust-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem 1.75rem;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+
+    .trust-card:hover {
+      background: rgba(255,255,255,0.07);
+    }
+
+    .trust-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .trust-card h4 {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* --- REVIEWS --- */
+    .reviews {
+      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
+      background: var(--cloud);
+    }
+
+    .reviews .section-heading {
+      max-width: 100%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+    }
+
+    .reviews .section-label {
+      text-align: center;
+    }
+
+    .reviews-sub {
+      text-align: center;
+      color: var(--gray);
+      font-size: 1.05rem;
+      margin-bottom: 3.5rem;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .review-card {
+      background: var(--white);
+      padding: 2rem;
+      border: 1px solid var(--mist);
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .review-stars {
+      color: #f5a623;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .review-card blockquote {
+      color: var(--slate);
+      font-size: 0.925rem;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+
+    .review-author {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.85rem;
+    }
+
+    .review-source {
+      color: var(--silver);
+      font-size: 0.75rem;
+      margin-top: 0.15rem;
+    }
+
+    /* --- ABOUT --- */
+    .about {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      min-height: 70vh;
+    }
+
+    .about-image {
+      background: var(--navy);
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 6vw, 6rem);
+    }
+
+    .about-content .section-heading {
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      max-width: 460px;
+    }
+
+    .about-sig {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--mist);
+    }
+
+    .about-sig strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .about-sig span {
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+
+    .accreditation-badges {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--mist);
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--navy);
+      text-transform: uppercase;
+    }
+
+    .badge svg {
+      width: 20px;
+      height: 20px;
+      color: var(--green);
+    }
+
+    /* --- AREAS --- */
+    .areas {
+      background: var(--charcoal);
+      padding: clamp(3rem, 6vw, 4.5rem) clamp(2rem, 6vw, 6rem);
+      text-align: center;
+    }
+
+    .areas h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+    }
+
+    .areas p {
+      color: var(--silver);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+      letter-spacing: 0.01em;
+    }
+
+    /* --- CONTACT CTA --- */
+    .contact {
+      background: var(--cloud);
+      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
+      text-align: center;
+    }
+
+    .contact .section-heading {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+    }
+
+    .contact-sub {
+      color: var(--gray);
+      font-size: 1.05rem;
+      margin-bottom: 3rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .contact-phone {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      color: var(--navy);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.75rem;
+      transition: color 0.2s;
+    }
+
+    .contact-phone:hover { color: var(--green); }
+
+    .contact-email {
+      color: var(--gray);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-email a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-email a:hover { color: var(--green); }
+
+    .contact-address {
+      color: var(--silver);
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      margin-top: 2rem;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      padding: 2rem clamp(2rem, 6vw, 6rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--mist);
+      font-size: 0.8rem;
+      color: var(--silver);
+    }
+
+    .footer a {
+      color: var(--silver);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer a:hover { color: var(--green); }
+
+    /* --- ANIMATIONS --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-image { height: 50vh; order: -1; }
+      .hero-content { padding: 3rem 2rem 4rem; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .why { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; }
+      .about-image { height: 50vh; }
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--mist);
+        gap: 1rem;
+      }
+      .nav-toggle { display: block; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2)::after { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+      .accreditation-badges { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .stats { grid-template-columns: 1fr; }
+      .stat::after { display: none !important; }
+      .stat {
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <img
+      src="https://us1-photo.nextdoor.com/business_logo/63/4c/634c68f7fcbfe8d333d1ad4ad63c20a5.png"
+      alt="Ideal Electrical Solutions"
+      class="nav-logo"
+    />
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-est reveal">NICEIC Approved &middot; 30+ Years</span>
+      <h1 class="reveal reveal-delay-1">Liverpool's trusted electricians</h1>
+      <p class="reveal reveal-delay-2">
+        NICEIC approved, City &amp; Guilds qualified electricians with over 30 years of experience.
+        From emergency callouts to full rewires, we deliver safe, professional electrical work across Liverpool and the North West.
+      </p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="tel:07399676656" class="btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="#services" class="btn-secondary">
+          Our services
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img
+        src="https://cdn.prod.website-files.com/6711d78ed440641cf307cca5/6711d7ee2983ea7b0da58c27_rsz_2image(16).png"
+        alt="Ideal Electrical Solutions -- professional electricians in Liverpool"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat reveal">
+      <div class="stat-number">30+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat reveal reveal-delay-1">
+      <div class="stat-number">220+</div>
+      <div class="stat-label">Five-Star Reviews</div>
+    </div>
+    <div class="stat reveal reveal-delay-2">
+      <div class="stat-number">45min</div>
+      <div class="stat-label">Emergency Response</div>
+    </div>
+    <div class="stat reveal reveal-delay-3">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Always Available</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-label reveal">What We Do</div>
+    <h2 class="section-heading reveal reveal-delay-1">Complete electrical services for homes &amp;&nbsp;businesses</h2>
+    <p class="section-sub reveal reveal-delay-2">From emergency repairs to full installations, our NICEIC approved team delivers safe, certified electrical work across Liverpool, Wirral, St Helens, Warrington and Formby.</p>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <span class="service-number">01</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <path d="M24 4L28 18h14l-11 8 4 14-11-8-11 8 4-14L6 18h14z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Emergency Electrician</h3>
+        <p>24/7 emergency callouts with a 45-minute response time. Power outages, faulty wiring, tripping circuits -- we fix it fast and fix it right. From &pound;80.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-number">02</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <path d="M8 40V20L24 8l16 12v20H8z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 40V28h12v12" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 20h16" stroke-linecap="round"/>
+        </svg>
+        <h3>House Rewires</h3>
+        <p>Full and partial rewires for homes of all sizes. A typical 3-bed takes 2-5 days, done room by room to minimise disruption. 10-year guarantee included. From &pound;4,000.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-number">03</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <rect x="10" y="8" width="28" height="32" rx="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 18h12M18 26h8M18 34h10" stroke-linecap="round"/>
+          <path d="M34 4v8M14 4v8" stroke-linecap="round"/>
+        </svg>
+        <h3>EICR Certificates</h3>
+        <p>Electrical Installation Condition Reports for landlords, homeowners and businesses. Thorough inspections with same-week availability. From &pound;99.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-number">04</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <rect x="14" y="30" width="20" height="12" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M24 30V18" stroke-linecap="round"/>
+          <circle cx="24" cy="12" r="6"/>
+          <path d="M20 42v2M28 42v2" stroke-linecap="round"/>
+        </svg>
+        <h3>EV Charger Installation</h3>
+        <p>Professional EV charging point installation for your home or business. All major brands fitted by qualified electricians. Typically &pound;800-&pound;1,200.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-number">05</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <path d="M24 4v6M24 38v6M4 24h6M38 24h6M10.3 10.3l4.2 4.2M33.5 33.5l4.2 4.2M37.7 10.3l-4.2 4.2M14.5 33.5l-4.2 4.2" stroke-linecap="round"/>
+          <circle cx="24" cy="24" r="8"/>
+        </svg>
+        <h3>Lighting &amp; LED</h3>
+        <p>Full lighting design and installation for homes, offices and commercial spaces. LED upgrades, smart lighting systems, garden and security lighting.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-number">06</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <path d="M12 8h24v32H12z" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24" cy="20" r="4"/>
+          <path d="M20 32h8" stroke-linecap="round"/>
+          <path d="M20 36h8" stroke-linecap="round"/>
+        </svg>
+        <h3>Fire &amp; Smoke Alarms</h3>
+        <p>Installation, testing and maintenance of fire alarm systems and smoke detectors. Keeping your home and business safe and compliant with current regulations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why">
+    <div>
+      <div class="section-label reveal">Why Choose Us</div>
+      <h2 class="section-heading reveal reveal-delay-1">Built on trust,<br>backed by qualifications</h2>
+      <p class="why-text reveal reveal-delay-2">
+        Every electrician on our team is City &amp; Guilds qualified, JIB Gold Card rated
+        and NICEIC approved with the latest 18th Edition certification. We carry &pound;5m
+        public liability insurance and every job comes with a full guarantee.
+      </p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M9 12l2 2 4-4"/>
+          <path d="M12 3a9 9 0 110 18 9 9 0 010-18z"/>
+        </svg>
+        <h4>NICEIC Approved Contractor</h4>
+      </div>
+      <div class="trust-card reveal reveal-delay-1">
+        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/>
+        </svg>
+        <h4>220+ Five-Star Google Reviews</h4>
+      </div>
+      <div class="trust-card reveal reveal-delay-2">
+        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <h4>&pound;5m Public Liability Insurance</h4>
+      </div>
+      <div class="trust-card reveal reveal-delay-3">
+        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        <h4>45-Minute Emergency Response</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="section-label reveal">What Our Customers Say</div>
+    <h2 class="section-heading reveal reveal-delay-1">Trusted across Liverpool</h2>
+    <p class="reviews-sub reveal reveal-delay-2">Over 220 five-star reviews from real customers across Liverpool and the North West.</p>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Michael saved our Christmas. Called him on Christmas Eve at 10pm after an electrical emergency -- he came within 20 minutes and fixed the problem."</blockquote>
+        <div class="review-author">Garry Delaney</div>
+        <div class="review-source">Google Review</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Had a partial rewiring including new fuseboard and cert done. Scheduled within a week, done in a day by Tom and Tom. Everything sorted, no problem and competitively priced."</blockquote>
+        <div class="review-author">Jowgen</div>
+        <div class="review-source">Google Review</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Michael has provided outstanding customer service. He's incredibly personable and communicates exceptionally well. Top quality work every time."</blockquote>
+        <div class="review-author">Sarita Jaiswal</div>
+        <div class="review-source">Google Review</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"I had an electrical issue late at night, with half the house losing power. I called, and he arrived straight away, handling everything quickly and professionally."</blockquote>
+        <div class="review-author">Clare P.</div>
+        <div class="review-source">Google Review</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Ron is very professional. Polite and good communication. Arrived on time. Got my EICR report same day. Definitely recommended."</blockquote>
+        <div class="review-author">Roy Li</div>
+        <div class="review-source">Google Review</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"The team's attention to detail and customer service was fantastic. Almost like having friends round. Couldn't recommend enough."</blockquote>
+        <div class="review-author">ElvisOddball</div>
+        <div class="review-source">Google Review</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-image">
+      <img
+        src="https://www.tradesmenup.co.uk/u/2-8/866/9e15c8.jpg"
+        alt="Ideal Electrical Solutions team"
+        loading="lazy"
+      />
+    </div>
+    <div class="about-content">
+      <div class="section-label reveal">About Us</div>
+      <h2 class="section-heading reveal reveal-delay-1">Liverpool's reliable electrical&nbsp;experts</h2>
+      <p class="reveal reveal-delay-2">
+        With over 30 years of experience, Ideal Electrical Solutions has grown into one of
+        Liverpool's most trusted electrical contractors. Our team of fully qualified, NICEIC
+        approved electricians delivers safe, professional work to homes and businesses
+        across the North West.
+      </p>
+      <p class="reveal reveal-delay-3">
+        From emergency callouts on Christmas Eve to full house rewires and EV charger
+        installations, we treat every job with the same attention to detail. With over
+        220 five-star reviews, our reputation speaks for itself.
+      </p>
+      <div class="about-sig reveal reveal-delay-4">
+        <strong>Michael, Thomas, Ron &amp; the team</strong>
+        <span>Ideal Electrical Solutions</span>
+      </div>
+      <div class="accreditation-badges reveal reveal-delay-4">
+        <div class="badge">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 110 18 9 9 0 010-18z"/></svg>
+          NICEIC
+        </div>
+        <div class="badge">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 110 18 9 9 0 010-18z"/></svg>
+          City &amp; Guilds
+        </div>
+        <div class="badge">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 110 18 9 9 0 010-18z"/></svg>
+          JIB Gold Card
+        </div>
+        <div class="badge">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 110 18 9 9 0 010-18z"/></svg>
+          18th Edition
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section class="areas">
+    <h3 class="reveal">Serving Liverpool &amp; the North West</h3>
+    <p class="reveal reveal-delay-1">
+      Liverpool City Centre &middot; Anfield &middot; Toxteth &middot; Wavertree &middot; Allerton &middot; Woolton &middot; Crosby &middot; Bootle &middot; Wirral &middot; St Helens &middot; Warrington &middot; Formby &middot; Ellesmere Port
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-label reveal">Get In Touch</div>
+    <h2 class="section-heading reveal reveal-delay-1">Ready to get started?</h2>
+    <p class="contact-sub reveal reveal-delay-2">
+      Call us any time for a free, no obligation quote. We are available 24 hours a day,
+      7 days a week -- including weekends and bank holidays.
+    </p>
+    <a href="tel:07399676656" class="contact-phone reveal reveal-delay-2">07399 676 656</a>
+    <div class="contact-email reveal reveal-delay-3">
+      or email <a href="mailto:michael@idealelectricalsolutions.co.uk">michael@idealelectricalsolutions.co.uk</a>
+    </div>
+    <a href="tel:07399676656" class="btn-primary reveal reveal-delay-3">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call For a Free Quote
+    </a>
+    <p class="contact-address reveal reveal-delay-4">
+      5 Sir Thomas Street, Liverpool, L1 6BW
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>&copy; 2026 Ideal Electrical Solutions. All rights reserved.</span>
+    <span>Website by <a href="https://highcroftdigital.com" target="_blank" rel="noopener">Highcroft Digital</a></span>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Mobile toggle
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    // Intersection Observer for reveals
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+
+</body>
+</html>

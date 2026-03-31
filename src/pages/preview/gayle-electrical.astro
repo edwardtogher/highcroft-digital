@@ -1,0 +1,1031 @@
+---
+// Gayle Electrical Ltd — Preview Page
+// Built by Highcroft Digital
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gayle Electrical Ltd — Birmingham, West Midlands</title>
+  <meta name="description" content="NICEIC-approved electricians in Birmingham. Domestic, commercial & industrial electrical services. Rewires, EV chargers, solar PV, CCTV & 24/7 emergency call-outs." />
+  <meta property="og:title" content="Gayle Electrical Ltd — Your New Site" />
+  <meta property="og:description" content="A modern, professional website for Gayle Electrical Ltd. NICEIC-approved electricians serving Birmingham & the West Midlands." />
+  <meta property="og:image" content="https://lh3.googleusercontent.com/sitesv/APaQ0SQS3vx4e8Ssj1fR8McwkHs_cW0bRdz3LOYBgc-buf3lMm5tVTCeOf205ngoGDsM41IAw9ks9o5lDoYGk42jT9axoMzXAJOmjv909L06NCHE3miNk96_mllKtHVwOb3mz2IQVtQg4GR6F-Yv216YlNtnBhm8oHwcgNzWu0EisuTSZF06TfWU9au2qqqo3IFZ3WVxP6VmxbhoquxRpyaung4piPYor-urDk8X=w1280" />
+  <meta property="og:url" content="https://highcroftdigital.com/preview/gayle-electrical" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #e04e4c;
+      --red-light: #f05a58;
+      --charcoal: #131820;
+      --slate: #3a424d;
+      --gray: #687279;
+      --silver: #9ca6ad;
+      --mist: #f0f2f4;
+      --cloud: #f7f8f9;
+      --white: #fefefe;
+      --accent: #e04e4c;
+      --accent-light: #f05a58;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--slate);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* --- NAV --- */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(254,254,254,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      transition: padding 0.3s ease;
+    }
+
+    .nav.scrolled { padding: 0.75rem 2rem; }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-brand-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--accent);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+    }
+
+    .nav-brand-text {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      line-height: 1.2;
+    }
+
+    .nav-brand-sub {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      color: var(--gray);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--slate);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--charcoal); }
+
+    .nav-cta {
+      background: var(--charcoal) !important;
+      color: var(--white) !important;
+      padding: 0.6rem 1.5rem !important;
+      border-radius: 2px;
+      font-size: 0.8rem !important;
+      letter-spacing: 0.06em !important;
+      text-transform: uppercase;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--accent) !important; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--charcoal);
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* --- HERO --- */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(4rem, 8vw, 8rem);
+      padding-top: 7rem;
+    }
+
+    .hero-est {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .hero-est::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      color: var(--charcoal);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      color: var(--gray);
+      max-width: 420px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: var(--white);
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: 2px;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--charcoal);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 1rem 0;
+      transition: color 0.2s;
+    }
+
+    .btn-secondary:hover { color: var(--accent); }
+
+    .btn-secondary svg {
+      transition: transform 0.2s;
+    }
+
+    .btn-secondary:hover svg {
+      transform: translateX(3px);
+    }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      background: var(--charcoal);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30%;
+      background: linear-gradient(to top, rgba(19,24,32,0.15), transparent);
+    }
+
+    /* --- STATS BAR --- */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--charcoal);
+    }
+
+    .stat {
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .stat:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 25%;
+      height: 50%;
+      width: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--silver);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* --- SERVICES --- */
+    .services {
+      padding: clamp(4rem, 10vw, 8rem) clamp(2rem, 6vw, 6rem);
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--charcoal);
+      line-height: 1.15;
+      max-width: 560px;
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+    }
+
+    .section-sub {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 480px;
+      margin-bottom: 4rem;
+      line-height: 1.7;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--mist);
+      border: 1px solid var(--mist);
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      position: relative;
+      transition: background 0.3s ease;
+    }
+
+    .service-card:hover {
+      background: var(--cloud);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1.75rem;
+      color: var(--accent);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      font-size: 0.925rem;
+      line-height: 1.7;
+    }
+
+    .service-number {
+      position: absolute;
+      top: clamp(1.5rem, 3vw, 2.5rem);
+      right: clamp(1.5rem, 3vw, 2.5rem);
+      font-family: var(--font-display);
+      font-size: 3rem;
+      color: var(--mist);
+      line-height: 1;
+      user-select: none;
+    }
+
+    /* --- WHY CHOOSE --- */
+    .why {
+      background: var(--charcoal);
+      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .why .section-label { color: var(--accent); }
+
+    .why .section-heading {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .why-text {
+      color: var(--silver);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 400px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .trust-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem 1.75rem;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+
+    .trust-card:hover {
+      background: rgba(255,255,255,0.07);
+    }
+
+    .trust-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .trust-card h4 {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* --- REVIEWS --- */
+    .reviews {
+      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
+      background: var(--cloud);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .review-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border: 1px solid var(--mist);
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 1.25rem;
+      color: #f5a623;
+    }
+
+    .review-card p {
+      color: var(--gray);
+      font-size: 0.925rem;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .review-author {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .review-source {
+      font-size: 0.75rem;
+      color: var(--silver);
+      margin-top: 0.25rem;
+    }
+
+    /* --- ABOUT --- */
+    .about {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      min-height: 70vh;
+    }
+
+    .about-image {
+      background: url('https://lh3.googleusercontent.com/sitesv/APaQ0SSSiKcgqYawcEtYNgaXynNCRmUOj6h5bBQKzIwxTq--g18xDxl1uWCT24dlghzzzJJdfbqktkyyIJpwQrpxAzF99YR2Hr_OaK1le0Ch4E-7SVkDJJ8wJoJkKk13OY9a_oxxrXoYAwWOzdyXvgpGWn_BGs9aZ9p-GwG767P9kFGjHB-R7BtlowVdaGFcBMPVDh3daYnI57YTTFF9CqXjwPvQkK9mssynuiZwrBU=w1280') center/cover;
+      min-height: 400px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 6vw, 6rem);
+    }
+
+    .about-content .section-heading {
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      max-width: 460px;
+    }
+
+    .about-sig {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--mist);
+    }
+
+    .about-sig strong {
+      display: block;
+      color: var(--charcoal);
+      font-size: 1rem;
+    }
+
+    .about-sig span {
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+
+    /* --- CONTACT CTA --- */
+    .contact {
+      background: var(--cloud);
+      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
+      text-align: center;
+    }
+
+    .contact .section-heading {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+    }
+
+    .contact-sub {
+      color: var(--gray);
+      font-size: 1.05rem;
+      margin-bottom: 3rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .contact-phone {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      color: var(--charcoal);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .contact-phone:hover { color: var(--accent); }
+
+    .contact-phone-alt {
+      color: var(--gray);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-phone-alt a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-phone-alt a:hover { color: var(--accent); }
+
+    .contact-email {
+      color: var(--gray);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-email a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .contact-email a:hover { color: var(--accent-light); }
+
+    .contact-areas {
+      color: var(--silver);
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      margin-top: 2rem;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      padding: 2rem clamp(2rem, 6vw, 6rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--mist);
+      font-size: 0.8rem;
+      color: var(--silver);
+    }
+
+    .footer a {
+      color: var(--silver);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer a:hover { color: var(--accent); }
+
+    /* --- ANIMATIONS --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-image { height: 50vh; order: -1; }
+      .hero-content { padding: 3rem 2rem 4rem; }
+      .why { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; }
+      .about-image { height: 50vh; }
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--mist);
+        gap: 1rem;
+      }
+      .nav-toggle { display: block; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2)::after { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .stats { grid-template-columns: 1fr; }
+      .stat::after { display: none !important; }
+      .stat {
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-brand">
+      <div class="nav-brand-icon">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="nav-brand-text">Gayle Electrical</div>
+        <div class="nav-brand-sub">NICEIC Approved</div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-est reveal">NICEIC Approved -- 15+ Years</span>
+      <h1 class="reveal reveal-delay-1">Electricians you can trust in&nbsp;Birmingham</h1>
+      <p class="reveal reveal-delay-2">
+        Family-run electrical contractors with over 35 years' combined experience.
+        From emergency repairs to EV chargers and solar panels, we deliver safe, reliable work every&nbsp;time.
+      </p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="tel:07341300781" class="btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="#services" class="btn-secondary">
+          Our services
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img
+        src="https://lh3.googleusercontent.com/sitesv/APaQ0SQS3vx4e8Ssj1fR8McwkHs_cW0bRdz3LOYBgc-buf3lMm5tVTCeOf205ngoGDsM41IAw9ks9o5lDoYGk42jT9axoMzXAJOmjv909L06NCHE3miNk96_mllKtHVwOb3mz2IQVtQg4GR6F-Yv216YlNtnBhm8oHwcgNzWu0EisuTSZF06TfWU9au2qqqo3IFZ3WVxP6VmxbhoquxRpyaung4piPYor-urDk8X=w1280"
+        alt="Gayle Electrical — professional electrical work in Birmingham"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat reveal">
+      <div class="stat-number">35+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat reveal reveal-delay-1">
+      <div class="stat-number">5&#9733;</div>
+      <div class="stat-label">Google Rated</div>
+    </div>
+    <div class="stat reveal reveal-delay-2">
+      <div class="stat-number">NICEIC</div>
+      <div class="stat-label">Approved Contractor</div>
+    </div>
+    <div class="stat reveal reveal-delay-3">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Emergency Call-Outs</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-label reveal">What We Do</div>
+    <h2 class="section-heading reveal reveal-delay-1">Complete electrical services for homes &amp;&nbsp;businesses</h2>
+    <p class="section-sub reveal reveal-delay-2">From small repairs to full rewires and modern energy solutions. Every job completed to the highest standards across Birmingham and the West&nbsp;Midlands.</p>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <span class="service-number">01</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <path d="M26 6L10 28h14l-2 14L38 20H24l2-14z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Emergency Call-Outs &amp; Fault Finding</h3>
+        <p>24/7 emergency electrical services when you need them most. Fast response times, professional diagnosis and reliable repairs to get your power back on safely.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-number">02</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <path d="M8 12h4v28H8z" stroke-linejoin="round"/>
+          <path d="M36 12h4v28h-4z" stroke-linejoin="round"/>
+          <path d="M12 16h24M12 24h24M12 32h24" stroke-linecap="round"/>
+          <circle cx="24" cy="8" r="4"/>
+        </svg>
+        <h3>Rewires &amp; Consumer Unit Upgrades</h3>
+        <p>Full and partial rewires for domestic, commercial and industrial properties. Fuse board upgrades to the latest safety standards with NICEIC certification on every job.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-number">03</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <rect x="14" y="28" width="20" height="12" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 28v-4a4 4 0 018 0v4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24" cy="34" r="2"/>
+          <path d="M6 14l18-8 18 8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 12v18h28V12" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>CCTV &amp; Security Systems</h3>
+        <p>Protect your home or business with professional CCTV installations, security lighting and fire alarm systems. Full design, installation and maintenance service.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-number">04</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <path d="M24 6v4M24 38v4M6 24h4M38 24h4M12 12l2.8 2.8M33.2 33.2l2.8 2.8M36 12l-2.8 2.8M14.8 33.2L12 36" stroke-linecap="round"/>
+          <circle cx="24" cy="24" r="8"/>
+          <path d="M20 42h8v4H20z" stroke-linejoin="round"/>
+        </svg>
+        <h3>EV Chargers &amp; Solar PV</h3>
+        <p>Future-proof your property with electric vehicle charger installations and solar PV with battery storage systems. Residential and commercial solutions available.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-number">05</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <path d="M24 4v8M8 24H4M44 24h-4" stroke-linecap="round"/>
+          <circle cx="24" cy="24" r="14"/>
+          <path d="M18 24a6 6 0 0112 0" stroke-linecap="round"/>
+          <path d="M24 18v6l4 4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>EICR Reports &amp; Certification</h3>
+        <p>Electrical Installation Condition Reports for landlords and homeowners. Ensure your property meets all current safety regulations with full certification provided.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-number">06</span>
+        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+          <path d="M12 8h24v32H12z" stroke-linejoin="round"/>
+          <circle cx="24" cy="20" r="6"/>
+          <path d="M18 34h12" stroke-linecap="round"/>
+          <path d="M20 38h8" stroke-linecap="round"/>
+          <path d="M24 14v2M28 20h2M20 20h-2M27 17l1.4-1.4M21 17l-1.4-1.4" stroke-linecap="round"/>
+        </svg>
+        <h3>Lighting &amp; General Electrical</h3>
+        <p>Indoor and outdoor lighting design and installation. Plus all general electrical work including socket additions, data cabling and smart home wiring for any property.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why">
+    <div>
+      <div class="section-label reveal">Why Choose Us</div>
+      <h2 class="section-heading reveal reveal-delay-1">Family business,<br>professional standards</h2>
+      <p class="why-text reveal reveal-delay-2">
+        We're a local, family-run business that takes pride in our reputation. We believe in clear communication, fair pricing, and turning up when we say we will. That's why much of our work comes from repeat customers and personal recommendations.
+      </p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M9 12l2 2 4-4"/>
+          <path d="M12 3a9 9 0 110 18 9 9 0 010-18z"/>
+        </svg>
+        <h4>NICEIC Approved Since 2007</h4>
+      </div>
+      <div class="trust-card reveal reveal-delay-1">
+        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/>
+        </svg>
+        <h4>5-Star Rated on Google</h4>
+      </div>
+      <div class="trust-card reveal reveal-delay-2">
+        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <h4>Fully Insured for Your Peace of Mind</h4>
+      </div>
+      <div class="trust-card reveal reveal-delay-3">
+        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+        </svg>
+        <h4>Family Run &amp; Trading 15+ Years</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="section-label reveal">What Our Customers Say</div>
+    <h2 class="section-heading reveal reveal-delay-1">Trusted by homeowners &amp;&nbsp;businesses</h2>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <p>"Responded very quickly to a vulnerable person without any electricity in the house. Sorted everything out very quickly and efficiently, ensuring everything was safe and working."</p>
+        <div class="review-author">Verified Customer</div>
+        <div class="review-source">via Checkatrade</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <p>"Aaron had lovely manners, was so polite and helpful. Work completed to exceptional standards and extremely tidy. Could not recommend them enough."</p>
+        <div class="review-author">Verified Customer</div>
+        <div class="review-source">via Checkatrade</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <p>"Easy to do business with, reasonably priced, fast and tidy workers. Professional and reliable. Wouldn't hesitate to call them again in the future."</p>
+        <div class="review-author">Verified Customer</div>
+        <div class="review-source">via Checkatrade</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-image"></div>
+    <div class="about-content">
+      <div class="section-label reveal">About Us</div>
+      <h2 class="section-heading reveal reveal-delay-1">A family business built on&nbsp;trust</h2>
+      <p class="reveal reveal-delay-2">
+        Gayle Electrical Ltd is a family-run, NICEIC-approved electrical contractor based in Birmingham, proudly serving homes and businesses across the West Midlands. With over 35 years' combined experience, we provide reliable and professional electrical services for domestic, commercial and industrial clients.
+      </p>
+      <p class="reveal reveal-delay-3">
+        We believe in clear communication, fair pricing, and turning up when we say we will. That's why much of our work comes from repeat customers and personal recommendations. Whether you need a trusted electrician for your home, rental property, or business premises, you can rely on us for dependable workmanship.
+      </p>
+      <div class="about-sig reveal reveal-delay-4">
+        <strong>Gayle Electrical Ltd</strong>
+        <span>Family-Run &amp; NICEIC Approved</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-label reveal">Get In Touch</div>
+    <h2 class="section-heading reveal reveal-delay-1">Ready to get started?</h2>
+    <p class="contact-sub reveal reveal-delay-2">
+      Call us today for a free quote or emergency call-out. We cover Birmingham and the surrounding areas across the West Midlands. Available 24/7.
+    </p>
+    <a href="tel:07341300781" class="contact-phone reveal reveal-delay-2">07341 300 781</a>
+    <div class="contact-phone-alt reveal reveal-delay-3">
+      or <a href="tel:01216080299">0121 608 0299</a>
+    </div>
+    <div class="contact-email reveal reveal-delay-3">
+      <a href="mailto:info@gayle-electrical.co.uk">info@gayle-electrical.co.uk</a>
+    </div>
+    <a href="tel:07341300781" class="btn-primary reveal reveal-delay-3">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call For a Free Quote
+    </a>
+    <p class="contact-areas reveal reveal-delay-4">
+      Serving Birmingham &middot; West Midlands &middot; Solihull &middot; Sutton Coldfield
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>&copy; 2026 Gayle Electrical Ltd. All rights reserved.</span>
+    <span>Website by <a href="https://highcroftdigital.com" target="_blank" rel="noopener">Highcroft Digital</a></span>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Mobile toggle
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    // Intersection Observer for reveals
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+
+</body>
+</html>
