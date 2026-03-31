@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Terms & Conditions | Highcroft Digital">
+  <!-- Sticky header -->
+  <header class="sticky-header show" id="stickyHeader">
+    <a href="/" class="header-link">
+      <div class="logo-mark">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+      <div class="wordmark">
+        <span class="wordmark-main">HIGHCROFT</span>
+        <span class="wordmark-sub">DIGITAL</span>
+      </div>
+    </a>
+  </header>
+
+  <!-- Content -->
+  <main class="policy-page">
+    <a href="/" class="back-link">&larr; Back to home</a>
+
+    <h1 class="policy-title">Terms &amp; Conditions</h1>
+    <p class="policy-updated">Last updated: 31 March 2026</p>
+
+    <div class="policy-body">
+      <p>These terms govern your use of the Highcroft Digital website and any services we provide. By using this website, you agree to these terms. If you do not agree, please do not use the site.</p>
+
+      <p>Highcroft Digital is the trading name of Ed Togher, a sole trader based in Surrey, UK.</p>
+
+      <h2>Use of this website</h2>
+      <p>This website is provided for general information about Highcroft Digital and the services we offer. You may browse the site freely, but you must not:</p>
+      <ul>
+        <li>Use the site in any way that is unlawful or fraudulent</li>
+        <li>Attempt to gain unauthorised access to the site or its underlying systems</li>
+        <li>Use the site to transmit any harmful or malicious code</li>
+        <li>Reproduce, duplicate, or copy any content from this site for commercial purposes without our written permission</li>
+      </ul>
+
+      <h2>Our services</h2>
+      <p>Highcroft Digital offers website design and development, AI tools, and automation systems for businesses. The specifics of any project -- including scope, timeline, deliverables, and cost -- will be agreed in writing between you and us before work begins.</p>
+      <p>Nothing on this website constitutes a binding offer or contract. It is an overview of what we do, not a guarantee of specific outcomes.</p>
+
+      <h2>Intellectual property</h2>
+      <p>All content on this website -- including text, design, graphics, logos, and code -- is owned by Highcroft Digital unless otherwise stated. You may not reproduce, distribute, or create derivative works from any part of this site without our prior written consent.</p>
+      <p>For client projects, intellectual property ownership will be set out in the project agreement. Typically, you will own the final deliverables once payment is complete.</p>
+
+      <h2>Payment terms</h2>
+      <p>Payment terms are agreed on a per-project basis before work begins. This typically includes:</p>
+      <ul>
+        <li>A deposit before work starts</li>
+        <li>Final payment on completion or at agreed milestones</li>
+        <li>Ongoing hosting or maintenance fees where applicable, billed monthly</li>
+      </ul>
+      <p>Exact amounts, schedules, and methods of payment will be confirmed in writing for each project.</p>
+
+      <h2>Limitation of liability</h2>
+      <p>We work hard to ensure everything we build is reliable and high quality. However:</p>
+      <ul>
+        <li>This website is provided "as is" without warranties of any kind, express or implied</li>
+        <li>We are not liable for any indirect, incidental, or consequential losses arising from your use of this website</li>
+        <li>Our total liability for any claim related to our services will not exceed the amount you paid us for the specific project in question</li>
+        <li>We are not responsible for any downtime, data loss, or issues caused by third-party services (such as hosting providers)</li>
+      </ul>
+      <p>Nothing in these terms excludes or limits our liability for death or personal injury caused by our negligence, fraud, or any other liability that cannot be excluded by law.</p>
+
+      <h2>Third-party links</h2>
+      <p>This website may contain links to external sites. We have no control over the content or availability of those sites and accept no responsibility for them.</p>
+
+      <h2>Changes to these terms</h2>
+      <p>We may update these terms from time to time. Any changes will be posted on this page with an updated date. Continued use of the site after changes are posted constitutes acceptance of the revised terms.</p>
+
+      <h2>Governing law</h2>
+      <p>These terms are governed by the laws of England and Wales. Any disputes will be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+      <h2>Contact</h2>
+      <p>If you have any questions about these terms, please get in touch:</p>
+      <p>
+        Ed Togher<br>
+        Highcroft Digital<br>
+        Email: <a href="mailto:ed@highcroftdigital.com">ed@highcroftdigital.com</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <span class="footer-copy">&copy; 2026 Highcroft Digital</span>
+      <span class="footer-location">Surrey, UK</span>
+    </div>
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+      <a href="/cookies">Cookie Policy</a>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .header-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+  }
+
+  .policy-page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: clamp(7rem, 12vh, 10rem) clamp(1.5rem, 6vw, 3rem) clamp(4rem, 8vh, 6rem);
+  }
+
+  .back-link {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-quiet);
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+    transition: color 300ms;
+  }
+  .back-link:hover {
+    color: var(--text-mid);
+  }
+
+  .policy-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+
+  .policy-updated {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--text-quiet);
+    margin-bottom: clamp(2.5rem, 5vh, 3.5rem);
+  }
+
+  .policy-body h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    letter-spacing: -0.005em;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .policy-body p {
+    font-size: clamp(0.9rem, 1.05vw, 0.98rem);
+    line-height: 1.75;
+    color: var(--text-mid);
+    margin-bottom: 0.75rem;
+  }
+
+  .policy-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .policy-body ul li {
+    font-size: clamp(0.9rem, 1.05vw, 0.98rem);
+    line-height: 1.75;
+    color: var(--text-mid);
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.35rem;
+  }
+
+  .policy-body ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 5px;
+    height: 5px;
+    background: var(--text-quiet);
+  }
+
+  .policy-body a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 300ms;
+  }
+  .policy-body a:hover {
+    border-bottom-color: var(--blue);
+  }
+
+  .policy-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+</style>

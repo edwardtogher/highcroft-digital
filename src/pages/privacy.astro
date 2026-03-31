@@ -1,0 +1,199 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Privacy Policy | Highcroft Digital">
+  <!-- Sticky header -->
+  <header class="sticky-header show" id="stickyHeader">
+    <a href="/" class="header-link">
+      <div class="logo-mark">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+      <div class="wordmark">
+        <span class="wordmark-main">HIGHCROFT</span>
+        <span class="wordmark-sub">DIGITAL</span>
+      </div>
+    </a>
+  </header>
+
+  <!-- Content -->
+  <main class="policy-page">
+    <a href="/" class="back-link">&larr; Back to home</a>
+
+    <h1 class="policy-title">Privacy Policy</h1>
+    <p class="policy-updated">Last updated: 31 March 2026</p>
+
+    <div class="policy-body">
+      <p>Highcroft Digital ("we", "us", "our") is a digital studio run by Ed Togher, based in Surrey, UK. We take your privacy seriously and are committed to protecting any personal data you share with us. This policy explains what data we collect through this website, why we collect it, and what rights you have.</p>
+
+      <h2>What data we collect</h2>
+      <p>We keep data collection to a minimum. When you visit this website, the following may be collected automatically:</p>
+      <ul>
+        <li><strong>Server logs</strong> -- your IP address, browser type, referring page, and the pages you visit. These are generated automatically by our hosting provider.</li>
+        <li><strong>Analytics data</strong> -- we use Vercel Analytics, which collects anonymised usage data such as page views, device type, and country. Vercel Analytics is privacy-focused and does not use cookies for tracking.</li>
+      </ul>
+      <p>We do not collect names, email addresses, or any other personal information through this website unless you contact us directly (for example, by emailing us).</p>
+
+      <h2>How we use your data</h2>
+      <p>Any data we collect is used solely to:</p>
+      <ul>
+        <li>Understand how visitors use the website so we can improve it</li>
+        <li>Maintain the security and performance of the site</li>
+        <li>Respond to enquiries if you contact us directly</li>
+      </ul>
+      <p>We do not sell, rent, or share your data with third parties for marketing purposes.</p>
+
+      <h2>Third parties</h2>
+      <p>This website is hosted on <strong>Vercel</strong>. Vercel processes server logs and analytics data on our behalf. You can read <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel's privacy policy</a> for details on how they handle data.</p>
+      <p>We do not use any other third-party services that collect personal data through this website.</p>
+
+      <h2>Cookies</h2>
+      <p>This website uses only essential cookies required for the site to function. We do not use tracking cookies or advertising cookies. For more detail, see our <a href="/cookies">Cookie Policy</a>.</p>
+
+      <h2>Data retention</h2>
+      <p>Server logs are retained by our hosting provider according to their standard retention periods (typically up to 30 days). Analytics data is aggregated and anonymised -- it cannot be used to identify individual visitors. If you contact us by email, we will keep your correspondence for as long as needed to deal with your enquiry, unless you ask us to delete it sooner.</p>
+
+      <h2>Your rights under UK GDPR</h2>
+      <p>Under UK data protection law, you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> -- request a copy of any personal data we hold about you</li>
+        <li><strong>Correction</strong> -- ask us to correct inaccurate or incomplete data</li>
+        <li><strong>Deletion</strong> -- ask us to delete your personal data</li>
+        <li><strong>Restriction</strong> -- ask us to restrict how we process your data</li>
+        <li><strong>Portability</strong> -- request your data in a machine-readable format</li>
+        <li><strong>Objection</strong> -- object to our processing of your data</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us using the details below. We will respond within 30 days.</p>
+      <p>You also have the right to lodge a complaint with the <a href="https://ico.org.uk/" target="_blank" rel="noopener noreferrer">Information Commissioner's Office (ICO)</a> if you believe your data has been handled improperly.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy from time to time. Any changes will be posted on this page with an updated date.</p>
+
+      <h2>Contact</h2>
+      <p>If you have any questions about this privacy policy or want to make a data request, please get in touch:</p>
+      <p>
+        Ed Togher<br>
+        Highcroft Digital<br>
+        Email: <a href="mailto:ed@highcroftdigital.com">ed@highcroftdigital.com</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <span class="footer-copy">&copy; 2026 Highcroft Digital</span>
+      <span class="footer-location">Surrey, UK</span>
+    </div>
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+      <a href="/cookies">Cookie Policy</a>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .header-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+  }
+
+  .policy-page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: clamp(7rem, 12vh, 10rem) clamp(1.5rem, 6vw, 3rem) clamp(4rem, 8vh, 6rem);
+  }
+
+  .back-link {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-quiet);
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+    transition: color 300ms;
+  }
+  .back-link:hover {
+    color: var(--text-mid);
+  }
+
+  .policy-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+
+  .policy-updated {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--text-quiet);
+    margin-bottom: clamp(2.5rem, 5vh, 3.5rem);
+  }
+
+  .policy-body h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    letter-spacing: -0.005em;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .policy-body p {
+    font-size: clamp(0.9rem, 1.05vw, 0.98rem);
+    line-height: 1.75;
+    color: var(--text-mid);
+    margin-bottom: 0.75rem;
+  }
+
+  .policy-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .policy-body ul li {
+    font-size: clamp(0.9rem, 1.05vw, 0.98rem);
+    line-height: 1.75;
+    color: var(--text-mid);
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.35rem;
+  }
+
+  .policy-body ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 5px;
+    height: 5px;
+    background: var(--text-quiet);
+  }
+
+  .policy-body a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 300ms;
+  }
+  .policy-body a:hover {
+    border-bottom-color: var(--blue);
+  }
+
+  .policy-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+</style>
