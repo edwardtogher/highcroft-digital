@@ -6,795 +6,545 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Secure Gas 247 — Boiler Repairs & Gas Engineers, Leeds</title>
-  <meta name="description" content="Professional boiler repair, servicing and installation in Leeds & West Yorkshire. Gas Safe registered engineers available 24/7. Call 07515 314 131." />
-  <meta property="og:title" content="Secure Gas 247 — Your New Website" />
-  <meta property="og:description" content="A modern, professional website for Secure Gas 247. Boiler repairs, servicing, installations & gas safety certificates across Leeds." />
-  <meta property="og:image" content="https://securegas247.co.uk/wp-content/uploads/2021/03/boilers-trans.png" />
+  <title>Secure Gas 247 — Boiler Repair Leeds</title>
+  <meta name="description" content="Gas Safe registered boiler repair, servicing and installations in Leeds. 24/7 emergency callouts. 15 years experience." />
+  <meta property="og:title" content="Secure Gas 247 — Your New Site" />
+  <meta property="og:description" content="Professional boiler repair, servicing and installations in Leeds. 24/7 emergency callouts." />
+  <meta property="og:image" content="https://securegas247.co.uk/wp-content/uploads/2021/03/1SecureGas247.png" />
   <meta property="og:url" content="https://highcroftdigital.com/preview/secure-gas-247" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --blue: #2563eb;
-      --blue-light: #3b82f6;
-      --blue-deep: #1e40af;
-      --navy: #0f172a;
-      --charcoal: #1e293b;
-      --slate: #334155;
-      --gray: #64748b;
-      --silver: #94a3b8;
-      --mist: #f1f5f9;
-      --cloud: #f8fafc;
-      --white: #fefefe;
+      --navy: #0b1522;
+      --navy-light: #142133;
+      --blue: #2483c7;
+      --blue-soft: #e6f2fb;
+      --text: #1e293b;
+      --text-mid: #475569;
+      --text-light: #94a3b8;
+      --border: #e2e8f0;
+      --bg: #fafbfc;
+      --white: #ffffff;
       --amber: #f59e0b;
-      --font-display: 'DM Serif Display', Georgia, serif;
-      --font-body: 'DM Sans', -apple-system, sans-serif;
+      --green: #10b981;
+      --radius: 12px;
+      --font: 'Outfit', system-ui, -apple-system, sans-serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font); color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
 
-    body {
-      font-family: var(--font-body);
-      color: var(--slate);
-      background: var(--white);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* --- NAV --- */
+    /* ── NAV ── */
     .nav {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
       z-index: 100;
-      padding: 1.25rem 2rem;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(1.25rem, 4vw, 3rem);
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(254,254,254,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-      transition: padding 0.3s ease;
     }
 
-    .nav.scrolled { padding: 0.75rem 2rem; }
+    .nav-logo { height: 36px; }
 
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-    }
+    .nav-right { display: flex; align-items: center; gap: 0.5rem; }
 
-    .nav-logo {
-      height: 40px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .nav-brand-text {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      color: var(--charcoal);
-      line-height: 1.2;
-    }
-
-    .nav-brand-sub {
-      font-family: var(--font-body);
-      font-size: 0.65rem;
-      color: var(--gray);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      align-items: center;
-    }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; }
 
     .nav-links a {
-      color: var(--slate);
+      color: var(--text-mid);
       text-decoration: none;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       font-weight: 500;
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      transition: all 0.15s;
     }
 
-    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a:hover { color: var(--text); background: var(--bg); }
 
     .nav-cta {
-      background: var(--blue) !important;
+      background: var(--blue);
       color: var(--white) !important;
-      padding: 0.6rem 1.5rem !important;
-      border-radius: 2px;
-      font-size: 0.8rem !important;
-      letter-spacing: 0.06em !important;
-      text-transform: uppercase;
+      padding: 0.5rem 1rem !important;
+      border-radius: 8px !important;
       font-weight: 600 !important;
-      transition: background 0.2s !important;
+      font-size: 0.85rem !important;
+      text-decoration: none;
+      transition: opacity 0.15s !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
-    .nav-cta:hover { background: var(--blue-deep) !important; }
+    .nav-cta:hover { opacity: 0.9; }
 
     .nav-toggle {
       display: none;
       background: none;
-      border: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
       cursor: pointer;
       padding: 0.5rem;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--charcoal);
-      margin: 5px 0;
-      transition: 0.3s;
-    }
-
-    /* --- HERO --- */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
+      width: 40px;
+      height: 40px;
+      align-items: center;
       justify-content: center;
-      padding: clamp(4rem, 8vw, 8rem);
-      padding-top: 7rem;
+    }
+
+    .nav-toggle svg { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 4vw, 3rem);
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
+      gap: 0.4rem;
+      background: var(--blue-soft);
       color: var(--blue);
-      margin-bottom: 2rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
     }
 
-    .hero-badge::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 2px;
-      background: var(--blue);
-    }
+    .hero-badge svg { flex-shrink: 0; }
 
     .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 4.2rem);
-      color: var(--charcoal);
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      font-weight: 400;
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
     }
 
-    .hero p {
-      font-size: clamp(1rem, 1.2vw, 1.15rem);
-      color: var(--gray);
-      max-width: 420px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-mid);
+      line-height: 1.6;
+      max-width: 520px;
+      margin: 0 auto 2rem;
     }
 
-    .hero-actions {
+    .hero-btns {
       display: flex;
-      gap: 1rem;
-      align-items: center;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .btn-primary {
+    .btn {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--blue);
-      color: var(--white);
-      padding: 1rem 2rem;
-      text-decoration: none;
-      font-size: 0.85rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
       font-weight: 600;
-      letter-spacing: 0.04em;
-      border-radius: 2px;
-      transition: background 0.25s ease, transform 0.2s ease;
-    }
-
-    .btn-primary:hover {
-      background: var(--blue-deep);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--charcoal);
       text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 1rem 0;
-      transition: color 0.2s;
+      transition: all 0.15s;
+      cursor: pointer;
+      border: none;
     }
 
-    .btn-secondary:hover { color: var(--blue); }
+    .btn-primary { background: var(--navy); color: var(--white); }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-outline { background: var(--white); color: var(--text); border: 1.5px solid var(--border); }
+    .btn-outline:hover { border-color: var(--text-light); background: var(--bg); }
 
-    .btn-secondary svg {
-      transition: transform 0.2s;
-    }
-
-    .btn-secondary:hover svg {
-      transform: translateX(3px);
-    }
-
-    .hero-image {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--blue-deep) 100%);
+    .hero-trust {
+      margin-top: 2.5rem;
       display: flex;
-      align-items: center;
       justify-content: center;
-    }
-
-    .hero-image-inner {
-      width: 100%;
-      height: 100%;
-      background:
-        radial-gradient(ellipse at 30% 50%, rgba(37,99,235,0.15) 0%, transparent 60%),
-        linear-gradient(135deg, #0f172a 0%, #1e3a5f 40%, #1e40af 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem;
       gap: 2rem;
+      flex-wrap: wrap;
     }
 
-    .hero-icon-cluster {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      max-width: 320px;
-    }
-
-    .hero-icon-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px;
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-      transition: background 0.3s;
-    }
-
-    .hero-icon-card:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    .hero-icon-card svg {
-      width: 36px;
-      height: 36px;
-      color: var(--blue-light);
-    }
-
-    .hero-icon-card span {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      text-align: center;
-    }
-
-    .hero-gas-safe {
+    .hero-trust-item {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem 1.5rem;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 4px;
-    }
-
-    .hero-gas-safe svg {
-      width: 24px;
-      height: 24px;
-      color: var(--amber);
-    }
-
-    .hero-gas-safe span {
-      color: rgba(255,255,255,0.8);
+      gap: 0.4rem;
       font-size: 0.8rem;
+      color: var(--text-light);
       font-weight: 500;
-      letter-spacing: 0.02em;
     }
 
-    /* --- STATS BAR --- */
+    .hero-trust-item svg { color: var(--green); flex-shrink: 0; }
+
+    /* ── STATS ── */
     .stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      background: var(--charcoal);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .stat {
-      padding: 2.5rem 2rem;
+      padding: 2rem 1rem;
       text-align: center;
-      position: relative;
+      border-right: 1px solid var(--border);
     }
 
-    .stat:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 25%;
-      height: 50%;
-      width: 1px;
-      background: rgba(255,255,255,0.1);
-    }
+    .stat:last-child { border-right: none; }
 
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      color: var(--white);
-      margin-bottom: 0.25rem;
+    .stat-num {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
     }
 
     .stat-label {
-      font-size: 0.75rem;
-      color: var(--silver);
-      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      color: var(--text-light);
       text-transform: uppercase;
-      font-weight: 500;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      margin-top: 0.35rem;
     }
 
-    /* --- SERVICES --- */
+    /* ── SERVICES ── */
     .services {
-      padding: clamp(4rem, 10vw, 8rem) clamp(2rem, 6vw, 6rem);
+      padding: clamp(3rem, 8vw, 5rem) clamp(1.25rem, 4vw, 3rem);
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .section-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--blue);
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
-    .section-heading {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      color: var(--charcoal);
-      line-height: 1.15;
-      max-width: 560px;
-      margin-bottom: 1.25rem;
-      font-weight: 400;
+    .section-title {
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
     }
 
-    .section-sub {
-      color: var(--gray);
-      font-size: 1.05rem;
-      max-width: 480px;
-      margin-bottom: 4rem;
-      line-height: 1.7;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--mist);
-      border: 1px solid var(--mist);
-    }
-
-    .service-card {
-      background: var(--white);
-      padding: clamp(2rem, 4vw, 3.5rem);
-      position: relative;
-      transition: background 0.3s ease;
-    }
-
-    .service-card:hover {
-      background: var(--cloud);
-    }
-
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 1.75rem;
-      color: var(--blue);
-    }
-
-    .service-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      color: var(--charcoal);
-      margin-bottom: 1rem;
-      font-weight: 400;
-    }
-
-    .service-card p {
-      color: var(--gray);
-      font-size: 0.925rem;
-      line-height: 1.7;
-    }
-
-    .service-number {
-      position: absolute;
-      top: clamp(1.5rem, 3vw, 2.5rem);
-      right: clamp(1.5rem, 3vw, 2.5rem);
-      font-family: var(--font-display);
-      font-size: 3rem;
-      color: var(--mist);
-      line-height: 1;
-      user-select: none;
-    }
-
-    /* --- WHY CHOOSE --- */
-    .why {
-      background: var(--navy);
-      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: clamp(3rem, 6vw, 6rem);
-      align-items: center;
-    }
-
-    .why .section-label { color: var(--blue-light); }
-
-    .why .section-heading {
-      color: var(--white);
-      margin-bottom: 1.5rem;
-    }
-
-    .why-text {
-      color: var(--silver);
-      font-size: 1rem;
-      line-height: 1.8;
-      max-width: 400px;
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .trust-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      padding: 2rem 1.75rem;
-      border-radius: 2px;
-      transition: background 0.3s;
-    }
-
-    .trust-card:hover {
-      background: rgba(255,255,255,0.07);
-    }
-
-    .trust-icon {
-      width: 32px;
-      height: 32px;
-      color: var(--blue-light);
-      margin-bottom: 1rem;
-    }
-
-    .trust-card h4 {
-      color: var(--white);
+    .section-desc {
+      color: var(--text-mid);
       font-size: 0.95rem;
-      font-weight: 500;
-      line-height: 1.4;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
     }
 
-    /* --- ABOUT --- */
-    .about {
+    .services-list {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      min-height: 70vh;
-    }
-
-    .about-image {
-      background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 50%, #1e40af 100%);
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       overflow: hidden;
     }
 
-    .about-image::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 40% 60%, rgba(37,99,235,0.2) 0%, transparent 50%);
+    .svc {
+      background: var(--white);
+      padding: 2rem 1.5rem;
+      transition: background 0.15s;
+      cursor: default;
     }
 
-    .about-image-icon {
-      position: relative;
-      z-index: 1;
-      width: 120px;
-      height: 120px;
-      color: rgba(255,255,255,0.12);
-    }
+    .svc:hover { background: var(--bg); }
 
-    .about-content {
+    .svc-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--blue-soft);
+      color: var(--blue);
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      padding: clamp(3rem, 6vw, 6rem);
+      margin-bottom: 1rem;
     }
 
-    .about-content .section-heading {
-      margin-bottom: 1.5rem;
+    .svc h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
     }
 
-    .about-content p {
-      color: var(--gray);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 1.25rem;
-      max-width: 460px;
+    .svc p {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.55;
     }
 
-    .about-sig {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--mist);
+    /* ── WHY ── */
+    .why {
+      background: var(--navy);
+      padding: clamp(3rem, 8vw, 5rem) clamp(1.25rem, 4vw, 3rem);
     }
 
-    .about-sig strong {
-      display: block;
-      color: var(--charcoal);
-      font-size: 1rem;
+    .why-inner {
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    .about-sig span {
-      color: var(--gray);
+    .why .section-label { color: var(--blue); }
+    .why .section-title { color: var(--white); }
+    .why .section-desc { color: var(--text-light); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .why-item {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .why-item:hover { border-color: rgba(255,255,255,0.12); }
+
+    .why-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(36,131,199,0.15);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .why-item h4 {
+      color: var(--white);
       font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
     }
 
-    /* --- REVIEWS --- */
+    .why-item p {
+      color: #64748b;
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    /* ── REVIEWS ── */
     .reviews {
-      background: var(--cloud);
-      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
-    }
-
-    .reviews .section-label,
-    .reviews .section-heading {
-      text-align: center;
-    }
-
-    .reviews .section-heading {
-      max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 3.5rem;
+      padding: clamp(3rem, 8vw, 5rem) clamp(1.25rem, 4vw, 3rem);
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .reviews-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
 
-    .review-card {
-      background: var(--white);
-      padding: 2.5rem 2rem;
-      border: 1px solid rgba(0,0,0,0.04);
-      border-radius: 2px;
-      position: relative;
+    .review {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
     }
 
     .review-stars {
       display: flex;
-      gap: 0.2rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .review-stars svg {
-      width: 16px;
-      height: 16px;
+      gap: 2px;
       color: var(--amber);
-      fill: var(--amber);
+      margin-bottom: 0.75rem;
     }
 
-    .review-card blockquote {
-      color: var(--slate);
-      font-size: 0.925rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
+    .review q {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.6;
       font-style: normal;
-    }
-
-    .review-author {
-      font-weight: 600;
-      color: var(--charcoal);
-      font-size: 0.85rem;
-    }
-
-    .review-source {
-      color: var(--silver);
-      font-size: 0.75rem;
-      margin-top: 0.15rem;
-    }
-
-    /* --- CONTACT CTA --- */
-    .contact {
-      background: var(--white);
-      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
-      text-align: center;
-    }
-
-    .contact .section-heading {
-      max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
       margin-bottom: 1rem;
     }
 
-    .contact-sub {
-      color: var(--gray);
-      font-size: 1.05rem;
-      margin-bottom: 3rem;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.7;
-    }
-
-    .contact-phone {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4.5vw, 3.5rem);
-      color: var(--charcoal);
-      text-decoration: none;
-      display: block;
-      margin-bottom: 2rem;
-      transition: color 0.2s;
-    }
-
-    .contact-phone:hover { color: var(--blue); }
-
-    .contact-details {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .contact-detail {
+    .review-footer {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      color: var(--gray);
-      font-size: 0.9rem;
+      gap: 0.6rem;
     }
 
-    .contact-detail svg {
-      width: 18px;
-      height: 18px;
+    .review-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--blue-soft);
       color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
     }
 
-    .contact-areas {
-      color: var(--silver);
-      font-size: 0.85rem;
+    .review-name {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .review-src {
+      font-size: 0.72rem;
+      color: var(--text-light);
+    }
+
+    /* ── CTA ── */
+    .cta {
+      margin: 0 clamp(1.25rem, 4vw, 3rem);
+      background: var(--navy);
+      border-radius: 16px;
+      padding: clamp(2.5rem, 6vw, 4rem);
+      text-align: center;
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .cta h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-desc {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      max-width: 440px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .cta-phone {
+      display: block;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.02em;
+      transition: color 0.15s;
+    }
+
+    .cta-phone:hover { color: var(--blue); }
+
+    .cta-email {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+
+    .cta .btn-primary {
+      background: var(--blue);
+      margin-top: 0.5rem;
+    }
+
+    .cta-areas {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      color: #64748b;
       letter-spacing: 0.04em;
-      margin-top: 2rem;
     }
 
-    /* --- FOOTER --- */
+    /* ── FOOTER ── */
     .footer {
-      padding: 2rem clamp(2rem, 6vw, 6rem);
+      padding: 1.5rem clamp(1.25rem, 4vw, 3rem);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid var(--mist);
-      font-size: 0.8rem;
-      color: var(--silver);
+      font-size: 0.75rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
     }
 
-    .footer a {
-      color: var(--silver);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .footer a { color: var(--text-light); text-decoration: none; }
     .footer a:hover { color: var(--blue); }
 
-    /* --- ANIMATIONS --- */
-    .reveal {
+    /* ── ANIMATIONS ── */
+    .rv {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(16px);
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    .rv.vis { opacity: 1; transform: none; }
+    .rv-d1 { transition-delay: 0.06s; }
+    .rv-d2 { transition-delay: 0.12s; }
+    .rv-d3 { transition-delay: 0.18s; }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-
-    /* --- RESPONSIVE --- */
-    @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-image { height: 50vh; order: -1; }
-      .hero-content { padding: 3rem 2rem 4rem; }
-      .why { grid-template-columns: 1fr; }
-      .about { grid-template-columns: 1fr; }
-      .about-image { height: 50vh; }
-      .reviews-grid { grid-template-columns: 1fr; max-width: 520px; }
-    }
-
+    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .nav-links { display: none; }
+      .nav { flex-wrap: wrap; }
       .nav-links.open {
         display: flex;
         flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+        width: 100%;
+        order: 99;
         background: var(--white);
-        padding: 1.5rem 2rem;
-        border-bottom: 1px solid var(--mist);
-        gap: 1rem;
+        padding: 0.75rem 0;
+        gap: 0.25rem;
+        border-top: 1px solid var(--border);
       }
-      .nav-toggle { display: block; }
+      .nav-links.open a {
+        padding: 0.75rem 0.5rem;
+        font-size: 1rem;
+        border-radius: 8px;
+      }
+      .nav-links.open a:hover { background: var(--bg); }
+      .nav-toggle { display: flex; }
       .stats { grid-template-columns: repeat(2, 1fr); }
-      .stat:nth-child(2)::after { display: none; }
-      .services-grid { grid-template-columns: 1fr; }
-      .trust-grid { grid-template-columns: 1fr; }
-      .contact-details { flex-direction: column; align-items: center; gap: 1rem; }
-      .footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+      .stat { border-bottom: 1px solid var(--border); }
+      .stat:nth-child(odd) { border-right: 1px solid var(--border); }
+      .stat:nth-child(even) { border-right: none; }
+      .services-list { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
 
     @media (max-width: 480px) {
       .stats { grid-template-columns: 1fr; }
-      .stat::after { display: none !important; }
-      .stat {
-        padding: 1.5rem;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-      }
-      .hero-actions { flex-direction: column; align-items: flex-start; }
-      .hero-icon-cluster { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .stat { border-right: none !important; }
+      .why-grid { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; }
+      .hero-trust { flex-direction: column; align-items: center; gap: 0.5rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
+      .rv { opacity: 1; transform: none; transition: none; }
       html { scroll-behavior: auto; }
     }
   </style>
@@ -802,353 +552,237 @@
 <body>
 
   <!-- NAV -->
-  <nav class="nav" id="nav">
-    <a href="#" class="nav-brand">
-      <img
-        src="https://securegas247.co.uk/wp-content/uploads/2021/03/boilers-trans.png"
-        alt="Secure Gas 247"
-        class="nav-logo"
-      />
-      <div>
-        <div class="nav-brand-text">Secure Gas 247</div>
-        <div class="nav-brand-sub">Gas Engineers &middot; Leeds</div>
-      </div>
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+  <nav class="nav">
+    <img src="https://securegas247.co.uk/wp-content/uploads/2021/03/1SecureGas247.png" alt="Secure Gas 247" class="nav-logo" />
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="tel:07515314131" class="nav-cta">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        07515 314 131
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-content">
-      <span class="hero-badge reveal">24/7 Emergency Callouts</span>
-      <h1 class="reveal reveal-delay-1">Heating engineers you can&nbsp;rely&nbsp;on</h1>
-      <p class="reveal reveal-delay-2">
-        Gas Safe registered engineers serving Leeds and West Yorkshire.
-        From emergency boiler repairs to full installations, we keep your home warm and safe.
-      </p>
-      <div class="hero-actions reveal reveal-delay-3">
-        <a href="tel:07515314131" class="btn-primary">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          Call Now
-        </a>
-        <a href="#services" class="btn-secondary">
-          Our services
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
+    <div class="hero-badge rv">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Gas Safe Registered
     </div>
-    <div class="hero-image">
-      <div class="hero-image-inner">
-        <div class="hero-icon-cluster">
-          <div class="hero-icon-card">
-            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
-            <span>24/7 Callouts</span>
-          </div>
-          <div class="hero-icon-card">
-            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>Gas Safe</span>
-          </div>
-          <div class="hero-icon-card">
-            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            <span>Boiler Repairs</span>
-          </div>
-          <div class="hero-icon-card">
-            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-            <span>Installations</span>
-          </div>
-        </div>
-        <div class="hero-gas-safe">
-          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-          <span>Gas Safe Registered Engineers</span>
-        </div>
-      </div>
+    <h1 class="rv rv-d1">Boiler repair in Leeds you can rely&nbsp;on</h1>
+    <p class="hero-sub rv rv-d2">15 years keeping Leeds warm. Emergency repairs, annual servicing, and full installations — available 24/7 with parts on the van.</p>
+    <div class="hero-btns rv rv-d3">
+      <a href="tel:07515314131" class="btn btn-primary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Now
+      </a>
+      <a href="#services" class="btn btn-outline">View Services</a>
+    </div>
+    <div class="hero-trust rv rv-d3">
+      <span class="hero-trust-item">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        Gas Safe Registered
+      </span>
+      <span class="hero-trust-item">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        24/7 Emergency
+      </span>
+      <span class="hero-trust-item">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        5-Star Google Reviews
+      </span>
     </div>
   </section>
 
   <!-- STATS -->
-  <div class="stats">
-    <div class="stat reveal">
-      <div class="stat-number">24/7</div>
-      <div class="stat-label">Emergency Callouts</div>
+  <div class="stats rv">
+    <div class="stat">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Years Experience</div>
     </div>
-    <div class="stat reveal reveal-delay-1">
-      <div class="stat-number">Gas Safe</div>
-      <div class="stat-label">Registered Engineers</div>
+    <div class="stat">
+      <div class="stat-num">90%</div>
+      <div class="stat-label">First Visit Fix</div>
     </div>
-    <div class="stat reveal reveal-delay-2">
-      <div class="stat-number">Leeds</div>
-      <div class="stat-label">&amp; West Yorkshire</div>
+    <div class="stat">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Availability</div>
     </div>
-    <div class="stat reveal reveal-delay-3">
-      <div class="stat-number">5&#9733;</div>
-      <div class="stat-label">Customer Rated</div>
+    <div class="stat">
+      <div class="stat-num">5.0</div>
+      <div class="stat-label">Google Rating</div>
     </div>
   </div>
 
   <!-- SERVICES -->
   <section class="services" id="services">
-    <div class="section-label reveal">What We Do</div>
-    <h2 class="section-heading reveal reveal-delay-1">Professional heating &amp; gas services for every&nbsp;need</h2>
-    <p class="section-sub reveal reveal-delay-2">Whether it is an emergency repair or a planned installation, our Gas Safe registered engineers deliver reliable, quality work across Leeds and West Yorkshire.</p>
+    <div class="section-label rv">Services</div>
+    <h2 class="section-title rv rv-d1">Everything your boiler needs</h2>
+    <p class="section-desc rv rv-d2">From emergency breakdowns to annual servicing. Gas Safe registered and available around the clock across Leeds and West Yorkshire.</p>
 
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <span class="service-number">01</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <path d="M14 8h20v32H14z" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 14h8M20 20h8M20 26h8" stroke-linecap="round"/>
-          <circle cx="24" cy="34" r="3"/>
-          <path d="M14 8h20" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M10 40h28" stroke-linecap="round"/>
-        </svg>
-        <h3>Boiler Repairs</h3>
-        <p>Fast, reliable boiler repairs when you need them most. Our engineers diagnose and fix faults on all major boiler brands, getting your heating back up and running quickly.</p>
+    <div class="services-list">
+      <div class="svc rv">
+        <div class="svc-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Boiler Repair</h3>
+        <p>Quick diagnosis and repair for any boiler type, at competitive prices. Most jobs completed on the first visit.</p>
       </div>
-
-      <div class="service-card reveal reveal-delay-1">
-        <span class="service-number">02</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <path d="M10 12h28v28H10z" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M18 12V8M30 12V8" stroke-linecap="round"/>
-          <path d="M10 20h28" stroke-linecap="round"/>
-          <path d="M24 28v8M20 32h8" stroke-linecap="round"/>
-        </svg>
-        <h3>New Boiler Installations</h3>
-        <p>Expert installation of energy-efficient boilers from leading manufacturers. We help you choose the right system for your home and budget, with full warranties included.</p>
-      </div>
-
-      <div class="service-card reveal reveal-delay-2">
-        <span class="service-number">03</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <path d="M24 6v4M24 38v4M6 24h4M38 24h4M12 12l2.8 2.8M33.2 33.2l2.8 2.8M36 12l-2.8 2.8M14.8 33.2L12 36" stroke-linecap="round"/>
-          <circle cx="24" cy="24" r="10"/>
-          <path d="M20 24l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+      <div class="svc rv rv-d1">
+        <div class="svc-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
         <h3>Boiler Servicing</h3>
-        <p>Annual boiler servicing to keep your system running safely and efficiently. Regular maintenance extends boiler life, reduces breakdowns and keeps your warranty valid.</p>
+        <p>Annual servicing to keep your boiler running smoothly, avoid breakdowns and reduce energy costs.</p>
       </div>
-
-      <div class="service-card reveal reveal-delay-3">
-        <span class="service-number">04</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <path d="M8 10h32v28H8z" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16 10V6M32 10V6" stroke-linecap="round"/>
-          <path d="M8 18h32" stroke-linecap="round"/>
-          <path d="M18 26h12M18 32h8" stroke-linecap="round"/>
-        </svg>
+      <div class="svc rv rv-d2">
+        <div class="svc-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg>
+        </div>
+        <h3>New Installations</h3>
+        <p>Full boiler and heating installations, done efficiently and at a time that suits you.</p>
+      </div>
+      <div class="svc rv">
+        <div class="svc-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3>Gas Appliances</h3>
+        <p>Cooker installations, gas hob connections, and appliance safety checks by Gas Safe engineers.</p>
+      </div>
+      <div class="svc rv rv-d1">
+        <div class="svc-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
         <h3>Gas Safety Certificates</h3>
-        <p>Landlord gas safety inspections and CP12 certificates. Legal requirement for all rental properties. We provide fast turnaround and competitive rates for landlords.</p>
+        <p>Landlord and homeowner gas safety inspections. Ensuring your property meets all legal requirements.</p>
       </div>
-
-      <div class="service-card reveal">
-        <span class="service-number">05</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <path d="M24 4v8M4 24h8M36 24h8M24 36v8" stroke-linecap="round"/>
-          <path d="M12 12l4 4M32 12l-4 4M12 36l4-4M32 36l-4-4" stroke-linecap="round"/>
-          <circle cx="24" cy="24" r="8"/>
-        </svg>
-        <h3>Central Heating Systems</h3>
-        <p>Full central heating installation, repair and power flushing. We design and fit complete systems or upgrade your existing setup for better efficiency and lower bills.</p>
-      </div>
-
-      <div class="service-card reveal reveal-delay-1">
-        <span class="service-number">06</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <path d="M14 6h20l4 8H10l4-8z" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M10 14v26h28V14" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 24c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke-linecap="round"/>
-          <path d="M24 28v6" stroke-linecap="round"/>
-        </svg>
-        <h3>Plumbing Services</h3>
-        <p>General plumbing repairs and installations alongside our gas services. From leaking taps to bathroom fitting, our qualified engineers handle it all under one roof.</p>
+      <div class="svc rv rv-d2">
+        <div class="svc-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Central Heating</h3>
+        <p>Full systems, radiator installations, powerflush, and underfloor heating across Leeds.</p>
       </div>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
+  <!-- WHY -->
   <section class="why">
-    <div>
-      <div class="section-label reveal">Why Choose Us</div>
-      <h2 class="section-heading reveal reveal-delay-1">Local engineers,<br>trusted results</h2>
-      <p class="why-text reveal reveal-delay-2">
-        Secure Gas 247 provides professional central heating and boiler services across
-        Leeds and West Yorkshire. Our Gas Safe registered engineers are available around the clock
-        for emergency callouts, and we pride ourselves on honest pricing with no hidden fees.
-      </p>
-    </div>
-    <div class="trust-grid">
-      <div class="trust-card reveal">
-        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          <path d="M9 12l2 2 4-4"/>
-        </svg>
-        <h4>Gas Safe Registered</h4>
-      </div>
-      <div class="trust-card reveal reveal-delay-1">
-        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M12 6v6l4 2"/>
-        </svg>
-        <h4>24/7 Emergency Availability</h4>
-      </div>
-      <div class="trust-card reveal reveal-delay-2">
-        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <path d="M9 12l2 2 4-4"/>
-          <path d="M12 3a9 9 0 110 18 9 9 0 010-18z"/>
-        </svg>
-        <h4>No Hidden Fees or Charges</h4>
-      </div>
-      <div class="trust-card reveal reveal-delay-3">
-        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/>
-        </svg>
-        <h4>5-Star Customer Reviews</h4>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-image">
-      <svg class="about-image-icon" fill="none" stroke="currentColor" stroke-width="0.5" viewBox="0 0 24 24">
-        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-      </svg>
-    </div>
-    <div class="about-content">
-      <div class="section-label reveal">About Us</div>
-      <h2 class="section-heading reveal reveal-delay-1">Professional gas engineers you can&nbsp;trust</h2>
-      <p class="reveal reveal-delay-2">
-        At Secure Gas 247, we offer professional central heating and boiler repair services,
-        installation and servicing across Leeds and the wider West Yorkshire area.
-      </p>
-      <p class="reveal reveal-delay-3">
-        As Gas Safe registered engineers, safety is at the core of everything we do.
-        Whether you need an emergency boiler repair, a new installation, or your annual
-        service, we deliver honest, reliable work at fair prices -- no call-out charges,
-        no hidden fees.
-      </p>
-      <div class="about-sig reveal reveal-delay-4">
-        <strong>Secure Gas 247</strong>
-        <span>Gas Safe Registered &middot; Leeds &amp; West Yorkshire</span>
+    <div class="why-inner">
+      <div class="section-label rv">Why Secure Gas 247</div>
+      <h2 class="section-title rv rv-d1">The engineer Leeds trusts</h2>
+      <p class="section-desc rv rv-d2">Fair pricing, no hidden fees, same-day service. Every job backed by a guarantee.</p>
+      <div class="why-grid">
+        <div class="why-item rv">
+          <div class="why-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Gas Safe Registered</h4>
+          <p>Fully certified and compliant with all current regulations.</p>
+        </div>
+        <div class="why-item rv rv-d1">
+          <div class="why-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h4>24/7 Availability</h4>
+          <p>Emergency callouts any time, 365 days a year.</p>
+        </div>
+        <div class="why-item rv rv-d2">
+          <div class="why-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          </div>
+          <h4>5-Star Reviews</h4>
+          <p>Consistently rated 5 stars by customers across Leeds.</p>
+        </div>
+        <div class="why-item rv rv-d3">
+          <div class="why-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <h4>No Hidden Fees</h4>
+          <p>Fair pricing with parts and labour guaranteed.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- REVIEWS -->
   <section class="reviews" id="reviews">
-    <div class="section-label reveal">Testimonials</div>
-    <h2 class="section-heading reveal reveal-delay-1">What our customers say</h2>
-
+    <div class="section-label rv">Reviews</div>
+    <h2 class="section-title rv rv-d1">What customers say</h2>
+    <p class="section-desc rv rv-d2">Real reviews from real customers across Leeds.</p>
     <div class="reviews-grid">
-      <div class="review-card reveal">
-        <div class="review-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+      <div class="review rv">
+        <div class="review-stars"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
+        <q>Had a boiler leak and got prompt service within the hour. Came and fixed the issue at a reasonable price. Would highly recommend.</q>
+        <div class="review-footer">
+          <div class="review-avatar">NM</div>
+          <div><div class="review-name">Nasir Mahmood</div><div class="review-src">Google Review</div></div>
         </div>
-        <blockquote>Called on a Sunday evening with no heating. They were out within the hour and had the boiler fixed before bedtime. Brilliant service and very fair price.</blockquote>
-        <div class="review-author">Sarah M.</div>
-        <div class="review-source">Leeds, LS8</div>
       </div>
-
-      <div class="review-card reveal reveal-delay-1">
-        <div class="review-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+      <div class="review rv rv-d1">
+        <div class="review-stars"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
+        <q>An absolutely first class service. Used their services over many years and cannot complain whatsoever.</q>
+        <div class="review-footer">
+          <div class="review-avatar">CH</div>
+          <div><div class="review-name">Carol Holmes</div><div class="review-src">Google Review</div></div>
         </div>
-        <blockquote>Had a new boiler installed. The engineer explained all the options clearly, no pressure to upsell. Neat, tidy work and the system runs perfectly. Highly recommend.</blockquote>
-        <div class="review-author">James T.</div>
-        <div class="review-source">Horsforth, LS18</div>
       </div>
-
-      <div class="review-card reveal reveal-delay-2">
-        <div class="review-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+      <div class="review rv rv-d2">
+        <div class="review-stars"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
+        <q>Brilliant service and fast. Very friendly, he explained everything he was doing. Great quality. Would highly recommend.</q>
+        <div class="review-footer">
+          <div class="review-avatar">JW</div>
+          <div><div class="review-name">Jane Watson</div><div class="review-src">Google Review</div></div>
         </div>
-        <blockquote>Use Secure Gas 247 every year for our landlord gas safety certificates. Always prompt, professional, and the paperwork is sorted same day. Would not go anywhere else.</blockquote>
-        <div class="review-author">David R.</div>
-        <div class="review-source">Landlord, Leeds</div>
+      </div>
+      <div class="review rv rv-d3">
+        <div class="review-stars"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
+        <q>Absolutely fantastic service. Rang at 2pm and within the hour he was here. Had parts on hand. Very professional and polite.</q>
+        <div class="review-footer">
+          <div class="review-avatar">HG</div>
+          <div><div class="review-name">Hannah Greenwood</div><div class="review-src">Google Review</div></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="section-label reveal">Get In Touch</div>
-    <h2 class="section-heading reveal reveal-delay-1">Need a gas engineer?</h2>
-    <p class="contact-sub reveal reveal-delay-2">
-      Call us now for a free, no obligation quote. We are available 24 hours a day,
-      7 days a week for emergency boiler repairs across Leeds and West Yorkshire.
-    </p>
-    <a href="tel:07515314131" class="contact-phone reveal reveal-delay-2">07515 314 131</a>
-    <div class="contact-details reveal reveal-delay-3">
-      <div class="contact-detail">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Leeds, West Yorkshire
-      </div>
-      <div class="contact-detail">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        Available 24/7
-      </div>
-    </div>
-    <a href="tel:07515314131" class="btn-primary reveal reveal-delay-3">
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="section-label rv" style="color: var(--blue);">Get In Touch</div>
+    <h2 class="rv rv-d1">Boiler trouble? Call now.</h2>
+    <p class="cta-desc rv rv-d2">Available 24/7 across Leeds and West Yorkshire. Free quotes, no hidden fees.</p>
+    <a href="tel:07515314131" class="cta-phone rv rv-d2">07515 314 131</a>
+    <a href="mailto:info@securegas247.co.uk" class="cta-email rv rv-d3">info@securegas247.co.uk</a>
+    <br/>
+    <a href="tel:07515314131" class="btn btn-primary rv rv-d3">
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       Call For a Free Quote
     </a>
-    <p class="contact-areas reveal reveal-delay-4">
-      Serving Leeds &middot; Pudsey &middot; Horsforth &middot; Morley &middot; Rothwell &middot; West Yorkshire
-    </p>
+    <p class="cta-areas rv rv-d3">Leeds &middot; Bradford &middot; Huddersfield &middot; West Yorkshire</p>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <span>&copy; 2026 Secure Gas 247. All rights reserved.</span>
+    <span>&copy; 2026 Secure Gas 247</span>
     <span>Website by <a href="https://highcroftdigital.com" target="_blank" rel="noopener">Highcroft Digital</a></span>
   </footer>
 
   <script>
-    // Nav scroll effect
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
-
-    // Mobile toggle
-    const toggle = document.getElementById('navToggle');
-    const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
-
-    // Intersection Observer for reveals
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } }),
+      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
     );
-
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.rv').forEach((el) => obs.observe(el));
   </script>
 
 </body>
