@@ -3,128 +3,82 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <div class="mondrian-page">
+  <!-- Sticky header - appears when you scroll past the hero logo -->
+  <header class="sticky-header" id="stickyHeader">
+    <div class="logo-mark">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+    </div>
+    <div class="wordmark">
+      <span class="wordmark-main">HIGHCROFT</span>
+      <span class="wordmark-sub">DIGITAL</span>
+    </div>
+  </header>
 
-    <!-- Row 1: Hero -->
-    <div class="cell hero-brand">
-      <div class="logo hero-logo">
-        <div class="logo-mark">
-          <span class="dot" style="background:#DD0100"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot" style="background:#FAC901"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot" style="background:#225095"></span>
-        </div>
-        <div class="logo-text">
-          <h1>
-            <span class="logo-name">HIGHCROFT</span>
-            <span class="logo-sub">DIGITAL</span>
-          </h1>
-        </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="accent-yellow"></div>
+    <p class="hero-label fade-in">Digital Design Studio</p>
+    <div class="hero-logo fade-in" id="heroLogo">
+      <div class="logo-mark">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+      <div class="wordmark">
+        <span class="wordmark-main">HIGHCROFT</span>
+        <span class="wordmark-sub">DIGITAL</span>
       </div>
     </div>
-    <div class="cell hero-statement">
-      <h2 class="hero-heading">Building what comes next.</h2>
-      <p class="hero-sub">A software studio based in Surrey, UK. We design, build and ship technology for businesses that want to stay ahead.</p>
-    </div>
-    <div class="cell fill-red"></div>
+    <p class="hero-sub fade-in">Modern websites, AI tools, and automation systems for businesses that want real results without the agency runaround. Based in Surrey, UK.</p>
+  </section>
 
-    <!-- Row 2: Identity -->
-    <div class="cell fill-yellow"></div>
-    <div class="cell identity">
-      <span class="cell-label">// STUDIO</span>
-      <h2>A studio, not an agency.</h2>
-      <p>No account managers, no committees. Direct collaboration and fast execution on the things that actually matter.</p>
-    </div>
-
-    <!-- Row 3: Capabilities -->
-    <div class="cell capabilities">
-      <span class="cell-label">// CAPABILITIES</span>
-      <div class="cap-words">
-        <span>AI</span>
-        <span>Automation</span>
-        <span>Software</span>
+  <!-- Services -->
+  <section class="services">
+    <p class="services-label fade-in">What we build</p>
+    <div class="services-grid">
+      <div class="service">
+        <div class="service-marker"></div>
+        <h3>Modern Websites</h3>
+        <p>Fast, responsive sites built with clean code. Designed to load quickly and convert visitors into customers.</p>
+      </div>
+      <div class="service">
+        <div class="service-marker"></div>
+        <h3>AI &amp; Automation</h3>
+        <p>Custom AI tools and automated workflows that handle the repetitive work so your team doesn't have to.</p>
+      </div>
+      <div class="service">
+        <div class="service-marker"></div>
+        <h3>Ongoing Support</h3>
+        <p>Hosting, updates, and maintenance handled. Your site stays fast, secure, and up to date.</p>
       </div>
     </div>
-    <div class="cell fill-blue"></div>
+  </section>
 
-    <!-- Row 4: Philosophy -->
-    <div class="cell philosophy">
-      <span class="cell-label">// APPROACH</span>
-      <h2>Less process. More product.</h2>
-      <p>We don't disappear for six months and come back with a PDF. We build in short cycles, stay close to the problem, and put working software in your hands fast.</p>
+  <!-- Approach -->
+  <section class="approach fade-in">
+    <div class="approach-left">
+      <p class="approach-label">How we work</p>
+      <h2 class="approach-heading">Direct. Fast. No filler.</h2>
     </div>
-    <div class="cell fill-red sm"></div>
-
-    <!-- Row 5: Technology -->
-    <div class="cell fill-yellow sm"></div>
-    <div class="cell technology">
-      <div class="node-grid" aria-hidden="true">
-        <span class="node"></span><span class="node"></span><span class="node"></span><span class="node"></span><span class="node"></span>
-        <span class="node"></span><span class="node active"></span><span class="node"></span><span class="node active"></span><span class="node"></span>
-        <span class="node"></span><span class="node"></span><span class="node active"></span><span class="node"></span><span class="node"></span>
-        <span class="node active"></span><span class="node"></span><span class="node"></span><span class="node"></span><span class="node active"></span>
-        <span class="node"></span><span class="node"></span><span class="node"></span><span class="node"></span><span class="node"></span>
-      </div>
-      <div class="tech-text">
-        <span class="cell-label">// TECHNOLOGY</span>
-        <h2>The tools have changed.</h2>
-        <p>We work with the latest in AI, cloud infrastructure, and modern frameworks — not because it's trendy, but because it's better.</p>
-      </div>
+    <div class="approach-right">
+      <p class="approach-text">You work directly with the person building your project. No account managers, no handoffs, no waiting. Just clear communication and real progress.</p>
+      <p class="approach-text">We build in short cycles, stay close to the problem, and put working software in your hands fast.</p>
     </div>
+  </section>
 
-    <!-- Row 6: Longevity -->
-    <div class="cell longevity">
-      <span class="cell-label">// LONGEVITY</span>
-      <h2>We build things that last.</h2>
-      <p>Every project is built to run, scale, and evolve. We stick around after launch because software is never really finished.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <span class="footer-copy">&copy; 2026 Highcroft Digital</span>
+      <span class="footer-location">Surrey, UK</span>
     </div>
-    <div class="cell fill-blue"></div>
-
-    <!-- Row 7: Location + Contact -->
-    <div class="cell fill-red"></div>
-    <div class="cell location">
-      <p class="location-text">Based in Surrey.<br>Built for anywhere.</p>
-      <span class="coords">51.3&deg;N&ensp;0.3&deg;W</span>
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
     </div>
-
-    <div class="cell contact">
-      <span class="cell-label">// CONTACT</span>
-      <h2>Let's talk.</h2>
-      <p>If you've got a project in mind — or just want to explore what's possible — we'd like to hear from you.</p>
-      <a href="mailto:ed@highcroftdigital.co.uk" class="contact-email">ed@highcroftdigital.co.uk</a>
-    </div>
-    <div class="cell fill-yellow"></div>
-
-    <!-- Footer row -->
-    <div class="cell footer-cell">
-      <div class="footer-inner">
-        <div class="logo logo-sm">
-          <div class="logo-mark">
-            <span class="dot" style="background:#DD0100"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot" style="background:#FAC901"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot" style="background:#225095"></span>
-          </div>
-          <div class="logo-text">
-            <span class="logo-name">HIGHCROFT</span>
-            <span class="logo-sub">DIGITAL</span>
-          </div>
-        </div>
-        <span class="footer-meta">&copy; 2026</span>
-      </div>
-    </div>
-
-  </div>
+  </footer>
 
   <script is:inline>
     (function() {
@@ -136,9 +90,24 @@ import Layout from '../layouts/Layout.astro';
         });
       }, { threshold: 0.1 });
 
-      document.querySelectorAll('.cell').forEach(function(el) {
+      document.querySelectorAll('.fade-in, .service').forEach(function(el) {
         observer.observe(el);
       });
+
+      var heroLogo = document.getElementById('heroLogo');
+      var stickyHeader = document.getElementById('stickyHeader');
+
+      var logoObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            stickyHeader.classList.remove('show');
+          } else {
+            stickyHeader.classList.add('show');
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
+
+      logoObserver.observe(heroLogo);
     })();
   </script>
 </Layout>
