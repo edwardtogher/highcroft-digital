@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dot Grid Pattern — Visible Structure</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0A0A0A; font-family: 'Space Grotesk', sans-serif; padding: 3rem; }
+  h1 { font-size: 0.6rem; letter-spacing: 0.2em; color: rgba(245,245,240,0.2); margin-bottom: 2.5rem; text-transform: uppercase; font-weight: 500; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .card { display: flex; flex-direction: column; }
+  .card-label { font-size: 0.55rem; letter-spacing: 0.12em; color: rgba(245,245,240,0.25); margin-bottom: 0.5rem; text-transform: uppercase; font-weight: 500; }
+  .preview { padding: 3rem 2.5rem; display: flex; align-items: center; gap: 1.25rem; }
+  .pv { padding: 2.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .light { background: #F5F5F0; }
+  .dark { background: #0A0A0A; border: 1px solid rgba(245,245,240,0.06); border-top: none; }
+  .text-wrap { display: flex; flex-direction: column; gap: 4px; }
+  .name { font-weight: 700; font-size: 1.6rem; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
+  .light .name { color: #1A1A1A; }
+  .dark .name { color: #F5F5F0; }
+  .sub { font-weight: 400; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .light .sub { color: rgba(26,26,26,0.35); }
+  .dark .sub { color: rgba(245,245,240,0.35); }
+
+  /* Sizes strip */
+  .sizes { display: flex; gap: 2rem; align-items: flex-end; padding: 1.5rem 2.5rem; background: #111; border: 1px solid rgba(245,245,240,0.05); border-top: none; }
+  .size-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .size-label { font-size: 0.45rem; color: rgba(245,245,240,0.2); letter-spacing: 0.1em; }
+
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+
+  /* ====== BASE: 3x3 diagonal dot grid with visible structure ====== */
+  /* Pattern: R . . / . Y . / . . B */
+
+  /* --- D1: Black grid lines, white empty cells --- */
+  .d1 { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 3px; flex-shrink: 0; }
+  .light .d1 { background: #1A1A1A; }
+  .dark .d1 { background: rgba(245,245,240,0.15); }
+  .d1 > div { background: #F5F5F0; }
+  .dark .d1 > div { background: #1A1A1A; }
+  .d1 .r { background: #DD0100 !important; }
+  .d1 .y { background: #FAC901 !important; }
+  .d1 .b { background: #225095 !important; }
+  .d1-48 { width: 48px; height: 48px; }
+  .d1-32 { width: 32px; height: 32px; gap: 2px; }
+  .d1-16 { width: 16px; height: 16px; gap: 1px; }
+
+  /* --- D2: No grid lines, just gaps (floating dots with structure) --- */
+  .d2 { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 3px; flex-shrink: 0; }
+  .d2 > div { background: transparent; }
+  .d2 .r { background: #DD0100 !important; }
+  .d2 .y { background: #FAC901 !important; }
+  .d2 .b { background: #225095 !important; }
+  .d2-48 { width: 48px; height: 48px; }
+  .d2-32 { width: 32px; height: 32px; gap: 2px; }
+  .d2-16 { width: 16px; height: 16px; gap: 1px; }
+
+  /* --- D3: Black grid, asymmetric cell sizes --- */
+  .d3 { display: grid; grid-template-columns: 3fr 2fr 1fr; grid-template-rows: 1fr 2fr 3fr; gap: 2px; flex-shrink: 0; }
+  .light .d3 { background: #1A1A1A; }
+  .dark .d3 { background: rgba(245,245,240,0.15); }
+  .d3 > div { background: #F5F5F0; }
+  .dark .d3 > div { background: #1A1A1A; }
+  .d3 .r { background: #DD0100 !important; }
+  .d3 .y { background: #FAC901 !important; }
+  .d3 .b { background: #225095 !important; }
+  .d3-48 { width: 48px; height: 48px; }
+  .d3-32 { width: 32px; height: 32px; }
+  .d3-16 { width: 16px; height: 16px; gap: 1px; }
+
+  /* --- D4: Thick grid lines --- */
+  .d4 { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 5px; flex-shrink: 0; }
+  .light .d4 { background: #1A1A1A; }
+  .dark .d4 { background: #F5F5F0; }
+  .d4 > div { background: #F5F5F0; }
+  .dark .d4 > div { background: #0A0A0A; }
+  .d4 .r { background: #DD0100 !important; }
+  .d4 .y { background: #FAC901 !important; }
+  .d4 .b { background: #225095 !important; }
+  .d4-48 { width: 48px; height: 48px; }
+  .d4-32 { width: 32px; height: 32px; gap: 3px; }
+  .d4-16 { width: 16px; height: 16px; gap: 2px; }
+
+  /* --- D5: Grid as inline period --- */
+  .d5-name { font-size: 1.8rem; display: flex; align-items: flex-end; gap: 6px; }
+  .d5 { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 2px; flex-shrink: 0; margin-bottom: 3px; }
+  .light .d5 { background: #1A1A1A; }
+  .dark .d5 { background: rgba(245,245,240,0.15); }
+  .d5 > div { background: #F5F5F0; }
+  .dark .d5 > div { background: #0A0A0A; }
+  .d5 .r { background: #DD0100 !important; }
+  .d5 .y { background: #FAC901 !important; }
+  .d5 .b { background: #225095 !important; }
+  .d5-18 { width: 18px; height: 18px; }
+
+  /* --- D6: All colored, no white cells --- */
+  .d6 { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 3px; flex-shrink: 0; }
+  .light .d6 { background: #1A1A1A; }
+  .dark .d6 { background: rgba(245,245,240,0.12); }
+  .d6 .r { background: #DD0100; }
+  .d6 .y { background: #FAC901; }
+  .d6 .b { background: #225095; }
+  .d6 .rl { background: rgba(221,1,0,0.2); }
+  .d6 .yl { background: rgba(250,201,1,0.15); }
+  .d6 .bl { background: rgba(34,80,149,0.2); }
+  .d6-48 { width: 48px; height: 48px; }
+  .d6-32 { width: 32px; height: 32px; gap: 2px; }
+  .d6-16 { width: 16px; height: 16px; gap: 1px; }
+
+  /* --- D7: Stacked above text --- */
+  .d7-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .d7 { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 3px; }
+  .light .d7 { background: #1A1A1A; }
+  .dark .d7 { background: rgba(245,245,240,0.15); }
+  .d7 > div { background: #F5F5F0; }
+  .dark .d7 > div { background: #0A0A0A; }
+  .d7 .r { background: #DD0100 !important; }
+  .d7 .y { background: #FAC901 !important; }
+  .d7 .b { background: #225095 !important; }
+  .d7-56 { width: 56px; height: 56px; }
+
+  /* --- D8: Asymmetric like Mondrian, diagonal dots --- */
+  .d8 { display: grid; grid-template-columns: 5fr 3fr 1fr; grid-template-rows: 1fr 3fr 2fr; gap: 2px; flex-shrink: 0; }
+  .light .d8 { background: #1A1A1A; }
+  .dark .d8 { background: rgba(245,245,240,0.15); }
+  .d8 > div { background: #F5F5F0; }
+  .dark .d8 > div { background: #0A0A0A; }
+  .d8 .r { background: #DD0100 !important; }
+  .d8 .y { background: #FAC901 !important; }
+  .d8 .b { background: #225095 !important; }
+  .d8-48 { width: 48px; height: 48px; }
+  .d8-32 { width: 32px; height: 32px; }
+  .d8-16 { width: 16px; height: 16px; gap: 1px; }
+</style>
+</head>
+<body>
+<h1>Dot Grid Diagonal — With Visible Grid Structure</h1>
+<div class="grid">
+
+  <!-- D1: Standard grid lines -->
+  <div class="card">
+    <span class="card-label">1 — Grid lines, equal cells</span>
+    <div class="preview light">
+      <div class="d1 d1-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+    <div class="preview dark">
+      <div class="d1 d1-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+    <div class="sizes">
+      <div class="size-item"><div class="d1 d1-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">48px</span></div>
+      <div class="size-item"><div class="d1 d1-32"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">32px</span></div>
+      <div class="size-item"><div class="d1 d1-16"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">16px</span></div>
+    </div>
+  </div>
+
+  <!-- D2: Floating dots (no grid bg) -->
+  <div class="card">
+    <span class="card-label">2 — Floating dots (original, for comparison)</span>
+    <div class="preview light">
+      <div class="d2 d2-48"><div></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div><div class="r" style="grid-row:1;grid-column:1"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+    <div class="preview dark">
+      <div class="d2 d2-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+  </div>
+
+  <!-- D3: Asymmetric cells -->
+  <div class="card">
+    <span class="card-label">3 — Asymmetric cell sizes (Mondrian proportions)</span>
+    <div class="preview light">
+      <div class="d3 d3-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+    <div class="preview dark">
+      <div class="d3 d3-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+    <div class="sizes">
+      <div class="size-item"><div class="d3 d3-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">48px</span></div>
+      <div class="size-item"><div class="d3 d3-32"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">32px</span></div>
+      <div class="size-item"><div class="d3 d3-16"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">16px</span></div>
+    </div>
+  </div>
+
+  <!-- D4: Thick grid lines -->
+  <div class="card">
+    <span class="card-label">4 — Thick grid lines</span>
+    <div class="preview light">
+      <div class="d4 d4-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+    <div class="preview dark">
+      <div class="d4 d4-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+    <div class="sizes">
+      <div class="size-item"><div class="d4 d4-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">48px</span></div>
+      <div class="size-item"><div class="d4 d4-32"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">32px</span></div>
+      <div class="size-item"><div class="d4 d4-16"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">16px</span></div>
+    </div>
+  </div>
+
+  <!-- D5: Grid as inline period -->
+  <div class="card">
+    <span class="card-label">5 — Grid replaces the period</span>
+    <div class="preview light">
+      <div class="text-wrap">
+        <span class="d5-name name">HIGHCROFT<span class="d5 d5-18"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></span></span>
+        <span class="sub">DIGITAL</span>
+      </div>
+    </div>
+    <div class="preview dark">
+      <div class="text-wrap">
+        <span class="d5-name name">HIGHCROFT<span class="d5 d5-18"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></span></span>
+        <span class="sub">DIGITAL</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- D6: All cells tinted -->
+  <div class="card">
+    <span class="card-label">6 — All cells tinted (no white)</span>
+    <div class="preview light">
+      <div class="d6 d6-48"><div class="r"></div><div class="yl"></div><div class="bl"></div><div class="rl"></div><div class="y"></div><div class="bl"></div><div class="rl"></div><div class="yl"></div><div class="b"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+    <div class="preview dark">
+      <div class="d6 d6-48"><div class="r"></div><div class="yl"></div><div class="bl"></div><div class="rl"></div><div class="y"></div><div class="bl"></div><div class="rl"></div><div class="yl"></div><div class="b"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+  </div>
+
+  <!-- D7: Stacked above text -->
+  <div class="card">
+    <span class="card-label">7 — Stacked above text</span>
+    <div class="preview light">
+      <div class="d7-wrap">
+        <div class="d7 d7-56"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div>
+        <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+      </div>
+    </div>
+    <div class="preview dark">
+      <div class="d7-wrap">
+        <div class="d7 d7-56"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div>
+        <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D8: Asymmetric Mondrian proportions -->
+  <div class="card">
+    <span class="card-label">8 — Mondrian asymmetric (5:3:1 cols, 1:3:2 rows)</span>
+    <div class="preview light">
+      <div class="d8 d8-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+    <div class="preview dark">
+      <div class="d8 d8-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div>
+      <div class="text-wrap"><span class="name">HIGHCROFT</span><span class="sub">DIGITAL</span></div>
+    </div>
+    <div class="sizes">
+      <div class="size-item"><div class="d8 d8-48"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">48px</span></div>
+      <div class="size-item"><div class="d8 d8-32"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">32px</span></div>
+      <div class="size-item"><div class="d8 d8-16"><div class="r"></div><div></div><div></div><div></div><div class="y"></div><div></div><div></div><div></div><div class="b"></div></div><span class="size-label">16px</span></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

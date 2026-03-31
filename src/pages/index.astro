@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="mondrian-page">
+
+    <!-- Row 1: Hero -->
+    <div class="cell hero-brand">
+      <div class="logo hero-logo">
+        <div class="logo-mark">
+          <span class="dot" style="background:#DD0100"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot" style="background:#FAC901"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot" style="background:#225095"></span>
+        </div>
+        <div class="logo-text">
+          <h1>
+            <span class="logo-name">HIGHCROFT</span>
+            <span class="logo-sub">DIGITAL</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="cell hero-statement">
+      <h2 class="hero-heading">Building what comes next.</h2>
+      <p class="hero-sub">A software studio based in Surrey, UK. We design, build and ship technology for businesses that want to stay ahead.</p>
+    </div>
+    <div class="cell fill-red"></div>
+
+    <!-- Row 2: Identity -->
+    <div class="cell fill-yellow"></div>
+    <div class="cell identity">
+      <span class="cell-label">// STUDIO</span>
+      <h2>A studio, not an agency.</h2>
+      <p>No account managers, no committees. Direct collaboration and fast execution on the things that actually matter.</p>
+    </div>
+
+    <!-- Row 3: Capabilities -->
+    <div class="cell capabilities">
+      <span class="cell-label">// CAPABILITIES</span>
+      <div class="cap-words">
+        <span>AI</span>
+        <span>Automation</span>
+        <span>Software</span>
+      </div>
+    </div>
+    <div class="cell fill-blue"></div>
+
+    <!-- Row 4: Philosophy -->
+    <div class="cell philosophy">
+      <span class="cell-label">// APPROACH</span>
+      <h2>Less process. More product.</h2>
+      <p>We don't disappear for six months and come back with a PDF. We build in short cycles, stay close to the problem, and put working software in your hands fast.</p>
+    </div>
+    <div class="cell fill-red sm"></div>
+
+    <!-- Row 5: Technology -->
+    <div class="cell fill-yellow sm"></div>
+    <div class="cell technology">
+      <div class="node-grid" aria-hidden="true">
+        <span class="node"></span><span class="node"></span><span class="node"></span><span class="node"></span><span class="node"></span>
+        <span class="node"></span><span class="node active"></span><span class="node"></span><span class="node active"></span><span class="node"></span>
+        <span class="node"></span><span class="node"></span><span class="node active"></span><span class="node"></span><span class="node"></span>
+        <span class="node active"></span><span class="node"></span><span class="node"></span><span class="node"></span><span class="node active"></span>
+        <span class="node"></span><span class="node"></span><span class="node"></span><span class="node"></span><span class="node"></span>
+      </div>
+      <div class="tech-text">
+        <span class="cell-label">// TECHNOLOGY</span>
+        <h2>The tools have changed.</h2>
+        <p>We work with the latest in AI, cloud infrastructure, and modern frameworks — not because it's trendy, but because it's better.</p>
+      </div>
+    </div>
+
+    <!-- Row 6: Longevity -->
+    <div class="cell longevity">
+      <span class="cell-label">// LONGEVITY</span>
+      <h2>We build things that last.</h2>
+      <p>Every project is built to run, scale, and evolve. We stick around after launch because software is never really finished.</p>
+    </div>
+    <div class="cell fill-blue"></div>
+
+    <!-- Row 7: Location + Contact -->
+    <div class="cell fill-red"></div>
+    <div class="cell location">
+      <p class="location-text">Based in Surrey.<br>Built for anywhere.</p>
+      <span class="coords">51.3&deg;N&ensp;0.3&deg;W</span>
+    </div>
+
+    <div class="cell contact">
+      <span class="cell-label">// CONTACT</span>
+      <h2>Let's talk.</h2>
+      <p>If you've got a project in mind — or just want to explore what's possible — we'd like to hear from you.</p>
+      <a href="mailto:ed@highcroftdigital.co.uk" class="contact-email">ed@highcroftdigital.co.uk</a>
+    </div>
+    <div class="cell fill-yellow"></div>
+
+    <!-- Footer row -->
+    <div class="cell footer-cell">
+      <div class="footer-inner">
+        <div class="logo logo-sm">
+          <div class="logo-mark">
+            <span class="dot" style="background:#DD0100"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot" style="background:#FAC901"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot" style="background:#225095"></span>
+          </div>
+          <div class="logo-text">
+            <span class="logo-name">HIGHCROFT</span>
+            <span class="logo-sub">DIGITAL</span>
+          </div>
+        </div>
+        <span class="footer-meta">&copy; 2026</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script is:inline>
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.cell').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+</Layout>
