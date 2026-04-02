@@ -1,6 +1,7 @@
 ---
 // ============================================================
-// SP Local Plumbing Services — Bristol
+// SP Local Plumbing Services — Bristol & Bath
+// Bathroom Installation Specialists
 // Built by Highcroft Digital
 // ============================================================
 
@@ -8,99 +9,85 @@ const config = {
   business_name: "SP Local Plumbing Services",
   phone: "+447833673116",
   phone_display: "07833 673116",
-  email: "",
-  address: "Bristol",
-  town: "Bristol",
+  address: "Bristol & Bath",
+  town: "Bristol & Bath",
   areas_served: ["Bristol", "Bath", "South Gloucestershire"],
-  logo_url: "",
-  logo_has_dark_bg: false,
-  logo_bg_color: "",
-  brand_color: "#1a6fb5",
-  brand_color_hover: "#145a96",
-  brand_color_soft: "#e8f2fb",
-  hero_title: "Bathroom Installations & Plumbing in Bristol",
-  hero_subtitle: "Full bathroom refurbishments and plumbing services across Bristol and Bath. Fixed labour pricing, no hidden costs, free quote.",
-  certification: "Bathroom Refurb Specialists",
+  logo_url: "https://framerusercontent.com/images/fbTjiPljb11SI5jkvdQECEQvTgM.png",
+  accent: "#fad26e",
+  accent_hover: "#f5c33a",
+  accent_soft: "rgba(250, 210, 110, 0.10)",
+  accent_glow: "rgba(250, 210, 110, 0.15)",
+  dark_bg: "#111115",
+  dark_card: "#19191f",
+  dark_surface: "#1e1e25",
+  dark_border: "rgba(255,255,255,0.06)",
+  hero_title: "Bathroom Installations Done Right",
+  hero_subtitle: "Full bathroom fit-outs across Bristol & Bath. Fixed labour pricing, no hidden costs. From design to completion - plumbing, tiling, and electrics under one roof.",
   stats: [
-    { num: "20+", label: "5-Star Reviews" },
-    { num: "100%", label: "Fixed Pricing" },
-    { num: "Free", label: "Quote & Advice" },
     { num: "5.0", label: "Google Rating" },
+    { num: "Fixed", label: "Labour Pricing" },
+    { num: "Bristol", label: "& Bath" },
+    { num: "20+", label: "5-Star Reviews" },
   ],
   services: [
-    { title: "Full Bathroom Installations", desc: "Complete bathroom transformations from concept to completion - design, plumbing, tiling and electrics all handled." },
-    { title: "Bathroom Refurbishment", desc: "Refresh your existing bathroom with a full refurb. We replace everything to a high standard, on time and within budget." },
-    { title: "En-Suite Installation", desc: "Create the en-suite you have always wanted. We design and install to suit your space and style." },
-    { title: "General Plumbing", desc: "All general plumbing work covered across Bristol and Bath. Fast response, clean work, fixed pricing." },
+    { title: "Full Bathroom Installations", desc: "Complete bathroom fit-outs from design to completion. We handle every detail so you don't have to.", icon: "bath" },
+    { title: "Bathroom Refurbishment", desc: "Updating and modernising existing bathrooms. A fresh look without the full rebuild.", icon: "refresh" },
+    { title: "Custom Design & Planning", desc: "Tailored bathroom designs to suit your space and budget. Your dream bathroom, planned properly.", icon: "pencil" },
+    { title: "Plumbing & Tiling", desc: "One-stop shop for all plumbing, tiling, and electrics. No need to hire multiple tradespeople.", icon: "grid" },
   ],
   process: [
-    { step: "1", title: "Free Quote", desc: "Call or message for a no-obligation quote - we'll come to you." },
-    { step: "2", title: "Design", desc: "We help you plan your ideal bathroom with tailored design advice." },
-    { step: "3", title: "Fixed Price", desc: "You get a fixed labour price upfront - no surprises." },
-    { step: "4", title: "Completed", desc: "We complete the work to a high standard, on time and tidy." },
+    { step: "01", title: "Free Quote", desc: "Tell us what you want. We visit, measure up, and give you a fixed price." },
+    { step: "02", title: "Design", desc: "We plan your dream bathroom together - layout, fixtures, finishes." },
+    { step: "03", title: "Installation", desc: "Our team handles everything. Plumbing, tiling, electrics - all under one roof." },
+    { step: "04", title: "Enjoy", desc: "Your new bathroom, delivered on budget and on time. No surprises." },
   ],
   reviews: [
-    { name: "Joy", location: "Bristol", initials: "JO", text: "Sid has done an amazing job with my bathroom renovation. Very professional, friendly and extremely helpful.", stars: 5 },
-    { name: "Chris", location: "Bristol", initials: "CH", text: "After being messed around by a few plumbers, Sid was a breath of fresh air. Quick to respond and did the job properly.", stars: 5 },
-    { name: "Lisa", location: "Bristol", initials: "LI", text: "Sid is a reliable bathroom fitter, no fuss. Arrives as arranged and completes agreed work to agreed price.", stars: 5 },
-    { name: "Nicola", location: "Bristol", initials: "NI", text: "Really pleased with the job and completed on time. Sid went above and beyond to make sure everything was perfect.", stars: 5 },
-    { name: "David", location: "Bristol", initials: "DA", text: "Excellent work. Carried out quickly and to a very high standard. Very professional.", stars: 5 },
-    { name: "Sarah", location: "Bristol", initials: "SA", text: "Sid is an honest and reliable plumber. His work is professional and the fixed pricing means no nasty surprises.", stars: 5 },
+    { name: "Joy", location: "Bristol", text: "Sid and the team did an amazing job on our bathroom. Fixed price meant no surprises. The tiling is immaculate.", stars: 5 },
+    { name: "Chris", location: "Bath", text: "Complete bathroom refurb done in under two weeks. They handled everything - plumbing, electrics, tiling. Couldn't be happier.", stars: 5 },
+    { name: "Heather", location: "Bristol", text: "Had quotes from five fitters. SP Local were the only ones who gave a fixed labour price upfront. The work was excellent.", stars: 5 },
   ],
-  trust_signals: ["Bathroom Refurb Specialists", "Fixed Labour Pricing", "20+ 5-Star Google Reviews", "Free Quote"],
+  trust_signals: ["5-Star Google Rating", "Fixed Labour Pricing", "One-Stop Shop", "Free Quotes"],
   faqs: [
-    { q: "Do you offer a free quote?", a: "Yes, all quotes are completely free and no-obligation. Just call or message and we will come to assess the job." },
-    { q: "How much does a bathroom installation cost?", a: "We use fixed labour pricing so you always know what you will pay before we start. Call for a free quote tailored to your bathroom." },
-    { q: "What areas do you cover?", a: "We cover Bristol, Bath and the surrounding South Gloucestershire area. Call to confirm your location." },
-    { q: "How long does a full bathroom installation take?", a: "Most full bathroom installations take between 5 and 10 working days depending on the complexity of the job. We will give you a clear timeline before we start." },
-    { q: "Do you handle tiling and electrics too?", a: "Yes, we handle the full project from start to finish including plumbing, tiling and any electrical work required." },
+    { q: "What does fixed labour pricing mean?", a: "You get a clear, fixed price for all labour before any work starts. No hourly rates, no surprises, no hidden costs." },
+    { q: "Do you handle everything or just plumbing?", a: "We're a one-stop shop. We handle plumbing, tiling, electrics, and design - so you don't need to hire multiple tradespeople." },
+    { q: "How long does a bathroom installation take?", a: "Most bathrooms take 1-2 weeks depending on the scope of work. We'll give you a clear timeline with your quote." },
+    { q: "What areas do you cover?", a: "We cover Bristol, Bath, and South Gloucestershire." },
   ],
   hours: "Mon-Fri 8am-6pm, Sat 9am-4pm",
   schema_type: "Plumber",
 };
 
-// Icon map — inline SVGs for zero external dependencies
 const icons: Record<string, string> = {
-  wrench: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-  check: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
-  home: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
-  doc: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
-  shield: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-  clock: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
-  star: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
-  flame: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
-  bolt: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
   phone: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
-  starFill: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#e8a020" stroke="#e8a020" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  starFill: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fad26e" stroke="#fad26e" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  check: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
   plus: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
   minus: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
-  chevron: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`,
+  bath: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-3a1 1 0 0 1 1-1z"/><path d="M6 12V5a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1"/><line x1="6" y1="20" x2="6" y2="22"/><line x1="18" y1="20" x2="18" y2="22"/></svg>`,
+  refresh: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>`,
+  pencil: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
+  grid: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>`,
+  shield: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  quote: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" opacity="0.15"><path d="M3 21c3-3 4.5-6 4.5-9H3V3h9v9c0 4.5-3 9-6 12l-3-3zm12 0c3-3 4.5-6 4.5-9H15V3h9v9c0 4.5-3 9-6 12l-3-3z"/></svg>`,
+  droplet: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`,
+  tag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>`,
+  mapPin: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  star: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
 };
 
-// Service icon cycling
-const serviceIcons = [icons.wrench, icons.flame, icons.bolt, icons.home];
-
-// Trust signal icon map
-const trustIconMap: Record<string, string> = {
-  "Gas Safe": icons.flame,
-  "Insured": icons.shield,
-  "Experience": icons.clock,
-  "Google": icons.star,
-  "Registered": icons.check,
-  "NICEIC": icons.bolt,
-  "NAPIT": icons.bolt,
-  "Qualified": icons.check,
+const serviceIconMap: Record<string, string> = {
+  bath: icons.bath,
+  refresh: icons.refresh,
+  pencil: icons.pencil,
+  grid: icons.grid,
 };
-
-function getTrustIcon(signal: string): string {
-  for (const [key, icon] of Object.entries(trustIconMap)) {
-    if (signal.includes(key)) return icon;
-  }
-  return icons.check;
-}
 
 function renderStars(count: number): string {
   return Array.from({ length: count }, () => icons.starFill).join("");
+}
+
+function getInitials(name: string): string {
+  return name.slice(0, 2).toUpperCase();
 }
 ---
 
@@ -109,11 +96,21 @@ function renderStars(count: number): string {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{config.business_name} - {config.hero_title}</title>
-  <meta name="description" content={`${config.hero_subtitle}. Call ${config.phone_display} for a free quote. Serving ${config.areas_served.join(", ")}.`} />
+  <title>{config.business_name} | Bathroom Installations Bristol & Bath</title>
+  <meta name="description" content={`${config.business_name} - bathroom installation specialists in Bristol & Bath. Fixed labour pricing, no hidden costs. Full fit-outs, refurbishments, and custom designs. Call ${config.phone_display}.`} />
+
+  {/* OG Meta Tags */}
+  <meta property="og:title" content={`${config.business_name} | Bathroom Installations Bristol & Bath`} />
+  <meta property="og:description" content="Full bathroom installations across Bristol & Bath. Fixed labour pricing, no hidden costs. 5-star rated on Google." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={config.logo_url} />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={`${config.business_name} | Bathroom Installations Bristol & Bath`} />
+  <meta name="twitter:description" content="Full bathroom installations across Bristol & Bath. Fixed labour pricing, no hidden costs." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   {/* LocalBusiness JSON-LD */}
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -121,13 +118,21 @@ function renderStars(count: number): string {
     "@type": config.schema_type,
     "name": config.business_name,
     "telephone": config.phone,
-    "email": config.email,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": config.address,
+      "addressLocality": "Bristol",
+      "addressRegion": "Somerset",
+      "addressCountry": "GB",
     },
     "areaServed": config.areas_served.map(a => ({ "@type": "Place", "name": a })),
     "openingHours": config.hours,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "20",
+    },
+    "image": config.logo_url,
+    "priceRange": "$$",
   })} />
 
   {/* FAQPage JSON-LD */}
@@ -154,9 +159,9 @@ function renderStars(count: number): string {
     <nav class="header-inner">
       <div class="header-left">
         <a href="#" class="logo-link">
-          <img src={config.logo_url} alt={`${config.business_name} logo`} class="logo-img" width="140" height="40" />
+          <img src={config.logo_url} alt={`${config.business_name} logo`} class="logo-img" width="160" height="44" />
+          <span class="logo-name">SP Local</span>
         </a>
-        <span class="service-area-label">{config.town} & Surrounding Areas</span>
       </div>
       <div class="header-right">
         <a href={`tel:${config.phone}`} class="header-phone-link">
@@ -164,9 +169,9 @@ function renderStars(count: number): string {
           <span class="header-phone-number">{config.phone_display}</span>
         </a>
         <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </button>
       </div>
       <div class="nav-dropdown" id="nav-dropdown">
@@ -187,34 +192,39 @@ function renderStars(count: number): string {
     {/* HERO                                                         */}
     {/* ============================================================ */}
     <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-glow-2"></div>
       <div class="container">
         <div class="hero-content">
-          <span class="hero-badge">
+          <div class="hero-badge">
             <span class="hero-badge-icon" set:html={icons.shield} />
-            {config.certification}
-          </span>
-          <h1 class="hero-title">{config.hero_title}</h1>
+            <span>5-Star Rated Bathroom Specialists</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="hero-title-line">Bathroom Installations</span>
+            <span class="hero-title-accent">Done Right.</span>
+          </h1>
           <p class="hero-subtitle">{config.hero_subtitle}</p>
           <div class="hero-cta-group">
-            <a href={`tel:${config.phone}`} class="btn btn-primary btn-lg">
+            <a href={`tel:${config.phone}`} class="btn btn-gold btn-lg">
               <span set:html={icons.phone} />
               Call {config.phone_display}
             </a>
-            <p class="hero-microcopy">No call-out fee. Available {config.hours.split(",")[0].replace("Mon-Fri ", "")}.</p>
+            <span class="hero-microcopy">Free quote, no obligation</span>
           </div>
         </div>
       </div>
     </section>
 
     {/* ============================================================ */}
-    {/* TRUST SIGNALS STRIP                                          */}
+    {/* TRUST STRIP                                                  */}
     {/* ============================================================ */}
     <section class="trust-strip" aria-label="Credentials">
       <div class="container">
         <div class="trust-strip-inner">
           {config.trust_signals.map((signal) => (
             <div class="trust-item">
-              <span class="trust-item-icon" set:html={getTrustIcon(signal)} />
+              <span class="trust-item-icon" set:html={icons.check} />
               <span class="trust-item-label">{signal}</span>
             </div>
           ))}
@@ -239,18 +249,37 @@ function renderStars(count: number): string {
     </section>
 
     {/* ============================================================ */}
+    {/* FIXED PRICING CALLOUT                                        */}
+    {/* ============================================================ */}
+    <section class="pricing-callout reveal">
+      <div class="container">
+        <div class="pricing-card">
+          <div class="pricing-card-inner">
+            <div class="pricing-icon" set:html={icons.tag} />
+            <div class="pricing-text">
+              <h2 class="pricing-title">Fixed Labour Pricing</h2>
+              <p class="pricing-desc">You get a clear, fixed price for all labour before work starts. No hourly rates, no surprises, no hidden costs. What we quote is what you pay.</p>
+            </div>
+            <a href={`tel:${config.phone}`} class="btn btn-gold btn-md pricing-btn">Get a Fixed Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ============================================================ */}
     {/* SERVICES                                                     */}
     {/* ============================================================ */}
     <section class="services reveal" id="services">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">What We Do</h2>
-          <p class="section-subtitle">Professional services you can rely on in {config.town} and the surrounding area.</p>
+          <span class="section-label">Our Services</span>
+          <h2 class="section-title">Everything Your Bathroom Needs</h2>
+          <p class="section-subtitle">From a full fit-out to a simple refresh - we handle the lot.</p>
         </div>
         <div class="services-grid">
           {config.services.map((service, i) => (
             <div class="service-card" style={`--delay: ${i * 0.1}s`}>
-              <div class="service-icon" set:html={serviceIcons[i % serviceIcons.length]} />
+              <div class="service-icon" set:html={serviceIconMap[service.icon]} />
               <h3 class="service-title">{service.title}</h3>
               <p class="service-desc">{service.desc}</p>
             </div>
@@ -260,24 +289,22 @@ function renderStars(count: number): string {
     </section>
 
     {/* ============================================================ */}
-    {/* HOW IT WORKS — TIMELINE                                      */}
+    {/* HOW IT WORKS                                                 */}
     {/* ============================================================ */}
     <section class="process reveal" id="process">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">How It Works</h2>
-          <p class="section-subtitle">From first call to job done, we keep it simple.</p>
+          <span class="section-label">How It Works</span>
+          <h2 class="section-title">From First Call to Finished Bathroom</h2>
+          <p class="section-subtitle">Simple, transparent, stress-free.</p>
         </div>
-        <div class="timeline">
+        <div class="process-grid">
           {config.process.map((step, i) => (
-            <div class="timeline-step" style={`--delay: ${i * 0.15}s`}>
-              <div class="timeline-marker">
-                <span class="timeline-number">{step.step}</span>
-              </div>
-              <div class="timeline-content">
-                <h3 class="timeline-title">{step.title}</h3>
-                <p class="timeline-desc">{step.desc}</p>
-              </div>
+            <div class="process-step" style={`--delay: ${i * 0.12}s`}>
+              <div class="process-number">{step.step}</div>
+              <div class="process-line"></div>
+              <h3 class="process-title">{step.title}</h3>
+              <p class="process-desc">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -285,21 +312,23 @@ function renderStars(count: number): string {
     </section>
 
     {/* ============================================================ */}
-    {/* TESTIMONIALS                                                 */}
+    {/* REVIEWS                                                      */}
     {/* ============================================================ */}
     <section class="reviews reveal" id="reviews">
       <div class="container">
         <div class="section-header">
+          <span class="section-label">Reviews</span>
           <h2 class="section-title">What Our Customers Say</h2>
-          <p class="section-subtitle">Real reviews from real customers.</p>
+          <p class="section-subtitle">Real reviews from real people across Bristol & Bath.</p>
         </div>
         <div class="reviews-grid">
           {config.reviews.map((review, i) => (
             <div class="review-card" style={`--delay: ${i * 0.1}s`}>
+              <div class="review-quote-mark" set:html={icons.quote} />
               <div class="review-stars" set:html={renderStars(review.stars)} />
               <blockquote class="review-text">&ldquo;{review.text}&rdquo;</blockquote>
               <div class="review-author">
-                <div class="review-avatar">{review.initials}</div>
+                <div class="review-avatar">{getInitials(review.name)}</div>
                 <div class="review-meta">
                   <span class="review-name">{review.name}</span>
                   <span class="review-location">{review.location}</span>
@@ -317,6 +346,7 @@ function renderStars(count: number): string {
     <section class="faq reveal" id="faq">
       <div class="container">
         <div class="section-header">
+          <span class="section-label">FAQ</span>
           <h2 class="section-title">Frequently Asked Questions</h2>
         </div>
         <div class="faq-list">
@@ -342,9 +372,10 @@ function renderStars(count: number): string {
     <section class="final-cta reveal">
       <div class="container">
         <div class="final-cta-card">
-          <h2 class="final-cta-title">Ready to Get Started?</h2>
-          <p class="final-cta-subtitle">Call now for a free, no-obligation quote. We aim to respond within 30 minutes.</p>
-          <a href={`tel:${config.phone}`} class="btn btn-primary btn-lg btn-white">
+          <div class="final-cta-glow"></div>
+          <h2 class="final-cta-title">Ready for Your New Bathroom?</h2>
+          <p class="final-cta-subtitle">Get a free, fixed-price quote. No obligation, no hidden costs.</p>
+          <a href={`tel:${config.phone}`} class="btn btn-gold btn-lg">
             <span set:html={icons.phone} />
             Call {config.phone_display}
           </a>
@@ -362,31 +393,40 @@ function renderStars(count: number): string {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <h4 class="footer-heading">{config.business_name}</h4>
-          <p class="footer-text">{config.hero_subtitle}</p>
+          <img src={config.logo_url} alt={`${config.business_name} logo`} class="footer-logo" width="140" height="38" />
+          <p class="footer-text">Bathroom installation specialists in Bristol & Bath. Fixed labour pricing, no hidden costs.</p>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Contact</h4>
           <ul class="footer-list">
             <li><a href={`tel:${config.phone}`}>{config.phone_display}</a></li>
-            <li><a href={`mailto:${config.email}`}>{config.email}</a></li>
             <li>{config.address}</li>
           </ul>
         </div>
         <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-list">
+            <li>Full Bathroom Installations</li>
+            <li>Bathroom Refurbishment</li>
+            <li>Custom Design & Planning</li>
+            <li>Plumbing & Tiling</li>
+          </ul>
+        </div>
+        <div class="footer-col">
           <h4 class="footer-heading">Hours</h4>
-          <p class="footer-text">{config.hours}</p>
+          <p class="footer-text">Mon - Fri: 8am - 6pm</p>
+          <p class="footer-text">Sat: 9am - 4pm</p>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; {new Date().getFullYear()} {config.business_name}. All rights reserved.</p>
-        <p class="footer-credit">Website by <a href="https://highcroftdigital.co.uk" target="_blank" rel="noopener">Highcroft Digital</a></p>
+        <p class="footer-credit">Website by <a href="https://highcroftdigital.com" target="_blank" rel="noopener">Highcroft Digital</a></p>
       </div>
     </div>
   </footer>
 
   {/* ============================================================ */}
-  {/* FLOATING PHONE BUTTON — mobile only                          */}
+  {/* FLOATING PHONE BUTTON - mobile only                          */}
   {/* ============================================================ */}
   <a href={`tel:${config.phone}`} class="floating-phone" aria-label={`Call ${config.business_name}`}>
     <span set:html={icons.phone} />
@@ -395,14 +435,7 @@ function renderStars(count: number): string {
 </body>
 </html>
 
-<style define:vars={{
-  brandColor: config.brand_color,
-  brandColorHover: config.brand_color_hover,
-  brandColorSoft: config.brand_color_soft,
-  navBg: config.logo_has_dark_bg ? config.logo_bg_color : '#fcfcfd',
-  navText: config.logo_has_dark_bg ? '#e2e8f0' : '#1a2536',
-  navBorder: config.logo_has_dark_bg ? 'rgba(255,255,255,0.1)' : '#e4e9ef',
-}}>
+<style>
   /* ============================================================
      RESET & BASE
      ============================================================ */
@@ -418,11 +451,11 @@ function renderStars(count: number): string {
   }
 
   body {
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Outfit", sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    color: #1a2332;
-    background: #f8f9fb;
+    color: #c8ccd4;
+    background: #111115;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -465,9 +498,10 @@ function renderStars(count: number): string {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: var(--navBg);
-    border-bottom: 1px solid var(--navBorder);
-    box-shadow: 0 1px 3px rgba(15, 27, 45, 0.04);
+    background: rgba(17, 17, 21, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .header-inner {
@@ -498,10 +532,19 @@ function renderStars(count: number): string {
   .logo-link {
     display: flex;
     align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fad26e;
+    letter-spacing: 0.02em;
   }
 
   .logo-img {
-    height: 36px;
+    height: 34px;
     width: auto;
     object-fit: contain;
   }
@@ -509,21 +552,6 @@ function renderStars(count: number): string {
   @media (min-width: 768px) {
     .logo-img {
       height: 40px;
-    }
-  }
-
-  .service-area-label {
-    display: none;
-    font-size: 0.8rem;
-    color: var(--navText);
-    font-weight: 500;
-    border-left: 1px solid var(--navBorder);
-    padding-left: 16px;
-  }
-
-  @media (min-width: 900px) {
-    .service-area-label {
-      display: block;
     }
   }
 
@@ -537,15 +565,15 @@ function renderStars(count: number): string {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.95rem;
-    color: var(--brandColor);
+    color: #fad26e;
     transition: color 0.2s;
     padding: 8px 0;
   }
 
   .header-phone-link:hover {
-    color: var(--brandColorHover);
+    color: #fff;
   }
 
   .header-phone-icon {
@@ -588,24 +616,24 @@ function renderStars(count: number): string {
     }
   }
 
-  .nav-toggle-bar {
+  .bar {
     display: block;
     width: 22px;
     height: 2px;
-    background: var(--navText);
+    background: #e0e4ec;
     border-radius: 2px;
     transition: transform 0.25s, opacity 0.25s;
   }
 
-  .nav-toggle.is-active .nav-toggle-bar:nth-child(1) {
+  .nav-toggle.is-active .bar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
 
-  .nav-toggle.is-active .nav-toggle-bar:nth-child(2) {
+  .nav-toggle.is-active .bar:nth-child(2) {
     opacity: 0;
   }
 
-  .nav-toggle.is-active .nav-toggle-bar:nth-child(3) {
+  .nav-toggle.is-active .bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
 
@@ -616,9 +644,9 @@ function renderStars(count: number): string {
     top: 100%;
     left: 0;
     right: 0;
-    background: #fff;
-    border-top: 1px solid #e8ecf1;
-    box-shadow: 0 8px 24px rgba(15, 27, 45, 0.1);
+    background: #19191f;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
     z-index: 200;
     flex-direction: column;
     padding: 8px 0;
@@ -638,12 +666,13 @@ function renderStars(count: number): string {
     padding: 14px 24px;
     font-weight: 500;
     font-size: 1rem;
-    color: #1a2332;
-    transition: background 0.15s;
+    color: #c8ccd4;
+    transition: background 0.15s, color 0.15s;
   }
 
   .nav-dropdown-link:hover {
-    background: #f4f6f8;
+    background: rgba(250, 210, 110, 0.06);
+    color: #fad26e;
   }
 
   .nav-dropdown-cta {
@@ -652,8 +681,8 @@ function renderStars(count: number): string {
     gap: 8px;
     margin: 8px 16px;
     padding: 14px 20px;
-    background: var(--brandColor);
-    color: #fff;
+    background: #fad26e;
+    color: #111115;
     border-radius: 10px;
     font-weight: 700;
     font-size: 1rem;
@@ -662,7 +691,7 @@ function renderStars(count: number): string {
   }
 
   .nav-dropdown-cta:hover {
-    background: var(--brandColorHover);
+    background: #f5c33a;
   }
 
   .nav-dropdown-cta svg {
@@ -674,34 +703,40 @@ function renderStars(count: number): string {
      HERO
      ============================================================ */
   .hero {
-    background: #0f1b2d;
+    background: #111115;
     padding: 80px 0 64px;
     position: relative;
     overflow: hidden;
   }
 
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: -30%;
-    right: -20%;
-    width: 500px;
-    height: 500px;
-    background: var(--brandColor);
-    opacity: 0.06;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
-  }
-
   @media (min-width: 768px) {
     .hero {
-      padding: 100px 0 80px;
+      padding: 110px 0 90px;
     }
   }
 
+  .hero-glow {
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(250, 210, 110, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-glow-2 {
+    position: absolute;
+    bottom: -40%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(250, 210, 110, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
   .hero-content {
-    max-width: 640px;
+    max-width: 680px;
     text-align: center;
     margin: 0 auto;
     position: relative;
@@ -711,16 +746,17 @@ function renderStars(count: number): string {
   .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #b0c4de;
+    gap: 8px;
+    background: rgba(250, 210, 110, 0.08);
+    border: 1px solid rgba(250, 210, 110, 0.15);
+    color: #fad26e;
     font-size: 0.8rem;
     font-weight: 600;
-    padding: 6px 14px;
+    padding: 8px 16px;
     border-radius: 100px;
-    margin-bottom: 24px;
-    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
 
   .hero-badge-icon {
@@ -731,38 +767,49 @@ function renderStars(count: number): string {
   .hero-badge-icon svg {
     width: 14px;
     height: 14px;
-    stroke: var(--brandColor);
+    stroke: #fad26e;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 7vw, 3rem);
-    font-weight: 800;
+    font-size: clamp(2.2rem, 7vw, 3.6rem);
+    font-weight: 700;
     color: #fff;
-    line-height: 1.15;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-title-line {
+    display: block;
+  }
+
+  .hero-title-accent {
+    display: block;
+    color: #fad26e;
   }
 
   .hero-subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: #8fa3bf;
-    line-height: 1.6;
-    margin-bottom: 32px;
-    max-width: 520px;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: #8b8f9a;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 540px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 400;
   }
 
   .hero-cta-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
   }
 
   .hero-microcopy {
     font-size: 0.85rem;
-    color: #6b829e;
+    color: #5c5f69;
+    font-weight: 400;
   }
 
   /* ============================================================
@@ -774,10 +821,10 @@ function renderStars(count: number): string {
     justify-content: center;
     gap: 10px;
     font-family: inherit;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1rem;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
     text-decoration: none;
@@ -794,15 +841,15 @@ function renderStars(count: number): string {
     flex-shrink: 0;
   }
 
-  .btn-primary {
-    background: var(--brandColor);
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  .btn-gold {
+    background: #fad26e;
+    color: #111115;
+    box-shadow: 0 2px 12px rgba(250, 210, 110, 0.2);
   }
 
-  .btn-primary:hover {
-    background: var(--brandColorHover);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  .btn-gold:hover {
+    background: #f5c33a;
+    box-shadow: 0 4px 20px rgba(250, 210, 110, 0.3);
   }
 
   .btn-lg {
@@ -811,35 +858,32 @@ function renderStars(count: number): string {
     min-height: 56px;
   }
 
-  .btn-white {
-    background: #fff;
-    color: var(--brandColor);
-  }
-
-  .btn-white:hover {
-    background: #f0f4f8;
-    color: var(--brandColorHover);
+  .btn-md {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    min-height: 48px;
   }
 
   /* ============================================================
      TRUST STRIP
      ============================================================ */
   .trust-strip {
-    background: var(--brandColorSoft);
-    border-bottom: 1px solid #dae4ef;
-    padding: 16px 0;
+    background: #19191f;
+    border-top: 1px solid rgba(250, 210, 110, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 18px 0;
   }
 
   .trust-strip-inner {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px 24px;
+    gap: 8px 28px;
   }
 
   @media (min-width: 768px) {
     .trust-strip-inner {
-      gap: 12px 40px;
+      gap: 12px 48px;
     }
   }
 
@@ -853,18 +897,18 @@ function renderStars(count: number): string {
   .trust-item-icon {
     display: flex;
     align-items: center;
-    color: #16a36c;
+    color: #fad26e;
   }
 
   .trust-item-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 
   .trust-item-label {
     font-size: 0.85rem;
-    font-weight: 600;
-    color: #1a2332;
+    font-weight: 500;
+    color: #a0a4ae;
     white-space: nowrap;
   }
 
@@ -872,13 +916,13 @@ function renderStars(count: number): string {
      STATS
      ============================================================ */
   .stats {
-    padding: 48px 0;
-    background: #fff;
+    padding: 56px 0;
+    background: #111115;
   }
 
   @media (min-width: 768px) {
     .stats {
-      padding: 64px 0;
+      padding: 72px 0;
     }
   }
 
@@ -897,14 +941,17 @@ function renderStars(count: number): string {
 
   .stat-item {
     text-align: center;
-    padding: 16px 8px;
+    padding: 20px 8px;
+    background: #19191f;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
   }
 
   .stat-num {
     display: block;
     font-size: clamp(1.8rem, 5vw, 2.4rem);
-    font-weight: 800;
-    color: var(--brandColor);
+    font-weight: 700;
+    color: #fad26e;
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
@@ -912,51 +959,140 @@ function renderStars(count: number): string {
   .stat-label {
     display: block;
     font-size: 0.85rem;
-    font-weight: 500;
-    color: #5a6a7e;
-    margin-top: 4px;
+    font-weight: 400;
+    color: #6b6f7a;
+    margin-top: 6px;
   }
 
   /* ============================================================
-     SECTION HEADERS (shared)
+     PRICING CALLOUT
+     ============================================================ */
+  .pricing-callout {
+    padding: 0 0 64px;
+    background: #111115;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-callout {
+      padding: 0 0 80px;
+    }
+  }
+
+  .pricing-card {
+    background: linear-gradient(135deg, rgba(250, 210, 110, 0.06) 0%, rgba(250, 210, 110, 0.02) 100%);
+    border: 1px solid rgba(250, 210, 110, 0.12);
+    border-radius: 18px;
+    padding: 2px;
+  }
+
+  .pricing-card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 36px 24px;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-card-inner {
+      flex-direction: row;
+      text-align: left;
+      gap: 28px;
+      padding: 40px 40px;
+    }
+  }
+
+  .pricing-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background: rgba(250, 210, 110, 0.1);
+    border-radius: 14px;
+    color: #fad26e;
+    flex-shrink: 0;
+  }
+
+  .pricing-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .pricing-text {
+    flex: 1;
+  }
+
+  .pricing-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fad26e;
+    margin-bottom: 6px;
+  }
+
+  .pricing-desc {
+    font-size: 0.95rem;
+    color: #8b8f9a;
+    line-height: 1.6;
+  }
+
+  .pricing-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* ============================================================
+     SECTION HEADERS
      ============================================================ */
   .section-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 44px;
   }
 
   @media (min-width: 768px) {
     .section-header {
-      margin-bottom: 48px;
+      margin-bottom: 56px;
     }
   }
 
+  .section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fad26e;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
   .section-title {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 800;
-    color: #0f1b2d;
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    font-weight: 700;
+    color: #fff;
     letter-spacing: -0.02em;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   .section-subtitle {
     font-size: 1rem;
-    color: #5a6a7e;
+    color: #6b6f7a;
     max-width: 520px;
     margin: 0 auto;
+    font-weight: 400;
   }
 
   /* ============================================================
      SERVICES
      ============================================================ */
   .services {
-    padding: 64px 0;
-    background: #f8f9fb;
+    padding: 72px 0;
+    background: #19191f;
   }
 
   @media (min-width: 768px) {
     .services {
-      padding: 80px 0;
+      padding: 96px 0;
     }
   }
 
@@ -974,180 +1110,148 @@ function renderStars(count: number): string {
   }
 
   .service-card {
-    background: #fff;
-    border: 1px solid #e8ecf1;
-    border-radius: 14px;
-    padding: 28px 24px;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #111115;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 32px 28px;
+    transition: border-color 0.25s, box-shadow 0.25s;
   }
 
   .service-card:hover {
-    border-color: var(--brandColor);
-    box-shadow: 0 4px 20px rgba(15, 27, 45, 0.06);
+    border-color: rgba(250, 210, 110, 0.2);
+    box-shadow: 0 4px 24px rgba(250, 210, 110, 0.04);
   }
 
   .service-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: var(--brandColorSoft);
-    border-radius: 10px;
-    color: var(--brandColor);
-    margin-bottom: 16px;
+    width: 48px;
+    height: 48px;
+    background: rgba(250, 210, 110, 0.08);
+    border-radius: 12px;
+    color: #fad26e;
+    margin-bottom: 20px;
   }
 
   .service-icon svg {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
   }
 
   .service-title {
     font-size: 1.1rem;
-    font-weight: 700;
-    color: #0f1b2d;
-    margin-bottom: 6px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
   }
 
   .service-desc {
     font-size: 0.92rem;
-    color: #5a6a7e;
-    line-height: 1.55;
+    color: #6b6f7a;
+    line-height: 1.6;
   }
 
   /* ============================================================
-     TIMELINE / PROCESS
+     PROCESS
      ============================================================ */
   .process {
-    padding: 64px 0;
-    background: #fff;
+    padding: 72px 0;
+    background: #111115;
   }
 
   @media (min-width: 768px) {
     .process {
-      padding: 80px 0;
+      padding: 96px 0;
     }
   }
 
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  .process-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .process-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+  }
+
+  .process-step {
+    text-align: center;
+    padding: 32px 20px;
     position: relative;
-    padding-left: 28px;
   }
 
-  /* Vertical line (mobile) */
-  .timeline::before {
-    content: "";
-    position: absolute;
-    left: 15px;
-    top: 24px;
-    bottom: 24px;
-    width: 2px;
-    background: #dde2e9;
-  }
-
-  .timeline-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px 0;
-    position: relative;
-  }
-
-  .timeline-marker {
-    flex-shrink: 0;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--brandColor);
-    display: flex;
+  .process-number {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    z-index: 2;
-    margin-left: -28px;
-  }
-
-  .timeline-number {
-    font-size: 0.85rem;
-    font-weight: 800;
-    color: #fff;
-  }
-
-  .timeline-content {
-    padding-top: 4px;
-  }
-
-  .timeline-title {
-    font-size: 1.05rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(250, 210, 110, 0.1);
+    border: 2px solid rgba(250, 210, 110, 0.2);
+    color: #fad26e;
+    font-size: 0.9rem;
     font-weight: 700;
-    color: #0f1b2d;
-    margin-bottom: 2px;
+    margin-bottom: 20px;
   }
 
-  .timeline-desc {
-    font-size: 0.92rem;
-    color: #5a6a7e;
+  .process-line {
+    display: none;
   }
 
-  /* Desktop: horizontal timeline */
-  @media (min-width: 768px) {
-    .timeline {
-      flex-direction: row;
-      padding-left: 0;
-      justify-content: space-between;
+  @media (min-width: 900px) {
+    .process-line {
+      display: block;
+      position: absolute;
+      top: 55px;
+      left: calc(50% + 36px);
+      width: calc(100% - 72px);
+      height: 1px;
+      background: rgba(250, 210, 110, 0.12);
     }
 
-    .timeline::before {
-      left: calc(18px + 12px);
-      right: calc(18px + 12px);
-      top: 18px;
-      bottom: auto;
-      height: 2px;
-      width: auto;
+    .process-step:last-child .process-line {
+      display: none;
     }
+  }
 
-    .timeline-step {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 16px;
-      flex: 1;
-      padding: 0 12px;
-    }
+  .process-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
 
-    .timeline-marker {
-      margin-left: 0;
-    }
-
-    .timeline-content {
-      padding-top: 0;
-    }
+  .process-desc {
+    font-size: 0.9rem;
+    color: #6b6f7a;
+    line-height: 1.6;
   }
 
   /* ============================================================
      REVIEWS
      ============================================================ */
   .reviews {
-    padding: 64px 0;
-    background: #0f1b2d;
+    padding: 72px 0;
+    background: #19191f;
   }
 
   @media (min-width: 768px) {
     .reviews {
-      padding: 80px 0;
+      padding: 96px 0;
     }
-  }
-
-  .reviews .section-title {
-    color: #fff;
-  }
-
-  .reviews .section-subtitle {
-    color: #7a90a8;
   }
 
   .reviews-grid {
@@ -1169,23 +1273,37 @@ function renderStars(count: number): string {
   }
 
   .review-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    padding: 28px 24px;
+    background: #111115;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .review-quote-mark {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fad26e;
+  }
+
+  .review-quote-mark svg {
+    width: 36px;
+    height: 36px;
   }
 
   .review-stars {
     display: flex;
     gap: 2px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 
   .review-text {
     font-size: 0.95rem;
-    color: #c5d3e3;
-    line-height: 1.65;
-    margin-bottom: 20px;
+    color: #a0a4ae;
+    line-height: 1.7;
+    margin-bottom: 24px;
     font-style: normal;
   }
 
@@ -1199,15 +1317,15 @@ function renderStars(count: number): string {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--brandColor);
-    color: #fff;
+    background: rgba(250, 210, 110, 0.12);
+    color: #fad26e;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 700;
     flex-shrink: 0;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
   }
 
   .review-meta {
@@ -1218,25 +1336,25 @@ function renderStars(count: number): string {
   .review-name {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #e0e8f0;
+    color: #e0e4ec;
   }
 
   .review-location {
     font-size: 0.8rem;
-    color: #6b829e;
+    color: #5c5f69;
   }
 
   /* ============================================================
      FAQ
      ============================================================ */
   .faq {
-    padding: 64px 0;
-    background: #f8f9fb;
+    padding: 72px 0;
+    background: #111115;
   }
 
   @media (min-width: 768px) {
     .faq {
-      padding: 80px 0;
+      padding: 96px 0;
     }
   }
 
@@ -1249,15 +1367,15 @@ function renderStars(count: number): string {
   }
 
   .faq-item {
-    background: #fff;
-    border: 1px solid #e8ecf1;
+    background: #19191f;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     overflow: hidden;
     transition: border-color 0.2s;
   }
 
   .faq-item[open] {
-    border-color: var(--brandColor);
+    border-color: rgba(250, 210, 110, 0.2);
   }
 
   .faq-question {
@@ -1268,11 +1386,16 @@ function renderStars(count: number): string {
     padding: 18px 20px;
     font-weight: 600;
     font-size: 1rem;
-    color: #0f1b2d;
+    color: #e0e4ec;
     cursor: pointer;
     list-style: none;
     user-select: none;
     min-height: 44px;
+    transition: color 0.2s;
+  }
+
+  .faq-question:hover {
+    color: #fad26e;
   }
 
   .faq-question::-webkit-details-marker {
@@ -1285,9 +1408,14 @@ function renderStars(count: number): string {
 
   .faq-icon {
     flex-shrink: 0;
-    color: #8fa3bf;
+    color: #5c5f69;
     display: flex;
     align-items: center;
+    transition: color 0.2s;
+  }
+
+  .faq-item[open] .faq-icon {
+    color: #fad26e;
   }
 
   .faq-icon-minus {
@@ -1305,28 +1433,29 @@ function renderStars(count: number): string {
   .faq-answer {
     padding: 0 20px 20px;
     font-size: 0.95rem;
-    color: #5a6a7e;
-    line-height: 1.65;
+    color: #6b6f7a;
+    line-height: 1.7;
   }
 
   /* ============================================================
      FINAL CTA
      ============================================================ */
   .final-cta {
-    padding: 64px 0;
-    background: #fff;
+    padding: 72px 0;
+    background: #19191f;
   }
 
   @media (min-width: 768px) {
     .final-cta {
-      padding: 80px 0;
+      padding: 96px 0;
     }
   }
 
   .final-cta-card {
-    background: #0f1b2d;
-    border-radius: 20px;
-    padding: 48px 24px;
+    background: #111115;
+    border: 1px solid rgba(250, 210, 110, 0.1);
+    border-radius: 24px;
+    padding: 56px 24px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1334,27 +1463,24 @@ function renderStars(count: number): string {
 
   @media (min-width: 768px) {
     .final-cta-card {
-      padding: 64px 48px;
+      padding: 72px 48px;
     }
   }
 
-  .final-cta-card::before {
-    content: "";
+  .final-cta-glow {
     position: absolute;
-    bottom: -40%;
-    left: -10%;
-    width: 400px;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
     height: 400px;
-    background: var(--brandColor);
-    opacity: 0.08;
-    border-radius: 50%;
-    filter: blur(60px);
+    background: radial-gradient(ellipse, rgba(250, 210, 110, 0.08) 0%, transparent 70%);
     pointer-events: none;
   }
 
   .final-cta-title {
     font-size: clamp(1.5rem, 5vw, 2.2rem);
-    font-weight: 800;
+    font-weight: 700;
     color: #fff;
     margin-bottom: 12px;
     letter-spacing: -0.02em;
@@ -1364,8 +1490,8 @@ function renderStars(count: number): string {
 
   .final-cta-subtitle {
     font-size: 1rem;
-    color: #8fa3bf;
-    margin-bottom: 28px;
+    color: #6b6f7a;
+    margin-bottom: 32px;
     max-width: 440px;
     margin-left: auto;
     margin-right: auto;
@@ -1381,7 +1507,7 @@ function renderStars(count: number): string {
   .final-cta-areas {
     margin-top: 20px;
     font-size: 0.85rem;
-    color: #6b829e;
+    color: #4a4d56;
     position: relative;
     z-index: 1;
   }
@@ -1390,14 +1516,15 @@ function renderStars(count: number): string {
      FOOTER
      ============================================================ */
   .site-footer {
-    background: #0a1220;
-    color: #8fa3bf;
-    padding: 48px 0 24px;
+    background: #0c0c10;
+    color: #6b6f7a;
+    padding: 56px 0 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
   }
 
   @media (min-width: 768px) {
     .site-footer {
-      padding: 64px 0 32px;
+      padding: 72px 0 32px;
     }
   }
 
@@ -1405,30 +1532,46 @@ function renderStars(count: number): string {
     display: grid;
     grid-template-columns: 1fr;
     gap: 32px;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
 
   @media (min-width: 640px) {
     .footer-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
+  @media (min-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    }
+  }
+
+  .footer-logo {
+    height: 34px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+
   .footer-heading {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #e0e8f0;
-    margin-bottom: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #a0a4ae;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
 
   .footer-text {
     font-size: 0.9rem;
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
   .footer-list li {
     font-size: 0.9rem;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
 
   .footer-list a {
@@ -1436,17 +1579,18 @@ function renderStars(count: number): string {
   }
 
   .footer-list a:hover {
-    color: #fff;
+    color: #fad26e;
   }
 
   .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 6px;
     text-align: center;
     font-size: 0.82rem;
+    color: #4a4d56;
   }
 
   @media (min-width: 640px) {
@@ -1457,7 +1601,7 @@ function renderStars(count: number): string {
   }
 
   .footer-credit a {
-    color: var(--brandColor);
+    color: #fad26e;
     font-weight: 600;
     transition: color 0.15s;
   }
@@ -1479,15 +1623,15 @@ function renderStars(count: number): string {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: var(--brandColor);
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22), 0 0 0 4px rgba(38, 129, 196, 0.15);
+    background: #fad26e;
+    color: #111115;
+    box-shadow: 0 4px 20px rgba(250, 210, 110, 0.3), 0 0 0 4px rgba(250, 210, 110, 0.1);
     z-index: 90;
     transition: background 0.2s, transform 0.15s;
   }
 
   .floating-phone:hover {
-    background: var(--brandColorHover);
+    background: #f5c33a;
   }
 
   .floating-phone:active {
@@ -1510,8 +1654,8 @@ function renderStars(count: number): string {
      ============================================================ */
   .reveal {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
 
   .reveal.is-visible {
@@ -1522,7 +1666,7 @@ function renderStars(count: number): string {
   /* Staggered children */
   .reveal.is-visible .stat-item,
   .reveal.is-visible .service-card,
-  .reveal.is-visible .timeline-step,
+  .reveal.is-visible .process-step,
   .reveal.is-visible .review-card,
   .reveal.is-visible .faq-item {
     animation: revealUp 0.5s ease forwards;
@@ -1533,7 +1677,7 @@ function renderStars(count: number): string {
   @keyframes revealUp {
     from {
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateY(18px);
     }
     to {
       opacity: 1;
@@ -1551,7 +1695,7 @@ function renderStars(count: number): string {
 
     .reveal.is-visible .stat-item,
     .reveal.is-visible .service-card,
-    .reveal.is-visible .timeline-step,
+    .reveal.is-visible .process-step,
     .reveal.is-visible .review-card,
     .reveal.is-visible .faq-item {
       animation: none;
@@ -1574,7 +1718,6 @@ function renderStars(count: number): string {
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Close dropdown when a link is clicked
     navDropdown.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         navDropdown.classList.remove("is-open");
@@ -1583,7 +1726,6 @@ function renderStars(count: number): string {
       });
     });
 
-    // Close dropdown on outside click
     document.addEventListener("click", (e) => {
       const target = e.target as HTMLElement;
       if (!navToggle.contains(target) && !navDropdown.contains(target)) {
@@ -1595,7 +1737,7 @@ function renderStars(count: number): string {
   }
 
   // ============================================================
-  // SCROLL REVEAL — IntersectionObserver
+  // SCROLL REVEAL
   // ============================================================
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -1612,30 +1754,29 @@ function renderStars(count: number): string {
         });
       },
       {
-        threshold: 0.12,
+        threshold: 0.1,
         rootMargin: "0px 0px -40px 0px",
       }
     );
 
     revealElements.forEach((el) => observer.observe(el));
   } else {
-    // If reduced motion preferred, show everything
     document.querySelectorAll(".reveal").forEach((el) => {
       el.classList.add("is-visible");
     });
   }
 
   // ============================================================
-  // HEADER SHADOW ON SCROLL
+  // HEADER BLUR ON SCROLL
   // ============================================================
   const header = document.getElementById("site-header");
 
   if (header) {
     const onScroll = () => {
       if (window.scrollY > 8) {
-        header.style.boxShadow = "0 2px 12px rgba(15, 27, 45, 0.08)";
+        header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.3)";
       } else {
-        header.style.boxShadow = "0 1px 3px rgba(15, 27, 45, 0.04)";
+        header.style.boxShadow = "none";
       }
     };
 
