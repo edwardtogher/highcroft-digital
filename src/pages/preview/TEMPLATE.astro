@@ -15,6 +15,8 @@ const config = {
   town: "TOWN",
   areas_served: ["Area 1", "Area 2", "Area 3"],
   logo_url: "LOGO_URL",
+  logo_has_dark_bg: false, // set true if logo has a dark/solid background (no transparency)
+  logo_bg_color: "", // if logo_has_dark_bg, set to the logo's background color (e.g. "#2a5f7d")
   brand_color: "#2681c4",
   brand_color_hover: "#1d6fa8",
   brand_color_soft: "#eaf3fb",
@@ -395,6 +397,9 @@ function renderStars(count: number): string {
   brandColor: config.brand_color,
   brandColorHover: config.brand_color_hover,
   brandColorSoft: config.brand_color_soft,
+  navBg: config.logo_has_dark_bg ? config.logo_bg_color : '#fcfcfd',
+  navText: config.logo_has_dark_bg ? '#e2e8f0' : '#1a2536',
+  navBorder: config.logo_has_dark_bg ? 'rgba(255,255,255,0.1)' : '#e4e9ef',
 }}>
   /* ============================================================
      RESET & BASE
@@ -458,8 +463,8 @@ function renderStars(count: number): string {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: #fff;
-    border-bottom: 1px solid #e8ecf1;
+    background: var(--navBg);
+    border-bottom: 1px solid var(--navBorder);
     box-shadow: 0 1px 3px rgba(15, 27, 45, 0.04);
   }
 
@@ -508,9 +513,9 @@ function renderStars(count: number): string {
   .service-area-label {
     display: none;
     font-size: 0.8rem;
-    color: #5a6a7e;
+    color: var(--navText);
     font-weight: 500;
-    border-left: 1px solid #dde2e9;
+    border-left: 1px solid var(--navBorder);
     padding-left: 16px;
   }
 
@@ -585,7 +590,7 @@ function renderStars(count: number): string {
     display: block;
     width: 22px;
     height: 2px;
-    background: #1a2332;
+    background: var(--navText);
     border-radius: 2px;
     transition: transform 0.25s, opacity 0.25s;
   }
