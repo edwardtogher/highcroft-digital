@@ -59,8 +59,9 @@
     .nav-cta { display: flex; align-items: center; gap: 6px; color: var(--coral); font-size: 0.82rem; font-weight: 600; text-decoration: none; padding: 8px 16px; border: 1px solid rgba(232,116,74,0.3); border-radius: 8px; transition: background 0.15s, border-color 0.15s; letter-spacing: 0.02em; }
     .nav-cta:hover { background: var(--coral-glow); border-color: rgba(232,116,74,0.5); }
     .nav-cta svg { width: 14px; height: 14px; }
-    .nav-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; width: 40px; height: 40px; align-items: center; justify-content: center; }
-    .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--text-mid); margin: 4px auto; transition: 0.2s; }
+    .nav-toggle { display: none; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; cursor: pointer; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; -webkit-tap-highlight-color: transparent; }
+    .nav-toggle:active { background: rgba(255,255,255,0.1); }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: var(--text); border-radius: 1px; }
 
     .hero { padding: clamp(72px,14vw,140px) clamp(20px,5vw,48px) clamp(56px,10vw,100px); max-width: 640px; }
     .hero-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral); margin-bottom: 24px; }
