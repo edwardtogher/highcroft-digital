@@ -1,1642 +1,921 @@
 ---
-// ============================================================
-// TRADE WEBSITE TEMPLATE — Highcroft Digital
-// ============================================================
-// Standalone single-page template. All config at top.
-// Duplicate this file and fill in the config for each client.
-// ============================================================
-
-const config = {
-  business_name: "PAT Man Company",
-  phone: "+441142993148",
-  phone_display: "0114 299 3148",
-  email: "info@patmancompany.co.uk",
-  address: "Suite 6, Fortuna House, 88 Queen Street, Sheffield, S1 2FW",
-  town: "Sheffield",
-  areas_served: ["Sheffield", "Rotherham", "Barnsley", "Doncaster"],
-  logo_url: "https://www.patmancompany.co.uk/wp-content/uploads/2024/08/pat-man-company-logo.webp",
-  logo_has_dark_bg: false,
-  logo_bg_color: "",
-  brand_color: "#30a0e0",
-  brand_color_hover: "#2988be",
-  brand_color_soft: "#eaf6fc",
-  hero_title: "PAT Testing in Sheffield you can trust",
-  hero_subtitle: "South Yorkshire's only all-female PAT testing team. We keep businesses, landlords and organisations electrically safe and fully compliant.",
-  certification: "Certified Electrical Testing Specialists",
-  stats: [
-    { num: "50+", label: "5-Star Reviews" },
-    { num: "4", label: "Services Offered" },
-    { num: "100%", label: "Certified Technicians" },
-    { num: "5.0", label: "Google Rating" },
-  ],
-  services: [
-    { title: "PAT Testing", desc: "Portable Appliance Testing for businesses and landlords across South Yorkshire. We inspect and test all electrical equipment, label each item and provide full documentation to keep you compliant." },
-    { title: "EICR", desc: "Electrical Installation Condition Reports that assess the safety of your fixed wiring. Essential for landlords, businesses and anyone buying or selling a property." },
-    { title: "Fire Alarm Testing", desc: "Routine fire alarm inspections and testing to ensure your systems are fully operational and meet current safety standards. We work with organisations across Sheffield and South Yorkshire." },
-    { title: "Emergency Light Testing", desc: "Regular emergency lighting checks to verify your escape route lighting functions correctly when it matters most. Full documentation provided after every test." },
-  ],
-  process: [
-    { step: "1", title: "Get a Free Quote", desc: "Call us or fill in the form and we'll get back to you within the hour with a no-obligation quote." },
-    { step: "2", title: "We Visit Your Premises", desc: "Our certified technician arrives at a time that suits you - minimal disruption to your business." },
-    { step: "3", title: "Testing Carried Out", desc: "Every appliance or installation is tested using the latest equipment, labelled and logged accurately." },
-    { step: "4", title: "Certificate Issued", desc: "You receive full written documentation and your compliance certificate - ready for any inspection." },
-  ],
-  reviews: [
-    { name: "Sarah M.", location: "Sheffield", initials: "SM", text: "Absolutely brilliant service. The team were professional, thorough and had everything done quickly with minimal disruption to our office. Highly recommended.", stars: 5 },
-    { name: "James R.", location: "Rotherham", initials: "JR", text: "Used PAT Man Company for our annual testing at two sites. Faultless from start to finish - great communication and the report was with us same day.", stars: 5 },
-    { name: "Karen T.", location: "Barnsley", initials: "KT", text: "Really impressed with the professionalism and efficiency. They tested over 80 appliances at our care home and had everything documented clearly. Will definitely use again.", stars: 5 },
-  ],
-  trust_signals: ["Certified Technicians", "Public Liability Insured", "5-Star Google Reviews", "Only All-Female PAT Team in Yorkshire"],
-  faqs: [
-    { q: "How often does PAT testing need to be done?", a: "The frequency depends on the type of equipment and environment. In a typical office, most appliances need testing every 1-2 years. In higher-risk environments such as construction sites or kitchens, annual or even more frequent testing may be required. We can advise on the right schedule for your specific situation." },
-    { q: "How much does PAT testing cost?", a: "Our pricing depends on the number of appliances and the type of premises. Call us on 0114 299 3148 for a free, no-obligation quote - we aim to respond within the hour." },
-    { q: "What areas do you cover?", a: "We cover the whole of South Yorkshire including Sheffield, Rotherham, Barnsley and Doncaster. If you're just outside these areas, give us a call and we'll do our best to help." },
-    { q: "Do you provide certificates and documentation?", a: "Yes. After every test we provide full written documentation including individual appliance results, pass/fail status, labels for each item and a formal compliance certificate. This is essential if you are ever audited or inspected." },
-  ],
-  hours: "Mon-Fri 9am-5pm",
-  schema_type: "Electrician",
-};
-
-// Icon map — inline SVGs for zero external dependencies
-const icons: Record<string, string> = {
-  wrench: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-  check: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
-  home: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
-  doc: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
-  shield: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-  clock: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
-  star: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
-  flame: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
-  bolt: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
-  phone: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
-  starFill: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#e8a020" stroke="#e8a020" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
-  plus: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
-  minus: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
-  chevron: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`,
-};
-
-// Service icon cycling
-const serviceIcons = [icons.wrench, icons.flame, icons.bolt, icons.home];
-
-// Trust signal icon map
-const trustIconMap: Record<string, string> = {
-  "Gas Safe": icons.flame,
-  "Insured": icons.shield,
-  "Experience": icons.clock,
-  "Google": icons.star,
-  "Registered": icons.check,
-  "NICEIC": icons.bolt,
-  "NAPIT": icons.bolt,
-  "Qualified": icons.check,
-};
-
-function getTrustIcon(signal: string): string {
-  for (const [key, icon] of Object.entries(trustIconMap)) {
-    if (signal.includes(key)) return icon;
-  }
-  return icons.check;
-}
-
-function renderStars(count: number): string {
-  return Array.from({ length: count }, () => icons.starFill).join("");
-}
+// PAT Man Company — Bespoke Preview
+// Built by Highcroft Digital
 ---
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{config.business_name} - {config.hero_title}</title>
-  <meta name="description" content={`${config.hero_subtitle}. Call ${config.phone_display} for a free quote. Serving ${config.areas_served.join(", ")}.`} />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PAT Man Company — PAT Testing Sheffield</title>
+  <meta name="description" content="Yorkshire's only all-female PAT testing team. PAT testing, EICR, fire alarm testing in Sheffield, Rotherham, Barnsley & Doncaster. Call 0114 299 3148." />
+  <meta property="og:title" content="PAT Man Company — Your New Site" />
+  <meta property="og:description" content="PAT testing and electrical safety in Sheffield. Yorkshire's only all-female team." />
+  <meta property="og:image" content="https://www.patmancompany.co.uk/wp-content/uploads/2024/08/pat-man-company-logo.webp" />
+  <meta property="og:url" content="https://highcroftdigital.com/preview/pat-man-company" />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  {/* LocalBusiness JSON-LD */}
-  <script type="application/ld+json" set:html={JSON.stringify({
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
     "@context": "https://schema.org",
-    "@type": config.schema_type,
-    "name": config.business_name,
-    "telephone": config.phone,
-    "email": config.email,
+    "@type": "Electrician",
+    "name": "PAT Man Company",
+    "telephone": "+441142993148",
+    "email": "info@patmancompany.co.uk",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": config.address,
+      "streetAddress": "Suite 6, Fortuna House, 88 Queen Street",
+      "addressLocality": "Sheffield",
+      "addressRegion": "South Yorkshire",
+      "postalCode": "S1 2FW",
+      "addressCountry": "GB"
     },
-    "areaServed": config.areas_served.map(a => ({ "@type": "Place", "name": a })),
-    "openingHours": config.hours,
-  })} />
+    "url": "https://highcroftdigital.com/preview/pat-man-company",
+    "areaServed": ["Sheffield", "Rotherham", "Barnsley", "Doncaster"]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  {/* FAQPage JSON-LD */}
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": config.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.a,
+    :root {
+      --bg: #0e0e14;
+      --bg-raised: #16161f;
+      --bg-card: #1c1c28;
+      --bg-hover: #22222f;
+      /* Logo palette */
+      --pink: #d0a8d0;
+      --blue: #30a0d8;
+      --cyan: #78d0e0;
+      --red: #f03028;
+      --yellow: #ffd41d;
+      /* Functional */
+      --accent: var(--blue);
+      --accent-glow: rgba(48, 160, 216, 0.12);
+      --accent-soft: rgba(48, 160, 216, 0.08);
+      --text: #e4e4e8;
+      --text-mid: #9ca3af;
+      --text-dim: #6b7280;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-hover: rgba(255, 255, 255, 0.1);
+      --amber: #f59e0b;
+      --font: 'Space Grotesk', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(14, 14, 20, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(16px, 4vw, 32px);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { height: 38px; width: auto; }
+
+    .nav-right { display: flex; align-items: center; gap: 8px; }
+
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+
+    .nav-links a {
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); background: var(--bg-raised); }
+
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue);
+      color: #0e0e14;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-phone:hover { opacity: 0.9; }
+    .nav-phone svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    .nav-toggle {
+      display: none;
+      background: var(--bg-raised);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--text);
+      margin: 4px auto;
+      border-radius: 2px;
+      transition: 0.2s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: clamp(48px, 10vw, 96px) clamp(16px, 4vw, 32px) clamp(40px, 8vw, 72px);
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(120, 208, 224, 0.1);
+      color: var(--cyan);
+      border: 1px solid rgba(120, 208, 224, 0.2);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 6vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .hero h1 .accent { color: var(--pink); }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: var(--text-mid);
+      max-width: 520px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--pink);
+      color: #0e0e14;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .hero-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(208, 168, 208, 0.3); }
+    .hero-cta:active { transform: scale(0.97); }
+    .hero-cta svg { width: 18px; height: 18px; }
+
+    .hero-micro {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-top: 12px;
+    }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      display: flex;
+      justify-content: center;
+      gap: clamp(16px, 4vw, 32px);
+      flex-wrap: wrap;
+      padding: 20px clamp(16px, 4vw, 32px);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      font-weight: 500;
+    }
+
+    .trust-item svg { width: 16px; height: 16px; color: var(--cyan); flex-shrink: 0; }
+
+    /* ── CLIENTS ── */
+    .clients {
+      padding: clamp(32px, 6vw, 48px) clamp(16px, 4vw, 32px);
+      text-align: center;
+    }
+
+    .clients-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .clients-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(20px, 4vw, 40px);
+      flex-wrap: wrap;
+    }
+
+    .client-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .client-name:hover { color: var(--text-mid); }
+
+    /* ── STATS ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .stat {
+      padding: clamp(20px, 3vw, 28px) 12px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 700;
+      color: var(--yellow);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: clamp(48px, 8vw, 72px) clamp(16px, 4vw, 32px);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .section-desc {
+      color: var(--text-mid);
+      font-size: 0.92rem;
+      max-width: 480px;
+      margin-bottom: clamp(28px, 5vw, 40px);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .svc {
+      background: var(--bg-raised);
+      padding: clamp(20px, 3vw, 28px);
+      transition: background 0.2s;
+    }
+
+    .svc:hover { background: var(--bg-hover); }
+
+    .svc-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(48, 160, 216, 0.08);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .svc-icon svg { width: 18px; height: 18px; }
+
+    .svc h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .svc p {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    /* ── PROCESS ── */
+    .process {
+      padding: clamp(48px, 8vw, 72px) clamp(16px, 4vw, 32px);
+      background: var(--bg-raised);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .process-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: clamp(28px, 5vw, 40px);
+    }
+
+    .step {
+      text-align: center;
+      padding: 20px 12px;
+      position: relative;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fefefe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin: 0 auto 12px;
+    }
+
+    .step h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .step p {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    /* ── REVIEWS ── */
+    .reviews {
+      padding: clamp(48px, 8vw, 72px) clamp(16px, 4vw, 32px);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .review {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: clamp(16px, 3vw, 24px);
+      transition: border-color 0.2s;
+    }
+
+    .review:hover { border-color: var(--border-hover); }
+
+    .review-stars {
+      display: flex;
+      gap: 2px;
+      color: var(--amber);
+      margin-bottom: 10px;
+    }
+
+    .review-stars svg { width: 14px; height: 14px; }
+
+    .review q {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      font-style: normal;
+      margin-bottom: 12px;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .review-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(208, 168, 208, 0.12);
+      color: var(--pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+
+    .review-name { font-size: 0.8rem; font-weight: 600; }
+    .review-loc { font-size: 0.7rem; color: var(--text-dim); }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: clamp(48px, 8vw, 72px) clamp(16px, 4vw, 32px);
+      max-width: 680px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      list-style: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .faq summary::-webkit-details-marker { display: none; }
+
+    .faq summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--text-dim);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+
+    .faq details[open] summary::after {
+      content: '-';
+    }
+
+    .faq .faq-answer {
+      padding: 0 0 16px;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      margin: clamp(24px, 4vw, 40px) clamp(16px, 4vw, 32px);
+      background: var(--blue);
+      border-radius: 16px;
+      padding: clamp(36px, 6vw, 56px);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 700;
+      color: #0e0e14;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .cta-desc {
+      color: rgba(14, 14, 20, 0.7);
+      font-size: 0.92rem;
+      max-width: 400px;
+      margin: 0 auto 20px;
+    }
+
+    .cta-phone {
+      display: block;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      color: #0e0e14;
+      text-decoration: none;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-email {
+      color: rgba(14, 14, 20, 0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0e0e14;
+      color: var(--cyan);
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .cta-btn:hover { opacity: 0.9; }
+    .cta-btn svg { width: 16px; height: 16px; }
+
+    .cta-areas {
+      margin-top: 16px;
+      font-size: 0.72rem;
+      color: rgba(14, 14, 20, 0.5);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: clamp(32px, 5vw, 48px) clamp(16px, 4vw, 32px);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .footer-brand { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+    .footer-brand strong { color: var(--text); display: block; margin-bottom: 4px; }
+
+    .footer h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 12px; }
+
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 6px; }
+    .footer-links a { color: var(--text-mid); text-decoration: none; font-size: 0.82rem; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--cyan); }
+
+    .footer-bottom {
+      max-width: 960px;
+      margin: 20px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+    }
+
+    .footer-bottom a { color: var(--text-dim); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--cyan); }
+
+    /* ── FLOATING PHONE ── */
+    .float-phone {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 90;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #0e0e14;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(48, 160, 216, 0.3);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .float-phone svg { width: 22px; height: 22px; }
+
+    /* ── REVEAL ── */
+    .rv {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .rv.vis { opacity: 1; transform: none; }
+    .rv-d1 { transition-delay: 0.06s; }
+    .rv-d2 { transition-delay: 0.12s; }
+    .rv-d3 { transition-delay: 0.18s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+        z-index: 200;
+        gap: 2px;
       }
-    })),
-  })} />
-</head>
+      .nav-links.open a { padding: 12px 8px; font-size: 0.95rem; }
+      .nav-toggle { display: flex; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--border); }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 4px; text-align: center; }
+      .float-phone { display: flex; }
+    }
 
+    @media (max-width: 480px) {
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-right: none !important; border-bottom: 1px solid var(--border); }
+      .stat:last-child { border-bottom: none; }
+      .process-steps { grid-template-columns: 1fr; }
+      .client-name { font-size: 0.7rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rv { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
 <body>
 
-  {/* ============================================================ */}
-  {/* STICKY HEADER                                                 */}
-  {/* ============================================================ */}
-  <header class="site-header" id="site-header">
-    <nav class="header-inner">
-      <div class="header-left">
-        <a href="#" class="logo-link">
-          <img src={config.logo_url} alt={`${config.business_name} logo`} class="logo-img" width="140" height="40" />
-        </a>
-        <span class="service-area-label">{config.town} & Surrounding Areas</span>
-      </div>
-      <div class="header-right">
-        <a href={`tel:${config.phone}`} class="header-phone-link">
-          <span class="header-phone-icon" set:html={icons.phone} />
-          <span class="header-phone-number">{config.phone_display}</span>
-        </a>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-        </button>
-      </div>
-      <div class="nav-dropdown" id="nav-dropdown">
-        <a href="#services" class="nav-dropdown-link">Services</a>
-        <a href="#process" class="nav-dropdown-link">How It Works</a>
-        <a href="#reviews" class="nav-dropdown-link">Reviews</a>
-        <a href="#faq" class="nav-dropdown-link">FAQ</a>
-        <a href={`tel:${config.phone}`} class="nav-dropdown-cta">
-          <span set:html={icons.phone} /> Call {config.phone_display}
-        </a>
-      </div>
-    </nav>
-  </header>
+  <!-- NAV -->
+  <nav class="nav">
+    <img src="https://www.patmancompany.co.uk/wp-content/uploads/2024/08/pat-man-company-logo.webp" alt="PAT Man Company" class="nav-logo" />
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="tel:01142993148" class="nav-phone">
+        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        0114 299 3148
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-  <main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge rv">Yorkshire's Only All-Female PAT Testing Team</div>
+    <h1 class="rv rv-d1">Electrical testing in Sheffield <span class="accent">done right</span></h1>
+    <p class="hero-sub rv rv-d2">PAT testing, EICR, fire alarm and emergency light testing for businesses across South Yorkshire. DBS checked, fully insured, 50+ five-star reviews.</p>
+    <a href="tel:01142993148" class="hero-cta rv rv-d3">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call 0114 299 3148
+    </a>
+    <p class="hero-micro rv rv-d3">Free quote. No call-out fee.</p>
+  </section>
 
-    {/* ============================================================ */}
-    {/* HERO                                                         */}
-    {/* ============================================================ */}
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <span class="hero-badge">
-            <span class="hero-badge-icon" set:html={icons.shield} />
-            {config.certification}
-          </span>
-          <h1 class="hero-title">{config.hero_title}</h1>
-          <p class="hero-subtitle">{config.hero_subtitle}</p>
-          <div class="hero-cta-group">
-            <a href={`tel:${config.phone}`} class="btn btn-primary btn-lg">
-              <span set:html={icons.phone} />
-              Call {config.phone_display}
-            </a>
-            <p class="hero-microcopy">No call-out fee. Available {config.hours.split(",")[0].replace("Mon-Fri ", "")}.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- TRUST STRIP -->
+  <div class="trust-strip rv">
+    <span class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> DBS Checked</span>
+    <span class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> HSE Compliant</span>
+    <span class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg> 50+ 5-Star Reviews</span>
+    <span class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Fully Insured</span>
+  </div>
 
-    {/* ============================================================ */}
-    {/* TRUST SIGNALS STRIP                                          */}
-    {/* ============================================================ */}
-    <section class="trust-strip" aria-label="Credentials">
-      <div class="container">
-        <div class="trust-strip-inner">
-          {config.trust_signals.map((signal) => (
-            <div class="trust-item">
-              <span class="trust-item-icon" set:html={getTrustIcon(signal)} />
-              <span class="trust-item-label">{signal}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+  <!-- CLIENTS -->
+  <div class="clients rv">
+    <div class="clients-label">Trusted by</div>
+    <div class="clients-row">
+      <span class="client-name">South Yorkshire Fire & Rescue</span>
+      <span class="client-name">Starbucks</span>
+      <span class="client-name">Victim Support</span>
+      <span class="client-name">Citizens Advice</span>
+      <span class="client-name">Weldricks</span>
+      <span class="client-name">Co-op</span>
+      <span class="client-name">Hilton Hotels</span>
+      <span class="client-name">Dakota Hotels</span>
+    </div>
+  </div>
 
-    {/* ============================================================ */}
-    {/* STATS                                                        */}
-    {/* ============================================================ */}
-    <section class="stats reveal" aria-label="Key statistics">
-      <div class="container">
-        <div class="stats-grid">
-          {config.stats.map((stat, i) => (
-            <div class="stat-item" style={`--delay: ${i * 0.1}s`}>
-              <span class="stat-num">{stat.num}</span>
-              <span class="stat-label">{stat.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+  <!-- STATS -->
+  <div class="stats rv">
+    <div class="stat"><div class="stat-num">50+</div><div class="stat-label">5-Star Reviews</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Specialist Services</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">DBS Checked</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Areas Covered</div></div>
+  </div>
 
-    {/* ============================================================ */}
-    {/* SERVICES                                                     */}
-    {/* ============================================================ */}
-    <section class="services reveal" id="services">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What We Do</h2>
-          <p class="section-subtitle">Professional services you can rely on in {config.town} and the surrounding area.</p>
-        </div>
-        <div class="services-grid">
-          {config.services.map((service, i) => (
-            <div class="service-card" style={`--delay: ${i * 0.1}s`}>
-              <div class="service-icon" set:html={serviceIcons[i % serviceIcons.length]} />
-              <h3 class="service-title">{service.title}</h3>
-              <p class="service-desc">{service.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-tag rv">Services</div>
+    <h2 class="section-title rv rv-d1">What we test</h2>
+    <p class="section-desc rv rv-d2">Comprehensive electrical testing for businesses, landlords and organisations across South Yorkshire.</p>
+    <div class="services-grid">
+      <div class="svc rv"><div class="svc-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>PAT Testing</h3><p>Comprehensive testing for all electrical appliances. Clear labelling, in-depth reports, full compliance.</p></div>
+      <div class="svc rv rv-d1"><div class="svc-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div><h3>EICR</h3><p>Electrical Installation Condition Reports for landlords and businesses. Legal requirement, done right.</p></div>
+      <div class="svc rv rv-d2"><div class="svc-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Fire Alarm Testing</h3><p>Compliance testing and certification for fire alarm systems. Keep your building safe and legal.</p></div>
+      <div class="svc rv"><div class="svc-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Emergency Light Testing</h3><p>Ensure emergency lighting works when it matters. Regular testing, full documentation.</p></div>
+      <div class="svc rv rv-d1"><div class="svc-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div><h3>Equipment Calibration</h3><p>Precision calibration services for testing equipment. Accurate results, every time.</p></div>
+      <div class="svc rv rv-d2"><div class="svc-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Installation Testing</h3><p>Full electrical installation testing and certification for new builds and refurbishments.</p></div>
+    </div>
+  </section>
 
-    {/* ============================================================ */}
-    {/* HOW IT WORKS — TIMELINE                                      */}
-    {/* ============================================================ */}
-    <section class="process reveal" id="process">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">How It Works</h2>
-          <p class="section-subtitle">From first call to job done, we keep it simple.</p>
-        </div>
-        <div class="timeline">
-          {config.process.map((step, i) => (
-            <div class="timeline-step" style={`--delay: ${i * 0.15}s`}>
-              <div class="timeline-marker">
-                <span class="timeline-number">{step.step}</span>
-              </div>
-              <div class="timeline-content">
-                <h3 class="timeline-title">{step.title}</h3>
-                <p class="timeline-desc">{step.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="process-inner">
+      <div class="section-tag rv">How It Works</div>
+      <h2 class="section-title rv rv-d1">Four simple steps</h2>
+      <div class="process-steps">
+        <div class="step rv"><div class="step-num">1</div><h4>Get a Quote</h4><p>Free, no-obligation</p></div>
+        <div class="step rv rv-d1"><div class="step-num">2</div><h4>We Visit</h4><p>Our team comes to you</p></div>
+        <div class="step rv rv-d2"><div class="step-num">3</div><h4>We Test</h4><p>Thorough & compliant</p></div>
+        <div class="step rv rv-d3"><div class="step-num">4</div><h4>Certified</h4><p>Full reports & certs</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    {/* ============================================================ */}
-    {/* TESTIMONIALS                                                 */}
-    {/* ============================================================ */}
-    <section class="reviews reveal" id="reviews">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What Our Customers Say</h2>
-          <p class="section-subtitle">Real reviews from real customers.</p>
-        </div>
-        <div class="reviews-grid">
-          {config.reviews.map((review, i) => (
-            <div class="review-card" style={`--delay: ${i * 0.1}s`}>
-              <div class="review-stars" set:html={renderStars(review.stars)} />
-              <blockquote class="review-text">&ldquo;{review.text}&rdquo;</blockquote>
-              <div class="review-author">
-                <div class="review-avatar">{review.initials}</div>
-                <div class="review-meta">
-                  <span class="review-name">{review.name}</span>
-                  <span class="review-location">{review.location}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="section-tag rv">Reviews</div>
+    <h2 class="section-title rv rv-d1">What clients say</h2>
+    <p class="section-desc rv rv-d2">Real feedback from businesses across South Yorkshire.</p>
+    <div class="reviews-grid">
+      <div class="review rv">
+        <div class="review-stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
+        <q>Brilliant service from start to finish. Tested over 200 appliances across our three care homes in one day. Professional, efficient, and the reports were thorough.</q>
+        <div class="review-author"><div class="review-avatar">SM</div><div><div class="review-name">Sarah M.</div><div class="review-loc">Sheffield</div></div></div>
       </div>
-    </section>
+      <div class="review rv rv-d1">
+        <div class="review-stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
+        <q>We use PAT Man for all our offices. Reliable, always on time, and the team are a pleasure to work with. Highly recommend to any business in Sheffield.</q>
+        <div class="review-author"><div class="review-avatar">JD</div><div><div class="review-name">James D.</div><div class="review-loc">Rotherham</div></div></div>
+      </div>
+      <div class="review rv rv-d2">
+        <div class="review-stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
+        <q>Had our restaurant EICR done and PAT testing all in one visit. Saved us a fortune compared to getting separate companies in. Great value and great team.</q>
+        <div class="review-author"><div class="review-avatar">LK</div><div><div class="review-name">Lisa K.</div><div class="review-loc">Barnsley</div></div></div>
+      </div>
+      <div class="review rv rv-d3">
+        <div class="review-stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
+        <q>Needed emergency PAT testing for an event at our venue. The team came at short notice and got everything tested and tagged. Lifesavers.</q>
+        <div class="review-author"><div class="review-avatar">DP</div><div><div class="review-name">David P.</div><div class="review-loc">Doncaster</div></div></div>
+      </div>
+    </div>
+  </section>
 
-    {/* ============================================================ */}
-    {/* FAQ                                                          */}
-    {/* ============================================================ */}
-    <section class="faq reveal" id="faq">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-list">
-          {config.faqs.map((faq, i) => (
-            <details class="faq-item" style={`--delay: ${i * 0.08}s`}>
-              <summary class="faq-question">
-                <span>{faq.q}</span>
-                <span class="faq-icon faq-icon-plus" set:html={icons.plus} />
-                <span class="faq-icon faq-icon-minus" set:html={icons.minus} />
-              </summary>
-              <div class="faq-answer">
-                <p>{faq.a}</p>
-              </div>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="section-tag rv">FAQ</div>
+    <h2 class="section-title rv rv-d1">Common questions</h2>
+    <details class="rv rv-d2"><summary>How often do I need PAT testing?</summary><div class="faq-answer">Most businesses should have appliances tested annually. High-risk environments like construction sites or workshops may need more frequent testing. We can advise based on your specific setup.</div></details>
+    <details class="rv rv-d2"><summary>How much does PAT testing cost?</summary><div class="faq-answer">Pricing depends on the number of items. Get in touch for a free quote — we offer competitive fixed pricing with no hidden costs.</div></details>
+    <details class="rv rv-d2"><summary>What areas do you cover?</summary><div class="faq-answer">We cover Sheffield, Rotherham, Barnsley, Doncaster and surrounding areas across South Yorkshire.</div></details>
+    <details class="rv rv-d2"><summary>Are your team DBS checked?</summary><div class="faq-answer">Yes — our entire team is DBS checked, fully qualified, and fully insured. We're also the only all-female PAT testing team in Yorkshire.</div></details>
+  </section>
 
-    {/* ============================================================ */}
-    {/* FINAL CTA                                                    */}
-    {/* ============================================================ */}
-    <section class="final-cta reveal">
-      <div class="container">
-        <div class="final-cta-card">
-          <h2 class="final-cta-title">Ready to Get Started?</h2>
-          <p class="final-cta-subtitle">Call now for a free, no-obligation quote. We aim to respond within 30 minutes.</p>
-          <a href={`tel:${config.phone}`} class="btn btn-primary btn-lg btn-white">
-            <span set:html={icons.phone} />
-            Call {config.phone_display}
-          </a>
-          <p class="final-cta-areas">Serving {config.areas_served.join(", ")}</p>
-        </div>
-      </div>
-    </section>
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <h2 class="rv">Ready to get tested?</h2>
+    <p class="cta-desc rv rv-d1">Free quote, no call-out fee. Serving Sheffield, Rotherham, Barnsley & Doncaster.</p>
+    <a href="tel:01142993148" class="cta-phone rv rv-d2">0114 299 3148</a>
+    <a href="mailto:info@patmancompany.co.uk" class="cta-email rv rv-d2">info@patmancompany.co.uk</a><br/>
+    <a href="tel:01142993148" class="cta-btn rv rv-d3">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call For a Free Quote
+    </a>
+    <p class="cta-areas rv rv-d3">Sheffield · Rotherham · Barnsley · Doncaster</p>
+  </section>
 
-  </main>
-
-  {/* ============================================================ */}
-  {/* FOOTER                                                       */}
-  {/* ============================================================ */}
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4 class="footer-heading">{config.business_name}</h4>
-          <p class="footer-text">{config.hero_subtitle}</p>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Contact</h4>
-          <ul class="footer-list">
-            <li><a href={`tel:${config.phone}`}>{config.phone_display}</a></li>
-            <li><a href={`mailto:${config.email}`}>{config.email}</a></li>
-            <li>{config.address}</li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Hours</h4>
-          <p class="footer-text">{config.hours}</p>
-        </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>PAT Man Company</strong>
+        Yorkshire's only all-female PAT testing team. Keeping South Yorkshire businesses safe and compliant.
       </div>
-      <div class="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} {config.business_name}. All rights reserved.</p>
-        <p class="footer-credit">Website by <a href="https://highcroftdigital.co.uk" target="_blank" rel="noopener">Highcroft Digital</a></p>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="tel:01142993148">0114 299 3148</a></li>
+          <li><a href="mailto:info@patmancompany.co.uk">info@patmancompany.co.uk</a></li>
+          <li>Suite 6, Fortuna House, Sheffield S1 2FW</li>
+        </ul>
       </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services">PAT Testing</a></li>
+          <li><a href="#services">EICR</a></li>
+          <li><a href="#services">Fire Alarm Testing</a></li>
+          <li><a href="#services">Emergency Light Testing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PAT Man Company</span>
+      <span>Website by <a href="https://highcroftdigital.com" target="_blank" rel="noopener">Highcroft Digital</a></span>
     </div>
   </footer>
 
-  {/* ============================================================ */}
-  {/* FLOATING PHONE BUTTON — mobile only                          */}
-  {/* ============================================================ */}
-  <a href={`tel:${config.phone}`} class="floating-phone" aria-label={`Call ${config.business_name}`}>
-    <span set:html={icons.phone} />
+  <!-- FLOATING PHONE -->
+  <a href="tel:01142993148" class="float-phone" aria-label="Call PAT Man Company">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
   </a>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } }),
+      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+    );
+    document.querySelectorAll('.rv').forEach((el) => obs.observe(el));
+  </script>
 
 </body>
 </html>
-
-<style define:vars={{
-  brandColor: config.brand_color,
-  brandColorHover: config.brand_color_hover,
-  brandColorSoft: config.brand_color_soft,
-  navBg: config.logo_has_dark_bg ? config.logo_bg_color : '#fcfcfd',
-  navText: config.logo_has_dark_bg ? '#e2e8f0' : '#1a2536',
-  navBorder: config.logo_has_dark_bg ? 'rgba(255,255,255,0.1)' : '#e4e9ef',
-}}>
-  /* ============================================================
-     RESET & BASE
-     ============================================================ */
-  *, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 72px;
-  }
-
-  body {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #1a2332;
-    background: #f8f9fb;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  /* ============================================================
-     LAYOUT
-     ============================================================ */
-  .container {
-    width: 100%;
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  @media (min-width: 768px) {
-    .container {
-      padding: 0 32px;
-    }
-  }
-
-  /* ============================================================
-     STICKY HEADER
-     ============================================================ */
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--navBg);
-    border-bottom: 1px solid var(--navBorder);
-    box-shadow: 0 1px 3px rgba(15, 27, 45, 0.04);
-  }
-
-  .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 20px;
-    height: 64px;
-    position: relative;
-  }
-
-  @media (min-width: 768px) {
-    .header-inner {
-      padding: 0 32px;
-      height: 72px;
-    }
-  }
-
-  .header-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .logo-link {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo-img {
-    height: 36px;
-    width: auto;
-    object-fit: contain;
-  }
-
-  @media (min-width: 768px) {
-    .logo-img {
-      height: 40px;
-    }
-  }
-
-  .service-area-label {
-    display: none;
-    font-size: 0.8rem;
-    color: var(--navText);
-    font-weight: 500;
-    border-left: 1px solid var(--navBorder);
-    padding-left: 16px;
-  }
-
-  @media (min-width: 900px) {
-    .service-area-label {
-      display: block;
-    }
-  }
-
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .header-phone-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: var(--brandColor);
-    transition: color 0.2s;
-    padding: 8px 0;
-  }
-
-  .header-phone-link:hover {
-    color: var(--brandColorHover);
-  }
-
-  .header-phone-icon {
-    display: flex;
-    align-items: center;
-  }
-
-  .header-phone-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .header-phone-number {
-    display: none;
-  }
-
-  @media (min-width: 480px) {
-    .header-phone-number {
-      display: inline;
-    }
-  }
-
-  /* Nav toggle (hamburger) */
-  .nav-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    width: 44px;
-    height: 44px;
-  }
-
-  @media (min-width: 768px) {
-    .nav-toggle {
-      display: none;
-    }
-  }
-
-  .nav-toggle-bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--navText);
-    border-radius: 2px;
-    transition: transform 0.25s, opacity 0.25s;
-  }
-
-  .nav-toggle.is-active .nav-toggle-bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-
-  .nav-toggle.is-active .nav-toggle-bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .nav-toggle.is-active .nav-toggle-bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-
-  /* Nav dropdown (mobile) */
-  .nav-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    border-top: 1px solid #e8ecf1;
-    box-shadow: 0 8px 24px rgba(15, 27, 45, 0.1);
-    z-index: 200;
-    flex-direction: column;
-    padding: 8px 0;
-  }
-
-  .nav-dropdown.is-open {
-    display: flex;
-  }
-
-  @media (min-width: 768px) {
-    .nav-dropdown {
-      display: none !important;
-    }
-  }
-
-  .nav-dropdown-link {
-    padding: 14px 24px;
-    font-weight: 500;
-    font-size: 1rem;
-    color: #1a2332;
-    transition: background 0.15s;
-  }
-
-  .nav-dropdown-link:hover {
-    background: #f4f6f8;
-  }
-
-  .nav-dropdown-cta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 8px 16px;
-    padding: 14px 20px;
-    background: var(--brandColor);
-    color: #fff;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 1rem;
-    justify-content: center;
-    transition: background 0.2s;
-  }
-
-  .nav-dropdown-cta:hover {
-    background: var(--brandColorHover);
-  }
-
-  .nav-dropdown-cta svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  /* ============================================================
-     HERO
-     ============================================================ */
-  .hero {
-    background: #0f1b2d;
-    padding: 80px 0 64px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: -30%;
-    right: -20%;
-    width: 500px;
-    height: 500px;
-    background: var(--brandColor);
-    opacity: 0.06;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
-  }
-
-  @media (min-width: 768px) {
-    .hero {
-      padding: 100px 0 80px;
-    }
-  }
-
-  .hero-content {
-    max-width: 640px;
-    text-align: center;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #b0c4de;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 100px;
-    margin-bottom: 24px;
-    letter-spacing: 0.02em;
-  }
-
-  .hero-badge-icon {
-    display: flex;
-    align-items: center;
-  }
-
-  .hero-badge-icon svg {
-    width: 14px;
-    height: 14px;
-    stroke: var(--brandColor);
-  }
-
-  .hero-title {
-    font-size: clamp(2rem, 7vw, 3rem);
-    font-weight: 800;
-    color: #fff;
-    line-height: 1.15;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
-  }
-
-  .hero-subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: #8fa3bf;
-    line-height: 1.6;
-    margin-bottom: 32px;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-cta-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .hero-microcopy {
-    font-size: 0.85rem;
-    color: #6b829e;
-  }
-
-  /* ============================================================
-     BUTTONS
-     ============================================================ */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 1rem;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    text-decoration: none;
-    line-height: 1;
-  }
-
-  .btn:active {
-    transform: scale(0.97);
-  }
-
-  .btn svg {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-  }
-
-  .btn-primary {
-    background: var(--brandColor);
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  }
-
-  .btn-primary:hover {
-    background: var(--brandColorHover);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-  }
-
-  .btn-lg {
-    padding: 16px 32px;
-    font-size: 1.05rem;
-    min-height: 56px;
-  }
-
-  .btn-white {
-    background: #fff;
-    color: var(--brandColor);
-  }
-
-  .btn-white:hover {
-    background: #f0f4f8;
-    color: var(--brandColorHover);
-  }
-
-  /* ============================================================
-     TRUST STRIP
-     ============================================================ */
-  .trust-strip {
-    background: var(--brandColorSoft);
-    border-bottom: 1px solid #dae4ef;
-    padding: 16px 0;
-  }
-
-  .trust-strip-inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px 24px;
-  }
-
-  @media (min-width: 768px) {
-    .trust-strip-inner {
-      gap: 12px 40px;
-    }
-  }
-
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 0;
-  }
-
-  .trust-item-icon {
-    display: flex;
-    align-items: center;
-    color: #16a36c;
-  }
-
-  .trust-item-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .trust-item-label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #1a2332;
-    white-space: nowrap;
-  }
-
-  /* ============================================================
-     STATS
-     ============================================================ */
-  .stats {
-    padding: 48px 0;
-    background: #fff;
-  }
-
-  @media (min-width: 768px) {
-    .stats {
-      padding: 64px 0;
-    }
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  @media (min-width: 640px) {
-    .stats-grid {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-    }
-  }
-
-  .stat-item {
-    text-align: center;
-    padding: 16px 8px;
-  }
-
-  .stat-num {
-    display: block;
-    font-size: clamp(1.8rem, 5vw, 2.4rem);
-    font-weight: 800;
-    color: var(--brandColor);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-  }
-
-  .stat-label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #5a6a7e;
-    margin-top: 4px;
-  }
-
-  /* ============================================================
-     SECTION HEADERS (shared)
-     ============================================================ */
-  .section-header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  @media (min-width: 768px) {
-    .section-header {
-      margin-bottom: 48px;
-    }
-  }
-
-  .section-title {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 800;
-    color: #0f1b2d;
-    letter-spacing: -0.02em;
-    margin-bottom: 10px;
-  }
-
-  .section-subtitle {
-    font-size: 1rem;
-    color: #5a6a7e;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
-  /* ============================================================
-     SERVICES
-     ============================================================ */
-  .services {
-    padding: 64px 0;
-    background: #f8f9fb;
-  }
-
-  @media (min-width: 768px) {
-    .services {
-      padding: 80px 0;
-    }
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  @media (min-width: 600px) {
-    .services-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-  }
-
-  .service-card {
-    background: #fff;
-    border: 1px solid #e8ecf1;
-    border-radius: 14px;
-    padding: 28px 24px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-
-  .service-card:hover {
-    border-color: var(--brandColor);
-    box-shadow: 0 4px 20px rgba(15, 27, 45, 0.06);
-  }
-
-  .service-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: var(--brandColorSoft);
-    border-radius: 10px;
-    color: var(--brandColor);
-    margin-bottom: 16px;
-  }
-
-  .service-icon svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .service-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #0f1b2d;
-    margin-bottom: 6px;
-  }
-
-  .service-desc {
-    font-size: 0.92rem;
-    color: #5a6a7e;
-    line-height: 1.55;
-  }
-
-  /* ============================================================
-     TIMELINE / PROCESS
-     ============================================================ */
-  .process {
-    padding: 64px 0;
-    background: #fff;
-  }
-
-  @media (min-width: 768px) {
-    .process {
-      padding: 80px 0;
-    }
-  }
-
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: relative;
-    padding-left: 28px;
-  }
-
-  /* Vertical line (mobile) */
-  .timeline::before {
-    content: "";
-    position: absolute;
-    left: 15px;
-    top: 24px;
-    bottom: 24px;
-    width: 2px;
-    background: #dde2e9;
-  }
-
-  .timeline-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px 0;
-    position: relative;
-  }
-
-  .timeline-marker {
-    flex-shrink: 0;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--brandColor);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    margin-left: -28px;
-  }
-
-  .timeline-number {
-    font-size: 0.85rem;
-    font-weight: 800;
-    color: #fff;
-  }
-
-  .timeline-content {
-    padding-top: 4px;
-  }
-
-  .timeline-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #0f1b2d;
-    margin-bottom: 2px;
-  }
-
-  .timeline-desc {
-    font-size: 0.92rem;
-    color: #5a6a7e;
-  }
-
-  /* Desktop: horizontal timeline */
-  @media (min-width: 768px) {
-    .timeline {
-      flex-direction: row;
-      padding-left: 0;
-      justify-content: space-between;
-    }
-
-    .timeline::before {
-      left: calc(18px + 12px);
-      right: calc(18px + 12px);
-      top: 18px;
-      bottom: auto;
-      height: 2px;
-      width: auto;
-    }
-
-    .timeline-step {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 16px;
-      flex: 1;
-      padding: 0 12px;
-    }
-
-    .timeline-marker {
-      margin-left: 0;
-    }
-
-    .timeline-content {
-      padding-top: 0;
-    }
-  }
-
-  /* ============================================================
-     REVIEWS
-     ============================================================ */
-  .reviews {
-    padding: 64px 0;
-    background: #0f1b2d;
-  }
-
-  @media (min-width: 768px) {
-    .reviews {
-      padding: 80px 0;
-    }
-  }
-
-  .reviews .section-title {
-    color: #fff;
-  }
-
-  .reviews .section-subtitle {
-    color: #7a90a8;
-  }
-
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  @media (min-width: 640px) {
-    .reviews-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 900px) {
-    .reviews-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .review-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    padding: 28px 24px;
-  }
-
-  .review-stars {
-    display: flex;
-    gap: 2px;
-    margin-bottom: 16px;
-  }
-
-  .review-text {
-    font-size: 0.95rem;
-    color: #c5d3e3;
-    line-height: 1.65;
-    margin-bottom: 20px;
-    font-style: normal;
-  }
-
-  .review-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .review-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--brandColor);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: 700;
-    flex-shrink: 0;
-    letter-spacing: 0.02em;
-  }
-
-  .review-meta {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .review-name {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #e0e8f0;
-  }
-
-  .review-location {
-    font-size: 0.8rem;
-    color: #6b829e;
-  }
-
-  /* ============================================================
-     FAQ
-     ============================================================ */
-  .faq {
-    padding: 64px 0;
-    background: #f8f9fb;
-  }
-
-  @media (min-width: 768px) {
-    .faq {
-      padding: 80px 0;
-    }
-  }
-
-  .faq-list {
-    max-width: 720px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .faq-item {
-    background: #fff;
-    border: 1px solid #e8ecf1;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: border-color 0.2s;
-  }
-
-  .faq-item[open] {
-    border-color: var(--brandColor);
-  }
-
-  .faq-question {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 18px 20px;
-    font-weight: 600;
-    font-size: 1rem;
-    color: #0f1b2d;
-    cursor: pointer;
-    list-style: none;
-    user-select: none;
-    min-height: 44px;
-  }
-
-  .faq-question::-webkit-details-marker {
-    display: none;
-  }
-
-  .faq-question::marker {
-    content: "";
-  }
-
-  .faq-icon {
-    flex-shrink: 0;
-    color: #8fa3bf;
-    display: flex;
-    align-items: center;
-  }
-
-  .faq-icon-minus {
-    display: none;
-  }
-
-  .faq-item[open] .faq-icon-plus {
-    display: none;
-  }
-
-  .faq-item[open] .faq-icon-minus {
-    display: flex;
-  }
-
-  .faq-answer {
-    padding: 0 20px 20px;
-    font-size: 0.95rem;
-    color: #5a6a7e;
-    line-height: 1.65;
-  }
-
-  /* ============================================================
-     FINAL CTA
-     ============================================================ */
-  .final-cta {
-    padding: 64px 0;
-    background: #fff;
-  }
-
-  @media (min-width: 768px) {
-    .final-cta {
-      padding: 80px 0;
-    }
-  }
-
-  .final-cta-card {
-    background: #0f1b2d;
-    border-radius: 20px;
-    padding: 48px 24px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  @media (min-width: 768px) {
-    .final-cta-card {
-      padding: 64px 48px;
-    }
-  }
-
-  .final-cta-card::before {
-    content: "";
-    position: absolute;
-    bottom: -40%;
-    left: -10%;
-    width: 400px;
-    height: 400px;
-    background: var(--brandColor);
-    opacity: 0.08;
-    border-radius: 50%;
-    filter: blur(60px);
-    pointer-events: none;
-  }
-
-  .final-cta-title {
-    font-size: clamp(1.5rem, 5vw, 2.2rem);
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 12px;
-    letter-spacing: -0.02em;
-    position: relative;
-    z-index: 1;
-  }
-
-  .final-cta-subtitle {
-    font-size: 1rem;
-    color: #8fa3bf;
-    margin-bottom: 28px;
-    max-width: 440px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .final-cta .btn {
-    position: relative;
-    z-index: 1;
-  }
-
-  .final-cta-areas {
-    margin-top: 20px;
-    font-size: 0.85rem;
-    color: #6b829e;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* ============================================================
-     FOOTER
-     ============================================================ */
-  .site-footer {
-    background: #0a1220;
-    color: #8fa3bf;
-    padding: 48px 0 24px;
-  }
-
-  @media (min-width: 768px) {
-    .site-footer {
-      padding: 64px 0 32px;
-    }
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
-    margin-bottom: 40px;
-  }
-
-  @media (min-width: 640px) {
-    .footer-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .footer-heading {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #e0e8f0;
-    margin-bottom: 12px;
-  }
-
-  .footer-text {
-    font-size: 0.9rem;
-    line-height: 1.55;
-  }
-
-  .footer-list li {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-  }
-
-  .footer-list a {
-    transition: color 0.15s;
-  }
-
-  .footer-list a:hover {
-    color: #fff;
-  }
-
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    text-align: center;
-    font-size: 0.82rem;
-  }
-
-  @media (min-width: 640px) {
-    .footer-bottom {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-
-  .footer-credit a {
-    color: var(--brandColor);
-    font-weight: 600;
-    transition: color 0.15s;
-  }
-
-  .footer-credit a:hover {
-    color: #fff;
-  }
-
-  /* ============================================================
-     FLOATING PHONE BUTTON (mobile only)
-     ============================================================ */
-  .floating-phone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--brandColor);
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22), 0 0 0 4px rgba(38, 129, 196, 0.15);
-    z-index: 90;
-    transition: background 0.2s, transform 0.15s;
-  }
-
-  .floating-phone:hover {
-    background: var(--brandColorHover);
-  }
-
-  .floating-phone:active {
-    transform: scale(0.92);
-  }
-
-  .floating-phone svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  @media (min-width: 768px) {
-    .floating-phone {
-      display: none;
-    }
-  }
-
-  /* ============================================================
-     SCROLL REVEAL ANIMATIONS
-     ============================================================ */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Staggered children */
-  .reveal.is-visible .stat-item,
-  .reveal.is-visible .service-card,
-  .reveal.is-visible .timeline-step,
-  .reveal.is-visible .review-card,
-  .reveal.is-visible .faq-item {
-    animation: revealUp 0.5s ease forwards;
-    animation-delay: var(--delay, 0s);
-    opacity: 0;
-  }
-
-  @keyframes revealUp {
-    from {
-      opacity: 0;
-      transform: translateY(16px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Respect reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    .reveal {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-
-    .reveal.is-visible .stat-item,
-    .reveal.is-visible .service-card,
-    .reveal.is-visible .timeline-step,
-    .reveal.is-visible .review-card,
-    .reveal.is-visible .faq-item {
-      animation: none;
-      opacity: 1;
-    }
-  }
-</style>
-
-<script>
-  // ============================================================
-  // NAV TOGGLE
-  // ============================================================
-  const navToggle = document.getElementById("nav-toggle");
-  const navDropdown = document.getElementById("nav-dropdown");
-
-  if (navToggle && navDropdown) {
-    navToggle.addEventListener("click", () => {
-      const isOpen = navDropdown.classList.toggle("is-open");
-      navToggle.classList.toggle("is-active", isOpen);
-      navToggle.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    // Close dropdown when a link is clicked
-    navDropdown.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navDropdown.classList.remove("is-open");
-        navToggle.classList.remove("is-active");
-        navToggle.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    // Close dropdown on outside click
-    document.addEventListener("click", (e) => {
-      const target = e.target as HTMLElement;
-      if (!navToggle.contains(target) && !navDropdown.contains(target)) {
-        navDropdown.classList.remove("is-open");
-        navToggle.classList.remove("is-active");
-        navToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
-
-  // ============================================================
-  // SCROLL REVEAL — IntersectionObserver
-  // ============================================================
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (!prefersReducedMotion) {
-    const revealElements = document.querySelectorAll(".reveal");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px",
-      }
-    );
-
-    revealElements.forEach((el) => observer.observe(el));
-  } else {
-    // If reduced motion preferred, show everything
-    document.querySelectorAll(".reveal").forEach((el) => {
-      el.classList.add("is-visible");
-    });
-  }
-
-  // ============================================================
-  // HEADER SHADOW ON SCROLL
-  // ============================================================
-  const header = document.getElementById("site-header");
-
-  if (header) {
-    const onScroll = () => {
-      if (window.scrollY > 8) {
-        header.style.boxShadow = "0 2px 12px rgba(15, 27, 45, 0.08)";
-      } else {
-        header.style.boxShadow = "0 1px 3px rgba(15, 27, 45, 0.04)";
-      }
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-  }
-</script>
