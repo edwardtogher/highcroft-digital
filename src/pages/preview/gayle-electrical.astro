@@ -1,94 +1,93 @@
 ---
 // ============================================================
-// Gayle Electrical Ltd — Preview Page
+// Gayle Electrical Ltd & Solar — Preview Page
 // Built by Highcroft Digital
-// Source: sites.google.com/view/gayleelectricalltd
+// Dark theme, red/warm orange accent (#d94535)
 // ============================================================
 
 const config = {
-  business_name: "Gayle Electrical Ltd",
+  business_name: "Gayle Electrical Ltd & Solar",
   phone: "+447341300781",
   phone_display: "07341 300 781",
   email: "info@gayle-electrical.co.uk",
   address: "Birmingham, West Midlands",
   town: "Birmingham",
-  areas_served: ["Birmingham", "Solihull", "West Bromwich", "Wolverhampton", "Dudley", "Sutton Coldfield"],
-  logo_url: "https://lh3.googleusercontent.com/sitesv/APaQ0SQlPQ3L9i1_HgvnUezUgc2fqArvWmdKdYQlVGW5LkLy1IQDyqg8dwe3KOUsVMBkvc3BuMuYMOEutg7GwO2896ShVtLX4tQw7jHAGF3MceZpTC1DRp8aIaTGJc-qR8xIeznEpRCGv4-OxBtkqGDyjMHm5_NwdHIbFTBo_MgJJewqis9VSk-sEdvPuWg",
-  logo_has_dark_bg: false,
-  logo_bg_color: "",
-  brand_color: "#c0392b",
-  brand_color_hover: "#a93226",
-  brand_color_soft: "#fdf0ef",
-  hero_title: "Trusted Electricians in Birmingham",
-  hero_subtitle: "NICEIC-approved electrical services for homes and businesses across Birmingham and the West Midlands. Rewires, EV chargers, solar PV, and 24/7 emergency call-outs.",
+  areas_served: ["Birmingham", "Solihull", "West Bromwich", "Wolverhampton", "Dudley", "Sutton Coldfield", "West Midlands"],
+  brand_color: "#d94535",
+  brand_color_hover: "#c23a2c",
+  brand_color_soft: "rgba(217, 69, 53, 0.12)",
+  hero_title: "Family Electricians You Can Trust",
+  hero_subtitle: "NICEIC-approved electrical services across Birmingham and the West Midlands. 35+ years combined experience in rewires, consumer units, solar PV, EV chargers, and 24/7 emergency call-outs.",
   certification: "NICEIC Approved Contractor",
   stats: [
-    { num: "35+", label: "Years Experience" },
-    { num: "24/7", label: "Emergency Cover" },
-    { num: "5.0", label: "Google Rating" },
-    { num: "100%", label: "NICEIC Certified" },
+    { num: "35+", label: "Years Combined Experience" },
+    { num: "24/7", label: "Emergency Availability" },
+    { num: "NICEIC", label: "Approved Contractor" },
+    { num: "5-Star", label: "Google Rated" },
   ],
   services: [
-    { title: "Fault Finding & Repairs", desc: "Fast diagnosis and repair of electrical faults, tripping circuits, and power failures in homes and commercial premises." },
-    { title: "Consumer Unit Upgrades", desc: "Modern fuse board replacements to keep your home safe and up to current regulations - with minimal disruption." },
-    { title: "Full & Partial Rewires", desc: "Complete house rewires and partial upgrades for older properties, carried out to the highest standard with full certification." },
-    { title: "EV Charger Installation", desc: "Home and workplace EV charging points installed by certified professionals - eligible for OZEV grant schemes." },
-    { title: "Solar PV & Battery Storage", desc: "Solar panel systems and battery storage to cut your energy bills and reduce your carbon footprint." },
-    { title: "EICR Reports", desc: "Electrical Installation Condition Reports for landlords, homeowners, and property buyers - fast turnaround, fully certified." },
+    { title: "Emergency Call-Outs", desc: "24/7 emergency fault finding and repairs. Power cuts, tripping circuits, burning smells - we'll be there fast.", icon: "bolt" },
+    { title: "Consumer Unit Upgrades", desc: "Fuse board replacements to modern standards. Keep your home safe and compliant with current regulations.", icon: "shield" },
+    { title: "Full & Partial Rewires", desc: "Domestic, commercial, and industrial rewires carried out to the highest standard with full certification.", icon: "wrench" },
+    { title: "EICR Reports", desc: "Electrical safety certificates for landlords and homeowners. Fast turnaround, fully certified.", icon: "doc" },
+    { title: "Solar PV & Battery Storage", desc: "Renewable energy installations to cut your bills and reduce your carbon footprint. Future-proof your home.", icon: "sun" },
+    { title: "EV Charger Installation", desc: "Home and commercial charging points installed by certified professionals. Ready for the electric future.", icon: "ev" },
   ],
   process: [
-    { step: "1", title: "Call or Message", desc: "Free, no-obligation chat about your job" },
-    { step: "2", title: "Site Visit", desc: "We assess the work needed - no guesswork" },
-    { step: "3", title: "Fixed Quote", desc: "Clear, honest pricing with no hidden costs" },
-    { step: "4", title: "Job Done", desc: "Certified work, cleaned up, fully guaranteed" },
+    { step: "1", title: "Get in Touch", desc: "Call or WhatsApp for a free quote" },
+    { step: "2", title: "Site Survey", desc: "We assess the job in person" },
+    { step: "3", title: "Clear Quote", desc: "Honest pricing, no hidden costs" },
+    { step: "4", title: "Job Done", desc: "Quality work, fully certified" },
   ],
   reviews: [
-    { name: "Sarah T.", location: "Birmingham", initials: "ST", text: "Responded very quickly when we had no electricity. Brilliant service - sorted the fault same day and very reasonably priced.", stars: 5 },
-    { name: "James M.", location: "Solihull", initials: "JM", text: "Professional, reliable and easy to deal with. Fitted our consumer unit upgrade with no fuss. Would highly recommend.", stars: 5 },
-    { name: "Michelle K.", location: "West Midlands", initials: "MK", text: "If you are looking for a professional, reliable electrician these guys are for you. Could not recommend them enough.", stars: 5 },
+    { name: "Marcus W.", location: "Solihull", initials: "MW", text: "Had a full rewire done and a new consumer unit fitted. The lads were tidy, professional, and explained everything. Fair price too.", stars: 5 },
+    { name: "Priya K.", location: "Erdington", initials: "PK", text: "Called at 10pm with a complete power cut. They were out within the hour and had it sorted. Lifesavers.", stars: 5 },
+    { name: "David H.", location: "Sutton Coldfield", initials: "DH", text: "Got solar panels and a battery installed. Saved a fortune on energy bills already. Wish I'd done it sooner.", stars: 5 },
   ],
   trust_signals: ["NICEIC Approved", "35+ Years Experience", "Fully Insured", "5-Star Google Reviews"],
   faqs: [
-    { q: "How quickly can you attend an emergency?", a: "We offer 24/7 emergency call-outs across Birmingham and the West Midlands. In most cases we can attend the same day - call us on 07341 300 781 and we'll get to you as fast as possible." },
-    { q: "Are you NICEIC approved?", a: "Yes. Gayle Electrical Ltd is a fully NICEIC-approved contractor. All our work is carried out to the latest wiring regulations (BS 7671) and you'll receive full certification on completion." },
-    { q: "Do you provide certificates for completed work?", a: "Absolutely. All notifiable work is certified and registered with the local authority. You'll receive an Electrical Installation Certificate or Minor Works Certificate as appropriate." },
-    { q: "What areas do you cover?", a: "We cover Birmingham and the wider West Midlands, including Solihull, West Bromwich, Wolverhampton, Dudley, and Sutton Coldfield. Not sure if we cover your area? Just give us a call." },
+    { q: "Do you offer emergency call-outs?", a: "Yes - we're available 24/7 for emergencies across Birmingham and the West Midlands." },
+    { q: "Are you NICEIC approved?", a: "Yes - we're fully NICEIC approved, insured, and all work comes with certification." },
+    { q: "Do you install solar panels?", a: "Yes - we install solar PV systems, battery storage, and EV chargers. We can advise on the best setup for your property." },
+    { q: "What areas do you cover?", a: "Birmingham and the wider West Midlands including Solihull, West Bromwich, Wolverhampton, Dudley, and Sutton Coldfield." },
   ],
   hours: "Mon-Fri 7am-8pm, Sat 8am-5pm, 24/7 Emergency",
   schema_type: "Electrician",
 };
 
-// Icon map — inline SVGs for zero external dependencies
+// Icon map -- inline SVGs for zero external dependencies
 const icons: Record<string, string> = {
-  wrench: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-  check: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
-  home: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
-  doc: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+  bolt: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
   shield: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  wrench: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  doc: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+  sun: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`,
+  ev: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="16" height="12" rx="2"/><line x1="20" y1="10" x2="22" y2="10"/><line x1="20" y1="14" x2="22" y2="14"/><line x1="10" y1="9" x2="8" y2="12"/><line x1="8" y1="12" x2="12" y2="12"/><line x1="12" y1="12" x2="10" y2="15"/></svg>`,
+  phone: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
+  check: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
   clock: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
   star: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
-  flame: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
-  bolt: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
-  phone: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
   starFill: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#e8a020" stroke="#e8a020" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
   plus: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
   minus: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
-  chevron: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`,
 };
 
-// Service icon cycling
-const serviceIcons = [icons.wrench, icons.flame, icons.bolt, icons.home];
+// Service icon map
+const serviceIconMap: Record<string, string> = {
+  bolt: icons.bolt,
+  shield: icons.shield,
+  wrench: icons.wrench,
+  doc: icons.doc,
+  sun: icons.sun,
+  ev: icons.ev,
+};
 
 // Trust signal icon map
 const trustIconMap: Record<string, string> = {
-  "Gas Safe": icons.flame,
+  "NICEIC": icons.bolt,
   "Insured": icons.shield,
   "Experience": icons.clock,
   "Google": icons.star,
-  "Registered": icons.check,
-  "NICEIC": icons.bolt,
-  "NAPIT": icons.bolt,
-  "Qualified": icons.check,
 };
 
 function getTrustIcon(signal: string): string {
@@ -108,8 +107,15 @@ function renderStars(count: number): string {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{config.business_name} - {config.hero_title}</title>
-  <meta name="description" content={`${config.hero_subtitle}. Call ${config.phone_display} for a free quote. Serving ${config.areas_served.join(", ")}.`} />
+  <title>{config.business_name} | Trusted Electricians in {config.town}</title>
+  <meta name="description" content={`${config.hero_subtitle} Call ${config.phone_display} for a free quote. Serving ${config.areas_served.join(", ")}.`} />
+
+  {/* OG Meta Tags */}
+  <meta property="og:title" content={`${config.business_name} | Trusted Electricians in ${config.town}`} />
+  <meta property="og:description" content={config.hero_subtitle} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_GB" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -123,10 +129,17 @@ function renderStars(count: number): string {
     "email": config.email,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": config.address,
+      "addressLocality": "Birmingham",
+      "addressRegion": "West Midlands",
+      "addressCountry": "GB",
     },
     "areaServed": config.areas_served.map(a => ({ "@type": "Place", "name": a })),
     "openingHours": config.hours,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "3",
+    },
   })} />
 
   {/* FAQPage JSON-LD */}
@@ -152,10 +165,10 @@ function renderStars(count: number): string {
   <header class="site-header" id="site-header">
     <nav class="header-inner">
       <div class="header-left">
-        <a href="#" class="logo-link">
-          <img src={config.logo_url} alt={`${config.business_name} logo`} class="logo-img" width="140" height="40" />
+        <a href="#" class="logo-text">
+          <span class="logo-gayle">GAYLE</span>
+          <span class="logo-electrical">ELECTRICAL</span>
         </a>
-        <span class="service-area-label">{config.town} & Surrounding Areas</span>
       </div>
       <div class="header-right">
         <a href={`tel:${config.phone}`} class="header-phone-link">
@@ -163,9 +176,9 @@ function renderStars(count: number): string {
           <span class="header-phone-number">{config.phone_display}</span>
         </a>
         <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </button>
       </div>
       <div class="nav-dropdown" id="nav-dropdown">
@@ -186,6 +199,8 @@ function renderStars(count: number): string {
     {/* HERO                                                         */}
     {/* ============================================================ */}
     <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-grid-lines"></div>
       <div class="container">
         <div class="hero-content">
           <span class="hero-badge">
@@ -199,7 +214,7 @@ function renderStars(count: number): string {
               <span set:html={icons.phone} />
               Call {config.phone_display}
             </a>
-            <p class="hero-microcopy">No call-out fee. Available {config.hours.split(",")[0].replace("Mon-Fri ", "")}.</p>
+            <p class="hero-microcopy">No call-out fee for quotes. Available 7 days a week.</p>
           </div>
         </div>
       </div>
@@ -244,12 +259,12 @@ function renderStars(count: number): string {
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">What We Do</h2>
-          <p class="section-subtitle">Professional services you can rely on in {config.town} and the surrounding area.</p>
+          <p class="section-subtitle">From emergency repairs to solar installations - traditional skills, modern technology.</p>
         </div>
         <div class="services-grid">
           {config.services.map((service, i) => (
-            <div class="service-card" style={`--delay: ${i * 0.1}s`}>
-              <div class="service-icon" set:html={serviceIcons[i % serviceIcons.length]} />
+            <div class="service-card" style={`--delay: ${i * 0.08}s`}>
+              <div class="service-icon" set:html={serviceIconMap[service.icon]} />
               <h3 class="service-title">{service.title}</h3>
               <p class="service-desc">{service.desc}</p>
             </div>
@@ -259,17 +274,46 @@ function renderStars(count: number): string {
     </section>
 
     {/* ============================================================ */}
-    {/* HOW IT WORKS — TIMELINE                                      */}
+    {/* FAMILY BUSINESS CALLOUT                                      */}
+    {/* ============================================================ */}
+    <section class="about reveal" id="about">
+      <div class="container">
+        <div class="about-card">
+          <div class="about-accent"></div>
+          <div class="about-content">
+            <h2 class="about-title">Family-Run. NICEIC Approved. 35+ Years.</h2>
+            <p class="about-text">We're a father-and-son team of electricians based in Birmingham. Between us, we've got over 35 years of hands-on experience in domestic, commercial, and industrial electrical work. We started with rewires and fuse boards - now we also install solar panels, battery storage, and EV chargers. Old school reliability meets new technology.</p>
+            <div class="about-certs">
+              <span class="about-cert">
+                <span set:html={icons.bolt} />
+                NICEIC Approved
+              </span>
+              <span class="about-cert">
+                <span set:html={icons.shield} />
+                Fully Insured
+              </span>
+              <span class="about-cert">
+                <span set:html={icons.clock} />
+                24/7 Emergency
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ============================================================ */}
+    {/* HOW IT WORKS -- TIMELINE                                     */}
     {/* ============================================================ */}
     <section class="process reveal" id="process">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">How It Works</h2>
-          <p class="section-subtitle">From first call to job done, we keep it simple.</p>
+          <p class="section-subtitle">From first call to job done - we keep it simple.</p>
         </div>
         <div class="timeline">
           {config.process.map((step, i) => (
-            <div class="timeline-step" style={`--delay: ${i * 0.15}s`}>
+            <div class="timeline-step" style={`--delay: ${i * 0.12}s`}>
               <div class="timeline-marker">
                 <span class="timeline-number">{step.step}</span>
               </div>
@@ -290,7 +334,7 @@ function renderStars(count: number): string {
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">What Our Customers Say</h2>
-          <p class="section-subtitle">Real reviews from real customers.</p>
+          <p class="section-subtitle">Real reviews from real customers across the West Midlands.</p>
         </div>
         <div class="reviews-grid">
           {config.reviews.map((review, i) => (
@@ -341,13 +385,17 @@ function renderStars(count: number): string {
     <section class="final-cta reveal">
       <div class="container">
         <div class="final-cta-card">
+          <div class="final-cta-glow"></div>
           <h2 class="final-cta-title">Ready to Get Started?</h2>
           <p class="final-cta-subtitle">Call now for a free, no-obligation quote. We aim to respond within 30 minutes.</p>
-          <a href={`tel:${config.phone}`} class="btn btn-primary btn-lg btn-white">
+          <a href={`tel:${config.phone}`} class="btn btn-primary btn-lg">
             <span set:html={icons.phone} />
             Call {config.phone_display}
           </a>
-          <p class="final-cta-areas">Serving {config.areas_served.join(", ")}</p>
+          <p class="final-cta-email">
+            Or email <a href={`mailto:${config.email}`}>{config.email}</a>
+          </p>
+          <p class="final-cta-areas">Serving {config.areas_served.join(" / ")}</p>
         </div>
       </div>
     </section>
@@ -362,7 +410,7 @@ function renderStars(count: number): string {
       <div class="footer-grid">
         <div class="footer-col">
           <h4 class="footer-heading">{config.business_name}</h4>
-          <p class="footer-text">{config.hero_subtitle}</p>
+          <p class="footer-text">Family-run, NICEIC-approved electricians in Birmingham. Domestic, commercial, and industrial - plus solar PV, battery storage, and EV chargers.</p>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Contact</h4>
@@ -379,13 +427,13 @@ function renderStars(count: number): string {
       </div>
       <div class="footer-bottom">
         <p>&copy; {new Date().getFullYear()} {config.business_name}. All rights reserved.</p>
-        <p class="footer-credit">Website by <a href="https://highcroftdigital.co.uk" target="_blank" rel="noopener">Highcroft Digital</a></p>
+        <p class="footer-credit">Website by <a href="https://highcroftdigital.com" target="_blank" rel="noopener">Highcroft Digital</a></p>
       </div>
     </div>
   </footer>
 
   {/* ============================================================ */}
-  {/* FLOATING PHONE BUTTON — mobile only                          */}
+  {/* FLOATING PHONE BUTTON -- mobile only                         */}
   {/* ============================================================ */}
   <a href={`tel:${config.phone}`} class="floating-phone" aria-label={`Call ${config.business_name}`}>
     <span set:html={icons.phone} />
@@ -394,14 +442,7 @@ function renderStars(count: number): string {
 </body>
 </html>
 
-<style define:vars={{
-  brandColor: config.brand_color,
-  brandColorHover: config.brand_color_hover,
-  brandColorSoft: config.brand_color_soft,
-  navBg: config.logo_has_dark_bg ? config.logo_bg_color : '#fcfcfd',
-  navText: config.logo_has_dark_bg ? '#e2e8f0' : '#1a2536',
-  navBorder: config.logo_has_dark_bg ? 'rgba(255,255,255,0.1)' : '#e4e9ef',
-}}>
+<style>
   /* ============================================================
      RESET & BASE
      ============================================================ */
@@ -420,8 +461,8 @@ function renderStars(count: number): string {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    color: #1a2332;
-    background: #f8f9fb;
+    color: #c8cdd5;
+    background: #111318;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -464,9 +505,10 @@ function renderStars(count: number): string {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: var(--navBg);
-    border-bottom: 1px solid var(--navBorder);
-    box-shadow: 0 1px 3px rgba(15, 27, 45, 0.04);
+    background: rgba(17, 19, 24, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .header-inner {
@@ -494,35 +536,33 @@ function renderStars(count: number): string {
     gap: 16px;
   }
 
-  .logo-link {
+  /* Text logo */
+  .logo-text {
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    gap: 8px;
+    text-decoration: none;
+    line-height: 1;
   }
 
-  .logo-img {
-    height: 36px;
-    width: auto;
-    object-fit: contain;
+  .logo-gayle {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #d94535;
+    letter-spacing: 0.04em;
+  }
+
+  .logo-electrical {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #e8ecf2;
+    letter-spacing: 0.04em;
   }
 
   @media (min-width: 768px) {
-    .logo-img {
-      height: 40px;
-    }
-  }
-
-  .service-area-label {
-    display: none;
-    font-size: 0.8rem;
-    color: var(--navText);
-    font-weight: 500;
-    border-left: 1px solid var(--navBorder);
-    padding-left: 16px;
-  }
-
-  @media (min-width: 900px) {
-    .service-area-label {
-      display: block;
+    .logo-gayle,
+    .logo-electrical {
+      font-size: 1.35rem;
     }
   }
 
@@ -538,13 +578,13 @@ function renderStars(count: number): string {
     gap: 8px;
     font-weight: 700;
     font-size: 0.95rem;
-    color: var(--brandColor);
+    color: #d94535;
     transition: color 0.2s;
     padding: 8px 0;
   }
 
   .header-phone-link:hover {
-    color: var(--brandColorHover);
+    color: #ef5a4a;
   }
 
   .header-phone-icon {
@@ -587,24 +627,24 @@ function renderStars(count: number): string {
     }
   }
 
-  .nav-toggle-bar {
+  .bar {
     display: block;
     width: 22px;
     height: 2px;
-    background: var(--navText);
+    background: #e8ecf2;
     border-radius: 2px;
     transition: transform 0.25s, opacity 0.25s;
   }
 
-  .nav-toggle.is-active .nav-toggle-bar:nth-child(1) {
+  .nav-toggle.is-active .bar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
 
-  .nav-toggle.is-active .nav-toggle-bar:nth-child(2) {
+  .nav-toggle.is-active .bar:nth-child(2) {
     opacity: 0;
   }
 
-  .nav-toggle.is-active .nav-toggle-bar:nth-child(3) {
+  .nav-toggle.is-active .bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
 
@@ -615,9 +655,9 @@ function renderStars(count: number): string {
     top: 100%;
     left: 0;
     right: 0;
-    background: #fff;
-    border-top: 1px solid #e8ecf1;
-    box-shadow: 0 8px 24px rgba(15, 27, 45, 0.1);
+    background: #1a1d24;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     z-index: 200;
     flex-direction: column;
     padding: 8px 0;
@@ -637,12 +677,12 @@ function renderStars(count: number): string {
     padding: 14px 24px;
     font-weight: 500;
     font-size: 1rem;
-    color: #1a2332;
+    color: #c8cdd5;
     transition: background 0.15s;
   }
 
   .nav-dropdown-link:hover {
-    background: #f4f6f8;
+    background: rgba(255, 255, 255, 0.04);
   }
 
   .nav-dropdown-cta {
@@ -651,7 +691,7 @@ function renderStars(count: number): string {
     gap: 8px;
     margin: 8px 16px;
     padding: 14px 20px;
-    background: var(--brandColor);
+    background: #d94535;
     color: #fff;
     border-radius: 10px;
     font-weight: 700;
@@ -661,7 +701,7 @@ function renderStars(count: number): string {
   }
 
   .nav-dropdown-cta:hover {
-    background: var(--brandColorHover);
+    background: #c23a2c;
   }
 
   .nav-dropdown-cta svg {
@@ -673,23 +713,29 @@ function renderStars(count: number): string {
      HERO
      ============================================================ */
   .hero {
-    background: #0f1b2d;
+    background: #111318;
     padding: 80px 0 64px;
     position: relative;
     overflow: hidden;
   }
 
-  .hero::before {
-    content: "";
+  .hero-glow {
     position: absolute;
-    top: -30%;
-    right: -20%;
-    width: 500px;
-    height: 500px;
-    background: var(--brandColor);
-    opacity: 0.06;
-    border-radius: 50%;
-    filter: blur(80px);
+    top: -20%;
+    right: -15%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(217, 69, 53, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
     pointer-events: none;
   }
 
@@ -700,7 +746,7 @@ function renderStars(count: number): string {
   }
 
   .hero-content {
-    max-width: 640px;
+    max-width: 660px;
     text-align: center;
     margin: 0 auto;
     position: relative;
@@ -711,9 +757,9 @@ function renderStars(count: number): string {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #b0c4de;
+    background: rgba(217, 69, 53, 0.1);
+    border: 1px solid rgba(217, 69, 53, 0.25);
+    color: #d94535;
     font-size: 0.8rem;
     font-weight: 600;
     padding: 6px 14px;
@@ -730,24 +776,24 @@ function renderStars(count: number): string {
   .hero-badge-icon svg {
     width: 14px;
     height: 14px;
-    stroke: var(--brandColor);
+    stroke: #d94535;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 7vw, 3rem);
+    font-size: clamp(2.2rem, 7vw, 3.2rem);
     font-weight: 800;
-    color: #fff;
-    line-height: 1.15;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
+    color: #f0f2f5;
+    line-height: 1.12;
+    margin-bottom: 18px;
+    letter-spacing: -0.025em;
   }
 
   .hero-subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: #8fa3bf;
-    line-height: 1.6;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: #8a919e;
+    line-height: 1.65;
     margin-bottom: 32px;
-    max-width: 520px;
+    max-width: 540px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -761,7 +807,7 @@ function renderStars(count: number): string {
 
   .hero-microcopy {
     font-size: 0.85rem;
-    color: #6b829e;
+    color: #5e6570;
   }
 
   /* ============================================================
@@ -794,14 +840,14 @@ function renderStars(count: number): string {
   }
 
   .btn-primary {
-    background: var(--brandColor);
+    background: #d94535;
     color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 12px rgba(217, 69, 53, 0.3);
   }
 
   .btn-primary:hover {
-    background: var(--brandColorHover);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    background: #ef5a4a;
+    box-shadow: 0 4px 20px rgba(217, 69, 53, 0.4);
   }
 
   .btn-lg {
@@ -810,22 +856,13 @@ function renderStars(count: number): string {
     min-height: 56px;
   }
 
-  .btn-white {
-    background: #fff;
-    color: var(--brandColor);
-  }
-
-  .btn-white:hover {
-    background: #f0f4f8;
-    color: var(--brandColorHover);
-  }
-
   /* ============================================================
      TRUST STRIP
      ============================================================ */
   .trust-strip {
-    background: var(--brandColorSoft);
-    border-bottom: 1px solid #dae4ef;
+    background: #161920;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     padding: 16px 0;
   }
 
@@ -852,7 +889,7 @@ function renderStars(count: number): string {
   .trust-item-icon {
     display: flex;
     align-items: center;
-    color: #16a36c;
+    color: #d94535;
   }
 
   .trust-item-icon svg {
@@ -863,7 +900,7 @@ function renderStars(count: number): string {
   .trust-item-label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #1a2332;
+    color: #c8cdd5;
     white-space: nowrap;
   }
 
@@ -872,7 +909,7 @@ function renderStars(count: number): string {
      ============================================================ */
   .stats {
     padding: 48px 0;
-    background: #fff;
+    background: #111318;
   }
 
   @media (min-width: 768px) {
@@ -896,24 +933,27 @@ function renderStars(count: number): string {
 
   .stat-item {
     text-align: center;
-    padding: 16px 8px;
+    padding: 20px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.02);
   }
 
   .stat-num {
     display: block;
-    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    font-size: clamp(1.6rem, 4.5vw, 2.2rem);
     font-weight: 800;
-    color: var(--brandColor);
+    color: #d94535;
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
 
   .stat-label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 500;
-    color: #5a6a7e;
-    margin-top: 4px;
+    color: #7a8190;
+    margin-top: 6px;
   }
 
   /* ============================================================
@@ -933,15 +973,15 @@ function renderStars(count: number): string {
   .section-title {
     font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 800;
-    color: #0f1b2d;
+    color: #f0f2f5;
     letter-spacing: -0.02em;
     margin-bottom: 10px;
   }
 
   .section-subtitle {
     font-size: 1rem;
-    color: #5a6a7e;
-    max-width: 520px;
+    color: #7a8190;
+    max-width: 540px;
     margin: 0 auto;
   }
 
@@ -950,7 +990,7 @@ function renderStars(count: number): string {
      ============================================================ */
   .services {
     padding: 64px 0;
-    background: #f8f9fb;
+    background: #161920;
   }
 
   @media (min-width: 768px) {
@@ -972,28 +1012,35 @@ function renderStars(count: number): string {
     }
   }
 
+  @media (min-width: 900px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
   .service-card {
-    background: #fff;
-    border: 1px solid #e8ecf1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 14px;
     padding: 28px 24px;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
   }
 
   .service-card:hover {
-    border-color: var(--brandColor);
-    box-shadow: 0 4px 20px rgba(15, 27, 45, 0.06);
+    border-color: rgba(217, 69, 53, 0.4);
+    box-shadow: 0 4px 24px rgba(217, 69, 53, 0.08);
+    transform: translateY(-2px);
   }
 
   .service-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: var(--brandColorSoft);
-    border-radius: 10px;
-    color: var(--brandColor);
+    width: 48px;
+    height: 48px;
+    background: rgba(217, 69, 53, 0.1);
+    border-radius: 12px;
+    color: #d94535;
     margin-bottom: 16px;
   }
 
@@ -1005,14 +1052,98 @@ function renderStars(count: number): string {
   .service-title {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #0f1b2d;
+    color: #e8ecf2;
     margin-bottom: 6px;
   }
 
   .service-desc {
     font-size: 0.92rem;
-    color: #5a6a7e;
-    line-height: 1.55;
+    color: #7a8190;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     ABOUT / FAMILY BUSINESS
+     ============================================================ */
+  .about {
+    padding: 64px 0;
+    background: #111318;
+  }
+
+  @media (min-width: 768px) {
+    .about {
+      padding: 80px 0;
+    }
+  }
+
+  .about-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 40px 28px;
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .about-card {
+      padding: 56px 48px;
+    }
+  }
+
+  .about-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #d94535, rgba(217, 69, 53, 0.2));
+    border-radius: 4px 0 0 4px;
+  }
+
+  .about-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-title {
+    font-size: clamp(1.3rem, 3.5vw, 1.75rem);
+    font-weight: 800;
+    color: #f0f2f5;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    color: #8a919e;
+    line-height: 1.7;
+    max-width: 680px;
+    margin-bottom: 24px;
+  }
+
+  .about-certs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .about-cert {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #d94535;
+    background: rgba(217, 69, 53, 0.08);
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(217, 69, 53, 0.15);
+  }
+
+  .about-cert svg {
+    width: 16px;
+    height: 16px;
   }
 
   /* ============================================================
@@ -1020,7 +1151,7 @@ function renderStars(count: number): string {
      ============================================================ */
   .process {
     padding: 64px 0;
-    background: #fff;
+    background: #161920;
   }
 
   @media (min-width: 768px) {
@@ -1045,7 +1176,7 @@ function renderStars(count: number): string {
     top: 24px;
     bottom: 24px;
     width: 2px;
-    background: #dde2e9;
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .timeline-step {
@@ -1061,13 +1192,14 @@ function renderStars(count: number): string {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--brandColor);
+    background: #d94535;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     z-index: 2;
     margin-left: -28px;
+    box-shadow: 0 0 0 4px #161920, 0 0 12px rgba(217, 69, 53, 0.3);
   }
 
   .timeline-number {
@@ -1083,13 +1215,13 @@ function renderStars(count: number): string {
   .timeline-title {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #0f1b2d;
+    color: #e8ecf2;
     margin-bottom: 2px;
   }
 
   .timeline-desc {
     font-size: 0.92rem;
-    color: #5a6a7e;
+    color: #7a8190;
   }
 
   /* Desktop: horizontal timeline */
@@ -1120,6 +1252,7 @@ function renderStars(count: number): string {
 
     .timeline-marker {
       margin-left: 0;
+      box-shadow: 0 0 0 4px #161920, 0 0 12px rgba(217, 69, 53, 0.3);
     }
 
     .timeline-content {
@@ -1132,21 +1265,13 @@ function renderStars(count: number): string {
      ============================================================ */
   .reviews {
     padding: 64px 0;
-    background: #0f1b2d;
+    background: #111318;
   }
 
   @media (min-width: 768px) {
     .reviews {
       padding: 80px 0;
     }
-  }
-
-  .reviews .section-title {
-    color: #fff;
-  }
-
-  .reviews .section-subtitle {
-    color: #7a90a8;
   }
 
   .reviews-grid {
@@ -1168,8 +1293,8 @@ function renderStars(count: number): string {
   }
 
   .review-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 14px;
     padding: 28px 24px;
   }
@@ -1182,7 +1307,7 @@ function renderStars(count: number): string {
 
   .review-text {
     font-size: 0.95rem;
-    color: #c5d3e3;
+    color: #b0b7c3;
     line-height: 1.65;
     margin-bottom: 20px;
     font-style: normal;
@@ -1198,7 +1323,7 @@ function renderStars(count: number): string {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--brandColor);
+    background: #d94535;
     color: #fff;
     display: flex;
     align-items: center;
@@ -1217,12 +1342,12 @@ function renderStars(count: number): string {
   .review-name {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #e0e8f0;
+    color: #e0e4ea;
   }
 
   .review-location {
     font-size: 0.8rem;
-    color: #6b829e;
+    color: #5e6570;
   }
 
   /* ============================================================
@@ -1230,7 +1355,7 @@ function renderStars(count: number): string {
      ============================================================ */
   .faq {
     padding: 64px 0;
-    background: #f8f9fb;
+    background: #161920;
   }
 
   @media (min-width: 768px) {
@@ -1248,15 +1373,15 @@ function renderStars(count: number): string {
   }
 
   .faq-item {
-    background: #fff;
-    border: 1px solid #e8ecf1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 12px;
     overflow: hidden;
     transition: border-color 0.2s;
   }
 
   .faq-item[open] {
-    border-color: var(--brandColor);
+    border-color: rgba(217, 69, 53, 0.4);
   }
 
   .faq-question {
@@ -1267,7 +1392,7 @@ function renderStars(count: number): string {
     padding: 18px 20px;
     font-weight: 600;
     font-size: 1rem;
-    color: #0f1b2d;
+    color: #e0e4ea;
     cursor: pointer;
     list-style: none;
     user-select: none;
@@ -1284,7 +1409,7 @@ function renderStars(count: number): string {
 
   .faq-icon {
     flex-shrink: 0;
-    color: #8fa3bf;
+    color: #5e6570;
     display: flex;
     align-items: center;
   }
@@ -1299,12 +1424,13 @@ function renderStars(count: number): string {
 
   .faq-item[open] .faq-icon-minus {
     display: flex;
+    color: #d94535;
   }
 
   .faq-answer {
     padding: 0 20px 20px;
     font-size: 0.95rem;
-    color: #5a6a7e;
+    color: #8a919e;
     line-height: 1.65;
   }
 
@@ -1313,7 +1439,7 @@ function renderStars(count: number): string {
      ============================================================ */
   .final-cta {
     padding: 64px 0;
-    background: #fff;
+    background: #111318;
   }
 
   @media (min-width: 768px) {
@@ -1323,7 +1449,8 @@ function renderStars(count: number): string {
   }
 
   .final-cta-card {
-    background: #0f1b2d;
+    background: linear-gradient(135deg, #1a1d24 0%, #1f1215 100%);
+    border: 1px solid rgba(217, 69, 53, 0.2);
     border-radius: 20px;
     padding: 48px 24px;
     text-align: center;
@@ -1337,24 +1464,21 @@ function renderStars(count: number): string {
     }
   }
 
-  .final-cta-card::before {
-    content: "";
+  .final-cta-glow {
     position: absolute;
-    bottom: -40%;
-    left: -10%;
-    width: 400px;
+    bottom: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
     height: 400px;
-    background: var(--brandColor);
-    opacity: 0.08;
-    border-radius: 50%;
-    filter: blur(60px);
+    background: radial-gradient(circle, rgba(217, 69, 53, 0.12) 0%, transparent 70%);
     pointer-events: none;
   }
 
   .final-cta-title {
     font-size: clamp(1.5rem, 5vw, 2.2rem);
     font-weight: 800;
-    color: #fff;
+    color: #f0f2f5;
     margin-bottom: 12px;
     letter-spacing: -0.02em;
     position: relative;
@@ -1363,7 +1487,7 @@ function renderStars(count: number): string {
 
   .final-cta-subtitle {
     font-size: 1rem;
-    color: #8fa3bf;
+    color: #8a919e;
     margin-bottom: 28px;
     max-width: 440px;
     margin-left: auto;
@@ -1377,10 +1501,28 @@ function renderStars(count: number): string {
     z-index: 1;
   }
 
+  .final-cta-email {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: #7a8190;
+    position: relative;
+    z-index: 1;
+  }
+
+  .final-cta-email a {
+    color: #d94535;
+    font-weight: 600;
+    transition: color 0.15s;
+  }
+
+  .final-cta-email a:hover {
+    color: #ef5a4a;
+  }
+
   .final-cta-areas {
-    margin-top: 20px;
-    font-size: 0.85rem;
-    color: #6b829e;
+    margin-top: 16px;
+    font-size: 0.82rem;
+    color: #5e6570;
     position: relative;
     z-index: 1;
   }
@@ -1389,9 +1531,10 @@ function renderStars(count: number): string {
      FOOTER
      ============================================================ */
   .site-footer {
-    background: #0a1220;
-    color: #8fa3bf;
+    background: #0c0e12;
+    color: #7a8190;
     padding: 48px 0 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
   }
 
   @media (min-width: 768px) {
@@ -1416,7 +1559,7 @@ function renderStars(count: number): string {
   .footer-heading {
     font-size: 0.95rem;
     font-weight: 700;
-    color: #e0e8f0;
+    color: #e0e4ea;
     margin-bottom: 12px;
   }
 
@@ -1435,7 +1578,7 @@ function renderStars(count: number): string {
   }
 
   .footer-list a:hover {
-    color: #fff;
+    color: #d94535;
   }
 
   .footer-bottom {
@@ -1456,13 +1599,13 @@ function renderStars(count: number): string {
   }
 
   .footer-credit a {
-    color: var(--brandColor);
+    color: #d94535;
     font-weight: 600;
     transition: color 0.15s;
   }
 
   .footer-credit a:hover {
-    color: #fff;
+    color: #ef5a4a;
   }
 
   /* ============================================================
@@ -1478,15 +1621,15 @@ function renderStars(count: number): string {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: var(--brandColor);
+    background: #d94535;
     color: #fff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22), 0 0 0 4px rgba(38, 129, 196, 0.15);
+    box-shadow: 0 4px 20px rgba(217, 69, 53, 0.4), 0 0 0 4px rgba(217, 69, 53, 0.15);
     z-index: 90;
     transition: background 0.2s, transform 0.15s;
   }
 
   .floating-phone:hover {
-    background: var(--brandColorHover);
+    background: #ef5a4a;
   }
 
   .floating-phone:active {
@@ -1556,6 +1699,10 @@ function renderStars(count: number): string {
       animation: none;
       opacity: 1;
     }
+
+    .service-card:hover {
+      transform: none;
+    }
   }
 </style>
 
@@ -1594,7 +1741,7 @@ function renderStars(count: number): string {
   }
 
   // ============================================================
-  // SCROLL REVEAL — IntersectionObserver
+  // SCROLL REVEAL -- IntersectionObserver
   // ============================================================
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -1632,9 +1779,9 @@ function renderStars(count: number): string {
   if (header) {
     const onScroll = () => {
       if (window.scrollY > 8) {
-        header.style.boxShadow = "0 2px 12px rgba(15, 27, 45, 0.08)";
+        header.style.boxShadow = "0 2px 16px rgba(0, 0, 0, 0.3)";
       } else {
-        header.style.boxShadow = "0 1px 3px rgba(15, 27, 45, 0.04)";
+        header.style.boxShadow = "none";
       }
     };
 
