@@ -1,61 +1,106 @@
 ---
 // ============================================================
-// SP Local Plumbing Services — Bristol
-// Built by Highcroft Digital
+// TRADE WEBSITE TEMPLATE — Highcroft Digital
+// ============================================================
+// Standalone single-page template. All config at top.
+// Duplicate this file and fill in the config for each client.
 // ============================================================
 
 const config = {
-  business_name: "SP Local Plumbing Services",
-  phone: "+447833673116",
-  phone_display: "07833 673116",
+  business_name: "A. S. I. Plumbing & Heating",
+  phone: "+447771655543",
+  phone_display: "07771 655543",
   email: "",
-  address: "Bristol",
-  town: "Bristol",
-  areas_served: ["Bristol", "Bath", "South Gloucestershire"],
+  address: "Liverpool, L13 6RR",
+  town: "Liverpool",
+  areas_served: ["Liverpool", "Wavertree", "West Derby", "Knotty Ash", "Prescot", "Huyton"],
   logo_url: "",
   logo_has_dark_bg: false,
   logo_bg_color: "",
-  brand_color: "#1a6fb5",
-  brand_color_hover: "#145a96",
-  brand_color_soft: "#e8f2fb",
-  hero_title: "Bathroom Installations & Plumbing in Bristol",
-  hero_subtitle: "Full bathroom refurbishments and plumbing services across Bristol and Bath. Fixed labour pricing, no hidden costs, free quote.",
-  certification: "Bathroom Refurb Specialists",
+  brand_color: "#1a5fa8",
+  brand_color_hover: "#154d8a",
+  brand_color_soft: "#e8f0fb",
+  hero_title: "Trusted Plumber & Heating Engineer in Liverpool",
+  hero_subtitle: "Boiler repairs, central heating, bathrooms and emergency plumbing across Liverpool and surrounding areas.",
+  certification: "Gas Safe Registered",
   stats: [
-    { num: "20+", label: "5-Star Reviews" },
-    { num: "100%", label: "Fixed Pricing" },
-    { num: "Free", label: "Quote & Advice" },
-    { num: "5.0", label: "Google Rating" },
+    { num: "10+", label: "Years Experience" },
+    { num: "24/7", label: "Emergency Cover" },
+    { num: "1hr", label: "Response Time" },
+    { num: "5.0", label: "Customer Rating" },
   ],
   services: [
-    { title: "Full Bathroom Installations", desc: "Complete bathroom transformations from concept to completion - design, plumbing, tiling and electrics all handled." },
-    { title: "Bathroom Refurbishment", desc: "Refresh your existing bathroom with a full refurb. We replace everything to a high standard, on time and within budget." },
-    { title: "En-Suite Installation", desc: "Create the en-suite you have always wanted. We design and install to suit your space and style." },
-    { title: "General Plumbing", desc: "All general plumbing work covered across Bristol and Bath. Fast response, clean work, fixed pricing." },
+    {
+      title: "Boiler Repair & Servicing",
+      desc: "Fast diagnosis and repair of all boiler makes and models. Annual servicing to keep your boiler running safely and efficiently.",
+    },
+    {
+      title: "Central Heating",
+      desc: "Full system installs, power flushes, radiator replacements and thermostat upgrades to keep your home warm all winter.",
+    },
+    {
+      title: "Bathroom Installation",
+      desc: "Complete bathroom fit-outs from full re-models to single fixture swaps. Tidy, reliable work with minimal disruption.",
+    },
+    {
+      title: "Emergency Plumbing",
+      desc: "Burst pipes, leaks, blocked drains and no hot water - we attend fast and fix the problem properly, first time.",
+    },
   ],
   process: [
-    { step: "1", title: "Free Quote", desc: "Call or message for a no-obligation quote - we'll come to you." },
-    { step: "2", title: "Design", desc: "We help you plan your ideal bathroom with tailored design advice." },
-    { step: "3", title: "Fixed Price", desc: "You get a fixed labour price upfront - no surprises." },
-    { step: "4", title: "Completed", desc: "We complete the work to a high standard, on time and tidy." },
+    { step: "1", title: "Call Ste", desc: "Free, no-obligation chat about your job" },
+    { step: "2", title: "We Visit", desc: "Quick site assessment at a time that suits you" },
+    { step: "3", title: "Fixed Quote", desc: "Clear price upfront, no hidden extras" },
+    { step: "4", title: "Job Done", desc: "Clean, guaranteed work every time" },
   ],
   reviews: [
-    { name: "Joy", location: "Bristol", initials: "JO", text: "Sid has done an amazing job with my bathroom renovation. Very professional, friendly and extremely helpful.", stars: 5 },
-    { name: "Chris", location: "Bristol", initials: "CH", text: "After being messed around by a few plumbers, Sid was a breath of fresh air. Quick to respond and did the job properly.", stars: 5 },
-    { name: "Lisa", location: "Bristol", initials: "LI", text: "Sid is a reliable bathroom fitter, no fuss. Arrives as arranged and completes agreed work to agreed price.", stars: 5 },
-    { name: "Nicola", location: "Bristol", initials: "NI", text: "Really pleased with the job and completed on time. Sid went above and beyond to make sure everything was perfect.", stars: 5 },
-    { name: "David", location: "Bristol", initials: "DA", text: "Excellent work. Carried out quickly and to a very high standard. Very professional.", stars: 5 },
-    { name: "Sarah", location: "Bristol", initials: "SA", text: "Sid is an honest and reliable plumber. His work is professional and the fixed pricing means no nasty surprises.", stars: 5 },
+    {
+      name: "Karen M.",
+      location: "Wavertree, Liverpool",
+      initials: "KM",
+      text: "Boiler packed in on a Friday night and Ste was out first thing Saturday morning. Fixed within the hour, brilliant service.",
+      stars: 5,
+    },
+    {
+      name: "Tony B.",
+      location: "West Derby, Liverpool",
+      initials: "TB",
+      text: "Had a full bathroom ripped out and refitted. Spotless job, fair price and finished ahead of schedule. Would highly recommend.",
+      stars: 5,
+    },
+    {
+      name: "Sarah L.",
+      location: "Knotty Ash, Liverpool",
+      initials: "SL",
+      text: "Discovered a burst pipe on a Sunday and panicked. Ste arrived within the hour, sorted it quickly and was very reasonably priced.",
+      stars: 5,
+    },
   ],
-  trust_signals: ["Bathroom Refurb Specialists", "Fixed Labour Pricing", "20+ 5-Star Google Reviews", "Free Quote"],
+  trust_signals: [
+    "Gas Safe Registered",
+    "10+ Years Experience",
+    "Public Liability Insured",
+    "5-Star Rated",
+  ],
   faqs: [
-    { q: "Do you offer a free quote?", a: "Yes, all quotes are completely free and no-obligation. Just call or message and we will come to assess the job." },
-    { q: "How much does a bathroom installation cost?", a: "We use fixed labour pricing so you always know what you will pay before we start. Call for a free quote tailored to your bathroom." },
-    { q: "What areas do you cover?", a: "We cover Bristol, Bath and the surrounding South Gloucestershire area. Call to confirm your location." },
-    { q: "How long does a full bathroom installation take?", a: "Most full bathroom installations take between 5 and 10 working days depending on the complexity of the job. We will give you a clear timeline before we start." },
-    { q: "Do you handle tiling and electrics too?", a: "Yes, we handle the full project from start to finish including plumbing, tiling and any electrical work required." },
+    {
+      q: "How quickly can you attend an emergency?",
+      a: "We aim to attend emergency callouts within 60 minutes across Liverpool and the surrounding areas. Call us any time - we cover evenings and weekends.",
+    },
+    {
+      q: "Are you Gas Safe registered?",
+      a: "Yes. All gas work is carried out by a fully qualified, Gas Safe registered engineer. We can provide our registration number on request.",
+    },
+    {
+      q: "Do you charge a call-out fee?",
+      a: "No call-out fee for most jobs. We assess the work and give you a fixed quote before any work begins - no surprises on the bill.",
+    },
+    {
+      q: "What areas do you cover?",
+      a: "We cover Liverpool and the surrounding areas including Wavertree, West Derby, Knotty Ash, Prescot and Huyton. Not sure if we cover your area? Just give us a call.",
+    },
   ],
-  hours: "Mon-Fri 8am-6pm, Sat 9am-4pm",
+  hours: "Mon-Sat 7am-8pm, Emergency 24/7",
   schema_type: "Plumber",
 };
 
@@ -154,7 +199,10 @@ function renderStars(count: number): string {
     <nav class="header-inner">
       <div class="header-left">
         <a href="#" class="logo-link">
-          <img src={config.logo_url} alt={`${config.business_name} logo`} class="logo-img" width="140" height="40" />
+          {config.logo_url
+            ? <img src={config.logo_url} alt={`${config.business_name} logo`} class="logo-img" width="140" height="40" />
+            : <span class="logo-text">{config.business_name}</span>
+          }
         </a>
         <span class="service-area-label">{config.town} & Surrounding Areas</span>
       </div>
@@ -369,7 +417,7 @@ function renderStars(count: number): string {
           <h4 class="footer-heading">Contact</h4>
           <ul class="footer-list">
             <li><a href={`tel:${config.phone}`}>{config.phone_display}</a></li>
-            <li><a href={`mailto:${config.email}`}>{config.email}</a></li>
+            {config.email && <li><a href={`mailto:${config.email}`}>{config.email}</a></li>}
             <li>{config.address}</li>
           </ul>
         </div>
@@ -509,6 +557,20 @@ function renderStars(count: number): string {
   @media (min-width: 768px) {
     .logo-img {
       height: 40px;
+    }
+  }
+
+  .logo-text {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--brandColor);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 480px) {
+    .logo-text {
+      font-size: 1.1rem;
     }
   }
 

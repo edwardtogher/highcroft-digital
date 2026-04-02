@@ -1,1125 +1,1642 @@
 ---
-// RD Electrical (SW) — Preview Page
-// Built by Highcroft Digital
+// ============================================================
+// TRADE WEBSITE TEMPLATE — Highcroft Digital
+// ============================================================
+// Standalone single-page template. All config at top.
+// Duplicate this file and fill in the config for each client.
+// ============================================================
+
+const config = {
+  business_name: "RD Electrical (SW)",
+  phone: "+447881296989",
+  phone_display: "07881 296989",
+  email: "info@rdelectricalsw.co.uk",
+  address: "Highridge Rd, Bristol, BS13 8HJ",
+  town: "Bristol",
+  areas_served: ["Bristol", "Clevedon", "Nailsea", "Weston-super-Mare", "Backwell"],
+  logo_url: "https://rdelectricalsw.co.uk/wp-content/uploads/2022/10/rdelectricalsw-logo-2-1.png",
+  logo_has_dark_bg: false,
+  logo_bg_color: "",
+  brand_color: "#0075bf",
+  brand_color_hover: "#004c9c",
+  brand_color_soft: "#e6f3fb",
+  hero_title: "Trusted Electrician in Bristol",
+  hero_subtitle: "NICEIC-registered, City & Guilds qualified electrician serving Bristol and the surrounding area. From consumer units to full rewires - done right, first time.",
+  certification: "NICEIC Registered",
+  stats: [
+    { num: "15+", label: "Years Experience" },
+    { num: "60+", label: "5-Star Reviews" },
+    { num: "24/7", label: "Emergency Cover" },
+    { num: "£2M", label: "Public Liability" },
+  ],
+  services: [
+    { title: "Consumer Unit Upgrades", desc: "Bring your fuse board up to current safety standards - protecting your home and meeting insurance requirements." },
+    { title: "Full & Partial Rewires", desc: "Complete or partial rewires for older properties, extensions, and renovations - all certified to BS7671." },
+    { title: "Lighting & Power", desc: "Additional sockets, downlights, LED strip, exterior and decking lighting, and specialist feature lighting." },
+    { title: "Inspection & Testing", desc: "EICR landlord certificates, fault finding, and safety checks - fast turnaround with full documentation." },
+  ],
+  process: [
+    { step: "1", title: "Free Quote", desc: "Call or message - we'll discuss the job and provide a transparent, no-obligation quote." },
+    { step: "2", title: "Book a Time", desc: "We work around you - evenings and weekends available. No long waits." },
+    { step: "3", title: "Job Completed", desc: "Riccardo arrives on time, works cleanly, and leaves everything tidy." },
+    { step: "4", title: "Certificate Issued", desc: "All notifiable work is fully certified and documented for your records." },
+  ],
+  reviews: [
+    { name: "David", location: "BS21, Clevedon", initials: "DA", text: "Riccardo arrived when he said he would and got the job done. He also made sure he cleared up after himself. Genuinely nice guy and reasonable charges.", stars: 5 },
+    { name: "Caroline", location: "BS2, Bristol", initials: "CA", text: "Highly recommended - Riccardo is a real professional and I'd definitely hire him again. Efficient, tidy, and excellent value.", stars: 5 },
+    { name: "Emma", location: "BS3, Bristol", initials: "EM", text: "Ric was quick to respond to messages and able to fit in my job at a convenient time without having to wait long. Really pleased with the work.", stars: 5 },
+  ],
+  trust_signals: ["NICEIC Registered", "15+ Years Experience", "£2M Public Liability Insured", "City & Guilds Qualified"],
+  faqs: [
+    { q: "Are you NICEIC registered?", a: "Yes - RD Electrical (SW) is fully NICEIC registered. All notifiable electrical work is certified and you receive official documentation upon completion." },
+    { q: "Do you cover emergency call-outs?", a: "Yes, we offer 24/7 emergency electrical assistance across Bristol and the surrounding area. Call 07881 296989 any time." },
+    { q: "What areas do you cover?", a: "We cover Bristol and the surrounding areas including Clevedon, Nailsea, Weston-super-Mare, and Backwell. Not sure if you're in range? Just call us." },
+    { q: "How much does an EICR landlord certificate cost?", a: "Pricing depends on the size of the property and number of circuits. Contact us for a free, no-obligation quote - we typically turn these around quickly for landlords." },
+  ],
+  hours: "Mon-Fri 7am-8pm, Sat 8am-5pm, 24/7 Emergency",
+  schema_type: "Electrician",
+};
+
+// Icon map — inline SVGs for zero external dependencies
+const icons: Record<string, string> = {
+  wrench: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  check: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
+  home: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+  doc: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+  shield: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  clock: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  star: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  flame: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
+  bolt: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+  phone: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
+  starFill: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#e8a020" stroke="#e8a020" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  plus: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
+  minus: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
+  chevron: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`,
+};
+
+// Service icon cycling
+const serviceIcons = [icons.wrench, icons.flame, icons.bolt, icons.home];
+
+// Trust signal icon map
+const trustIconMap: Record<string, string> = {
+  "Gas Safe": icons.flame,
+  "Insured": icons.shield,
+  "Experience": icons.clock,
+  "Google": icons.star,
+  "Registered": icons.check,
+  "NICEIC": icons.bolt,
+  "NAPIT": icons.bolt,
+  "Qualified": icons.check,
+};
+
+function getTrustIcon(signal: string): string {
+  for (const [key, icon] of Object.entries(trustIconMap)) {
+    if (signal.includes(key)) return icon;
+  }
+  return icons.check;
+}
+
+function renderStars(count: number): string {
+  return Array.from({ length: count }, () => icons.starFill).join("");
+}
 ---
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RD Electrical (SW) — Bristol Electricians</title>
-  <meta name="description" content="Your local electrician in Bristol. NICEIC registered, City & Guilds accredited. Domestic & commercial electrical services. Over 15 years experience." />
-  <meta property="og:title" content="RD Electrical (SW) — Your New Site" />
-  <meta property="og:description" content="A modern, professional website for RD Electrical (SW). Expert electricians serving Bristol, Clevedon, Nailsea & surrounding areas." />
-  <meta property="og:image" content="https://rdelectricalsw.co.uk/wp-content/uploads/2022/10/rdelectricalsw-logo-2-1.png" />
-  <meta property="og:url" content="https://highcroftdigital.com/preview/rd-electrical" />
-  <meta property="og:type" content="website" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{config.business_name} - {config.hero_title}</title>
+  <meta name="description" content={`${config.hero_subtitle}. Call ${config.phone_display} for a free quote. Serving ${config.areas_served.join(", ")}.`} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    :root {
-      --blue: #0170B9;
-      --blue-light: #0388e0;
-      --gold: #ffd323;
-      --charcoal: #131820;
-      --slate: #3a424d;
-      --gray: #687279;
-      --silver: #9ca6ad;
-      --mist: #f0f2f4;
-      --cloud: #f7f8f9;
-      --white: #fefefe;
-      --font-display: 'DM Serif Display', Georgia, serif;
-      --font-body: 'DM Sans', -apple-system, sans-serif;
+  {/* LocalBusiness JSON-LD */}
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": config.schema_type,
+    "name": config.business_name,
+    "telephone": config.phone,
+    "email": config.email,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": config.address,
+    },
+    "areaServed": config.areas_served.map(a => ({ "@type": "Place", "name": a })),
+    "openingHours": config.hours,
+  })} />
+
+  {/* FAQPage JSON-LD */}
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": config.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a,
+      }
+    })),
+  })} />
+</head>
+
+<body>
+
+  {/* ============================================================ */}
+  {/* STICKY HEADER                                                 */}
+  {/* ============================================================ */}
+  <header class="site-header" id="site-header">
+    <nav class="header-inner">
+      <div class="header-left">
+        <a href="#" class="logo-link">
+          <img src={config.logo_url} alt={`${config.business_name} logo`} class="logo-img" width="140" height="40" />
+        </a>
+        <span class="service-area-label">{config.town} & Surrounding Areas</span>
+      </div>
+      <div class="header-right">
+        <a href={`tel:${config.phone}`} class="header-phone-link">
+          <span class="header-phone-icon" set:html={icons.phone} />
+          <span class="header-phone-number">{config.phone_display}</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+      <div class="nav-dropdown" id="nav-dropdown">
+        <a href="#services" class="nav-dropdown-link">Services</a>
+        <a href="#process" class="nav-dropdown-link">How It Works</a>
+        <a href="#reviews" class="nav-dropdown-link">Reviews</a>
+        <a href="#faq" class="nav-dropdown-link">FAQ</a>
+        <a href={`tel:${config.phone}`} class="nav-dropdown-cta">
+          <span set:html={icons.phone} /> Call {config.phone_display}
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    {/* ============================================================ */}
+    {/* HERO                                                         */}
+    {/* ============================================================ */}
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">
+            <span class="hero-badge-icon" set:html={icons.shield} />
+            {config.certification}
+          </span>
+          <h1 class="hero-title">{config.hero_title}</h1>
+          <p class="hero-subtitle">{config.hero_subtitle}</p>
+          <div class="hero-cta-group">
+            <a href={`tel:${config.phone}`} class="btn btn-primary btn-lg">
+              <span set:html={icons.phone} />
+              Call {config.phone_display}
+            </a>
+            <p class="hero-microcopy">No call-out fee. Available {config.hours.split(",")[0].replace("Mon-Fri ", "")}.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ============================================================ */}
+    {/* TRUST SIGNALS STRIP                                          */}
+    {/* ============================================================ */}
+    <section class="trust-strip" aria-label="Credentials">
+      <div class="container">
+        <div class="trust-strip-inner">
+          {config.trust_signals.map((signal) => (
+            <div class="trust-item">
+              <span class="trust-item-icon" set:html={getTrustIcon(signal)} />
+              <span class="trust-item-label">{signal}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ============================================================ */}
+    {/* STATS                                                        */}
+    {/* ============================================================ */}
+    <section class="stats reveal" aria-label="Key statistics">
+      <div class="container">
+        <div class="stats-grid">
+          {config.stats.map((stat, i) => (
+            <div class="stat-item" style={`--delay: ${i * 0.1}s`}>
+              <span class="stat-num">{stat.num}</span>
+              <span class="stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ============================================================ */}
+    {/* SERVICES                                                     */}
+    {/* ============================================================ */}
+    <section class="services reveal" id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What We Do</h2>
+          <p class="section-subtitle">Professional services you can rely on in {config.town} and the surrounding area.</p>
+        </div>
+        <div class="services-grid">
+          {config.services.map((service, i) => (
+            <div class="service-card" style={`--delay: ${i * 0.1}s`}>
+              <div class="service-icon" set:html={serviceIcons[i % serviceIcons.length]} />
+              <h3 class="service-title">{service.title}</h3>
+              <p class="service-desc">{service.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ============================================================ */}
+    {/* HOW IT WORKS — TIMELINE                                      */}
+    {/* ============================================================ */}
+    <section class="process reveal" id="process">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-subtitle">From first call to job done, we keep it simple.</p>
+        </div>
+        <div class="timeline">
+          {config.process.map((step, i) => (
+            <div class="timeline-step" style={`--delay: ${i * 0.15}s`}>
+              <div class="timeline-marker">
+                <span class="timeline-number">{step.step}</span>
+              </div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">{step.title}</h3>
+                <p class="timeline-desc">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ============================================================ */}
+    {/* TESTIMONIALS                                                 */}
+    {/* ============================================================ */}
+    <section class="reviews reveal" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What Our Customers Say</h2>
+          <p class="section-subtitle">Real reviews from real customers.</p>
+        </div>
+        <div class="reviews-grid">
+          {config.reviews.map((review, i) => (
+            <div class="review-card" style={`--delay: ${i * 0.1}s`}>
+              <div class="review-stars" set:html={renderStars(review.stars)} />
+              <blockquote class="review-text">&ldquo;{review.text}&rdquo;</blockquote>
+              <div class="review-author">
+                <div class="review-avatar">{review.initials}</div>
+                <div class="review-meta">
+                  <span class="review-name">{review.name}</span>
+                  <span class="review-location">{review.location}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ============================================================ */}
+    {/* FAQ                                                          */}
+    {/* ============================================================ */}
+    <section class="faq reveal" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+          {config.faqs.map((faq, i) => (
+            <details class="faq-item" style={`--delay: ${i * 0.08}s`}>
+              <summary class="faq-question">
+                <span>{faq.q}</span>
+                <span class="faq-icon faq-icon-plus" set:html={icons.plus} />
+                <span class="faq-icon faq-icon-minus" set:html={icons.minus} />
+              </summary>
+              <div class="faq-answer">
+                <p>{faq.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ============================================================ */}
+    {/* FINAL CTA                                                    */}
+    {/* ============================================================ */}
+    <section class="final-cta reveal">
+      <div class="container">
+        <div class="final-cta-card">
+          <h2 class="final-cta-title">Ready to Get Started?</h2>
+          <p class="final-cta-subtitle">Call now for a free, no-obligation quote. We aim to respond within 30 minutes.</p>
+          <a href={`tel:${config.phone}`} class="btn btn-primary btn-lg btn-white">
+            <span set:html={icons.phone} />
+            Call {config.phone_display}
+          </a>
+          <p class="final-cta-areas">Serving {config.areas_served.join(", ")}</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  {/* ============================================================ */}
+  {/* FOOTER                                                       */}
+  {/* ============================================================ */}
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 class="footer-heading">{config.business_name}</h4>
+          <p class="footer-text">{config.hero_subtitle}</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-list">
+            <li><a href={`tel:${config.phone}`}>{config.phone_display}</a></li>
+            <li><a href={`mailto:${config.email}`}>{config.email}</a></li>
+            <li>{config.address}</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Hours</h4>
+          <p class="footer-text">{config.hours}</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} {config.business_name}. All rights reserved.</p>
+        <p class="footer-credit">Website by <a href="https://highcroftdigital.co.uk" target="_blank" rel="noopener">Highcroft Digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+  {/* ============================================================ */}
+  {/* FLOATING PHONE BUTTON — mobile only                          */}
+  {/* ============================================================ */}
+  <a href={`tel:${config.phone}`} class="floating-phone" aria-label={`Call ${config.business_name}`}>
+    <span set:html={icons.phone} />
+  </a>
+
+</body>
+</html>
+
+<style define:vars={{
+  brandColor: config.brand_color,
+  brandColorHover: config.brand_color_hover,
+  brandColorSoft: config.brand_color_soft,
+  navBg: config.logo_has_dark_bg ? config.logo_bg_color : '#fcfcfd',
+  navText: config.logo_has_dark_bg ? '#e2e8f0' : '#1a2536',
+  navBorder: config.logo_has_dark_bg ? 'rgba(255,255,255,0.1)' : '#e4e9ef',
+}}>
+  /* ============================================================
+     RESET & BASE
+     ============================================================ */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+  }
+
+  body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1a2332;
+    background: #f8f9fb;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  /* ============================================================
+     LAYOUT
+     ============================================================ */
+  .container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding: 0 32px;
     }
+  }
 
-    html {
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+  /* ============================================================
+     STICKY HEADER
+     ============================================================ */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navBg);
+    border-bottom: 1px solid var(--navBorder);
+    box-shadow: 0 1px 3px rgba(15, 27, 45, 0.04);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 64px;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .header-inner {
+      padding: 0 32px;
+      height: 72px;
     }
+  }
 
-    body {
-      font-family: var(--font-body);
-      color: var(--slate);
-      background: var(--white);
-      line-height: 1.6;
-      overflow-x: hidden;
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  @media (min-width: 768px) {
+    .logo-img {
+      height: 40px;
     }
+  }
 
-    /* --- NAV --- */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 1.25rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(254,254,254,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-      transition: padding 0.3s ease;
+  .service-area-label {
+    display: none;
+    font-size: 0.8rem;
+    color: var(--navText);
+    font-weight: 500;
+    border-left: 1px solid var(--navBorder);
+    padding-left: 16px;
+  }
+
+  @media (min-width: 900px) {
+    .service-area-label {
+      display: block;
     }
+  }
 
-    .nav.scrolled { padding: 0.75rem 2rem; }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 
-    .nav-logo {
-      height: 44px;
-      width: auto;
-      object-fit: contain;
+  .header-phone-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--brandColor);
+    transition: color 0.2s;
+    padding: 8px 0;
+  }
+
+  .header-phone-link:hover {
+    color: var(--brandColorHover);
+  }
+
+  .header-phone-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-phone-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .header-phone-number {
+    display: none;
+  }
+
+  @media (min-width: 480px) {
+    .header-phone-number {
+      display: inline;
     }
+  }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      align-items: center;
-    }
+  /* Nav toggle (hamburger) */
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+  }
 
-    .nav-links a {
-      color: var(--slate);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--charcoal); }
-
-    .nav-cta {
-      background: var(--charcoal) !important;
-      color: var(--white) !important;
-      padding: 0.6rem 1.5rem !important;
-      border-radius: 2px;
-      font-size: 0.8rem !important;
-      letter-spacing: 0.06em !important;
-      text-transform: uppercase;
-      font-weight: 600 !important;
-      transition: background 0.2s !important;
-    }
-
-    .nav-cta:hover { background: var(--blue) !important; }
-
+  @media (min-width: 768px) {
     .nav-toggle {
       display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
     }
+  }
 
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--charcoal);
-      margin: 5px 0;
-      transition: 0.3s;
+  .nav-toggle-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--navText);
+    border-radius: 2px;
+    transition: transform 0.25s, opacity 0.25s;
+  }
+
+  .nav-toggle.is-active .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle.is-active .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.is-active .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Nav dropdown (mobile) */
+  .nav-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid #e8ecf1;
+    box-shadow: 0 8px 24px rgba(15, 27, 45, 0.1);
+    z-index: 200;
+    flex-direction: column;
+    padding: 8px 0;
+  }
+
+  .nav-dropdown.is-open {
+    display: flex;
+  }
+
+  @media (min-width: 768px) {
+    .nav-dropdown {
+      display: none !important;
     }
+  }
 
-    /* --- HERO --- */
+  .nav-dropdown-link {
+    padding: 14px 24px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #1a2332;
+    transition: background 0.15s;
+  }
+
+  .nav-dropdown-link:hover {
+    background: #f4f6f8;
+  }
+
+  .nav-dropdown-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 16px;
+    padding: 14px 20px;
+    background: var(--brandColor);
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .nav-dropdown-cta:hover {
+    background: var(--brandColorHover);
+  }
+
+  .nav-dropdown-cta svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero {
+    background: #0f1b2d;
+    padding: 80px 0 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: var(--brandColor);
+    opacity: 0.06;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
     .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
+      padding: 100px 0 80px;
     }
+  }
 
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(4rem, 8vw, 8rem);
-      padding-top: 7rem;
+  .hero-content {
+    max-width: 640px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #b0c4de;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-badge-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-badge-icon svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--brandColor);
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 7vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: #8fa3bf;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-microcopy {
+    font-size: 0.85rem;
+    color: #6b829e;
+  }
+
+  /* ============================================================
+     BUTTONS
+     ============================================================ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .btn:active {
+    transform: scale(0.97);
+  }
+
+  .btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .btn-primary {
+    background: var(--brandColor);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .btn-primary:hover {
+    background: var(--brandColorHover);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  }
+
+  .btn-lg {
+    padding: 16px 32px;
+    font-size: 1.05rem;
+    min-height: 56px;
+  }
+
+  .btn-white {
+    background: #fff;
+    color: var(--brandColor);
+  }
+
+  .btn-white:hover {
+    background: #f0f4f8;
+    color: var(--brandColorHover);
+  }
+
+  /* ============================================================
+     TRUST STRIP
+     ============================================================ */
+  .trust-strip {
+    background: var(--brandColorSoft);
+    border-bottom: 1px solid #dae4ef;
+    padding: 16px 0;
+  }
+
+  .trust-strip-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+  }
+
+  @media (min-width: 768px) {
+    .trust-strip-inner {
+      gap: 12px 40px;
     }
+  }
 
-    .hero-est {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 2rem;
-    }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+  }
 
-    .hero-est::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 2px;
-      background: var(--blue);
-    }
+  .trust-item-icon {
+    display: flex;
+    align-items: center;
+    color: #16a36c;
+  }
 
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 4.2rem);
-      color: var(--charcoal);
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      font-weight: 400;
-    }
+  .trust-item-icon svg {
+    width: 18px;
+    height: 18px;
+  }
 
-    .hero p {
-      font-size: clamp(1rem, 1.2vw, 1.15rem);
-      color: var(--gray);
-      max-width: 420px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
+  .trust-item-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a2332;
+    white-space: nowrap;
+  }
 
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
+  /* ============================================================
+     STATS
+     ============================================================ */
+  .stats {
+    padding: 48px 0;
+    background: #fff;
+  }
 
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--blue);
-      color: var(--white);
-      padding: 1rem 2rem;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      border-radius: 2px;
-      transition: background 0.25s ease, transform 0.2s ease;
-    }
-
-    .btn-primary:hover {
-      background: var(--blue-light);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--charcoal);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 1rem 0;
-      transition: color 0.2s;
-    }
-
-    .btn-secondary:hover { color: var(--blue); }
-
-    .btn-secondary svg {
-      transition: transform 0.2s;
-    }
-
-    .btn-secondary:hover svg {
-      transform: translateX(3px);
-    }
-
-    .hero-image {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-image::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 30%;
-      background: linear-gradient(to top, rgba(19,24,32,0.15), transparent);
-    }
-
-    /* --- STATS BAR --- */
+  @media (min-width: 768px) {
     .stats {
-      display: grid;
+      padding: 64px 0;
+    }
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .stats-grid {
       grid-template-columns: repeat(4, 1fr);
-      background: var(--charcoal);
+      gap: 32px;
     }
+  }
 
-    .stat {
-      padding: 2.5rem 2rem;
-      text-align: center;
-      position: relative;
+  .stat-item {
+    text-align: center;
+    padding: 16px 8px;
+  }
+
+  .stat-num {
+    display: block;
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    font-weight: 800;
+    color: var(--brandColor);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #5a6a7e;
+    margin-top: 4px;
+  }
+
+  /* ============================================================
+     SECTION HEADERS (shared)
+     ============================================================ */
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 768px) {
+    .section-header {
+      margin-bottom: 48px;
     }
+  }
 
-    .stat:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 25%;
-      height: 50%;
-      width: 1px;
-      background: rgba(255,255,255,0.1);
-    }
+  .section-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 800;
+    color: #0f1b2d;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
 
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      color: var(--white);
-      margin-bottom: 0.25rem;
-    }
+  .section-subtitle {
+    font-size: 1rem;
+    color: #5a6a7e;
+    max-width: 520px;
+    margin: 0 auto;
+  }
 
-    .stat-label {
-      font-size: 0.75rem;
-      color: var(--silver);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
+  /* ============================================================
+     SERVICES
+     ============================================================ */
+  .services {
+    padding: 64px 0;
+    background: #f8f9fb;
+  }
 
-    /* --- SERVICES --- */
+  @media (min-width: 768px) {
     .services {
-      padding: clamp(4rem, 10vw, 8rem) clamp(2rem, 6vw, 6rem);
+      padding: 80px 0;
     }
+  }
 
-    .section-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 1rem;
-    }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 
-    .section-heading {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      color: var(--charcoal);
-      line-height: 1.15;
-      max-width: 560px;
-      margin-bottom: 1.25rem;
-      font-weight: 400;
-    }
-
-    .section-sub {
-      color: var(--gray);
-      font-size: 1.05rem;
-      max-width: 480px;
-      margin-bottom: 4rem;
-      line-height: 1.7;
-    }
-
+  @media (min-width: 600px) {
     .services-grid {
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--mist);
-      border: 1px solid var(--mist);
+      gap: 20px;
     }
+  }
 
-    .service-card {
-      background: var(--white);
-      padding: clamp(2rem, 4vw, 3.5rem);
-      position: relative;
-      transition: background 0.3s ease;
+  .service-card {
+    background: #fff;
+    border: 1px solid #e8ecf1;
+    border-radius: 14px;
+    padding: 28px 24px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .service-card:hover {
+    border-color: var(--brandColor);
+    box-shadow: 0 4px 20px rgba(15, 27, 45, 0.06);
+  }
+
+  .service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--brandColorSoft);
+    border-radius: 10px;
+    color: var(--brandColor);
+    margin-bottom: 16px;
+  }
+
+  .service-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .service-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f1b2d;
+    margin-bottom: 6px;
+  }
+
+  .service-desc {
+    font-size: 0.92rem;
+    color: #5a6a7e;
+    line-height: 1.55;
+  }
+
+  /* ============================================================
+     TIMELINE / PROCESS
+     ============================================================ */
+  .process {
+    padding: 64px 0;
+    background: #fff;
+  }
+
+  @media (min-width: 768px) {
+    .process {
+      padding: 80px 0;
     }
+  }
 
-    .service-card:hover {
-      background: var(--cloud);
-    }
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 28px;
+  }
 
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 1.75rem;
-      color: var(--blue);
-    }
+  /* Vertical line (mobile) */
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: #dde2e9;
+  }
 
-    .service-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      color: var(--charcoal);
-      margin-bottom: 1rem;
-      font-weight: 400;
-    }
+  .timeline-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+    position: relative;
+  }
 
-    .service-card p {
-      color: var(--gray);
-      font-size: 0.925rem;
-      line-height: 1.7;
-    }
+  .timeline-marker {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--brandColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    margin-left: -28px;
+  }
 
-    .service-number {
-      position: absolute;
-      top: clamp(1.5rem, 3vw, 2.5rem);
-      right: clamp(1.5rem, 3vw, 2.5rem);
-      font-family: var(--font-display);
-      font-size: 3rem;
-      color: var(--mist);
-      line-height: 1;
-      user-select: none;
-    }
+  .timeline-number {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #fff;
+  }
 
-    /* --- WHY CHOOSE --- */
-    .why {
-      background: var(--charcoal);
-      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: clamp(3rem, 6vw, 6rem);
-      align-items: center;
-    }
+  .timeline-content {
+    padding-top: 4px;
+  }
 
-    .why .section-label { color: var(--gold); }
+  .timeline-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f1b2d;
+    margin-bottom: 2px;
+  }
 
-    .why .section-heading {
-      color: var(--white);
-      margin-bottom: 1.5rem;
-    }
+  .timeline-desc {
+    font-size: 0.92rem;
+    color: #5a6a7e;
+  }
 
-    .why-text {
-      color: var(--silver);
-      font-size: 1rem;
-      line-height: 1.8;
-      max-width: 400px;
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .trust-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      padding: 2rem 1.75rem;
-      border-radius: 2px;
-      transition: background 0.3s;
-    }
-
-    .trust-card:hover {
-      background: rgba(255,255,255,0.07);
-    }
-
-    .trust-icon {
-      width: 32px;
-      height: 32px;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .trust-card h4 {
-      color: var(--white);
-      font-size: 0.95rem;
-      font-weight: 500;
-      line-height: 1.4;
-    }
-
-    /* --- TESTIMONIALS --- */
-    .testimonials {
-      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
-      background: var(--cloud);
-    }
-
-    .testimonials .section-heading {
-      max-width: 100%;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 3.5rem;
-    }
-
-    .testimonials .section-label {
-      text-align: center;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .testimonial-card {
-      background: var(--white);
-      padding: 2.25rem;
-      border: 1px solid var(--mist);
-      border-radius: 2px;
-      position: relative;
-    }
-
-    .testimonial-card::before {
-      content: '\201C';
-      font-family: var(--font-display);
-      font-size: 4rem;
-      color: var(--blue);
-      opacity: 0.15;
-      position: absolute;
-      top: 0.75rem;
-      left: 1.25rem;
-      line-height: 1;
-    }
-
-    .testimonial-stars {
-      display: flex;
-      gap: 2px;
-      margin-bottom: 1rem;
-    }
-
-    .testimonial-stars svg {
-      width: 14px;
-      height: 14px;
-      fill: var(--gold);
-    }
-
-    .testimonial-card blockquote {
-      color: var(--gray);
-      font-size: 0.9rem;
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-      font-style: normal;
-    }
-
-    .testimonial-author {
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--charcoal);
-    }
-
-    /* --- ABOUT --- */
-    .about {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      min-height: 70vh;
-    }
-
-    .about-image {
-      background: url('https://rdelectricalsw.co.uk/wp-content/uploads/2021/06/electrical-services-bristol-1.jpg') center/cover;
-      min-height: 400px;
-    }
-
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(3rem, 6vw, 6rem);
-    }
-
-    .about-content .section-heading {
-      margin-bottom: 1.5rem;
-    }
-
-    .about-content p {
-      color: var(--gray);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 1.25rem;
-      max-width: 460px;
-    }
-
-    .about-sig {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--mist);
-    }
-
-    .about-sig strong {
-      display: block;
-      color: var(--charcoal);
-      font-size: 1rem;
-    }
-
-    .about-sig span {
-      color: var(--gray);
-      font-size: 0.85rem;
-    }
-
-    .accreditations {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .accreditations img {
-      height: 40px;
-      width: auto;
-      object-fit: contain;
-      filter: grayscale(30%);
-      opacity: 0.8;
-      transition: opacity 0.2s, filter 0.2s;
-    }
-
-    .accreditations img:hover {
-      filter: grayscale(0%);
-      opacity: 1;
-    }
-
-    /* --- GALLERY --- */
-    .gallery {
-      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
-    }
-
-    .gallery .section-heading {
-      text-align: center;
-      max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 3rem;
-    }
-
-    .gallery .section-label {
-      text-align: center;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.75rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 2px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    }
-
-    /* --- CONTACT CTA --- */
-    .contact {
-      background: var(--charcoal);
-      padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 6rem);
-      text-align: center;
-    }
-
-    .contact .section-label { color: var(--gold); }
-
-    .contact .section-heading {
-      max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 1rem;
-      color: var(--white);
-    }
-
-    .contact-sub {
-      color: var(--silver);
-      font-size: 1.05rem;
-      margin-bottom: 3rem;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.7;
-    }
-
-    .contact-phone {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4.5vw, 3.5rem);
-      color: var(--white);
-      text-decoration: none;
-      display: block;
-      margin-bottom: 0.75rem;
-      transition: color 0.2s;
-    }
-
-    .contact-phone:hover { color: var(--gold); }
-
-    .contact-email {
-      color: var(--silver);
-      font-size: 1.1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .contact-email a {
-      color: var(--silver);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .contact-email a:hover { color: var(--gold); }
-
-    .contact-areas {
-      color: rgba(255,255,255,0.35);
-      font-size: 0.85rem;
-      letter-spacing: 0.04em;
-      margin-top: 2rem;
-    }
-
-    .contact .btn-primary {
-      background: var(--blue);
-    }
-
-    .contact .btn-primary:hover {
-      background: var(--blue-light);
-    }
-
-    /* --- FOOTER --- */
-    .footer {
-      padding: 2rem clamp(2rem, 6vw, 6rem);
-      display: flex;
+  /* Desktop: horizontal timeline */
+  @media (min-width: 768px) {
+    .timeline {
+      flex-direction: row;
+      padding-left: 0;
       justify-content: space-between;
+    }
+
+    .timeline::before {
+      left: calc(18px + 12px);
+      right: calc(18px + 12px);
+      top: 18px;
+      bottom: auto;
+      height: 2px;
+      width: auto;
+    }
+
+    .timeline-step {
+      flex-direction: column;
       align-items: center;
-      border-top: 1px solid var(--mist);
-      font-size: 0.8rem;
-      color: var(--silver);
+      text-align: center;
+      gap: 16px;
+      flex: 1;
+      padding: 0 12px;
     }
 
-    .footer a {
-      color: var(--silver);
-      text-decoration: none;
-      transition: color 0.2s;
+    .timeline-marker {
+      margin-left: 0;
     }
 
-    .footer a:hover { color: var(--blue); }
+    .timeline-content {
+      padding-top: 0;
+    }
+  }
 
-    /* --- ANIMATIONS --- */
-    .reveal {
+  /* ============================================================
+     REVIEWS
+     ============================================================ */
+  .reviews {
+    padding: 64px 0;
+    background: #0f1b2d;
+  }
+
+  @media (min-width: 768px) {
+    .reviews {
+      padding: 80px 0;
+    }
+  }
+
+  .reviews .section-title {
+    color: #fff;
+  }
+
+  .reviews .section-subtitle {
+    color: #7a90a8;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .reviews-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .reviews-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .review-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 28px 24px;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 16px;
+  }
+
+  .review-text {
+    font-size: 0.95rem;
+    color: #c5d3e3;
+    line-height: 1.65;
+    margin-bottom: 20px;
+    font-style: normal;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brandColor);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+  }
+
+  .review-meta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .review-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #e0e8f0;
+  }
+
+  .review-location {
+    font-size: 0.8rem;
+    color: #6b829e;
+  }
+
+  /* ============================================================
+     FAQ
+     ============================================================ */
+  .faq {
+    padding: 64px 0;
+    background: #f8f9fb;
+  }
+
+  @media (min-width: 768px) {
+    .faq {
+      padding: 80px 0;
+    }
+  }
+
+  .faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-item {
+    background: #fff;
+    border: 1px solid #e8ecf1;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .faq-item[open] {
+    border-color: var(--brandColor);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #0f1b2d;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    min-height: 44px;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::marker {
+    content: "";
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    color: #8fa3bf;
+    display: flex;
+    align-items: center;
+  }
+
+  .faq-icon-minus {
+    display: none;
+  }
+
+  .faq-item[open] .faq-icon-plus {
+    display: none;
+  }
+
+  .faq-item[open] .faq-icon-minus {
+    display: flex;
+  }
+
+  .faq-answer {
+    padding: 0 20px 20px;
+    font-size: 0.95rem;
+    color: #5a6a7e;
+    line-height: 1.65;
+  }
+
+  /* ============================================================
+     FINAL CTA
+     ============================================================ */
+  .final-cta {
+    padding: 64px 0;
+    background: #fff;
+  }
+
+  @media (min-width: 768px) {
+    .final-cta {
+      padding: 80px 0;
+    }
+  }
+
+  .final-cta-card {
+    background: #0f1b2d;
+    border-radius: 20px;
+    padding: 48px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .final-cta-card {
+      padding: 64px 48px;
+    }
+  }
+
+  .final-cta-card::before {
+    content: "";
+    position: absolute;
+    bottom: -40%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: var(--brandColor);
+    opacity: 0.08;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .final-cta-title {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .final-cta-subtitle {
+    font-size: 1rem;
+    color: #8fa3bf;
+    margin-bottom: 28px;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .final-cta .btn {
+    position: relative;
+    z-index: 1;
+  }
+
+  .final-cta-areas {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #6b829e;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .site-footer {
+    background: #0a1220;
+    color: #8fa3bf;
+    padding: 48px 0 24px;
+  }
+
+  @media (min-width: 768px) {
+    .site-footer {
+      padding: 64px 0 32px;
+    }
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .footer-heading {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #e0e8f0;
+    margin-bottom: 12px;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .footer-list li {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  .footer-list a {
+    transition: color 0.15s;
+  }
+
+  .footer-list a:hover {
+    color: #fff;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    font-size: 0.82rem;
+  }
+
+  @media (min-width: 640px) {
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .footer-credit a {
+    color: var(--brandColor);
+    font-weight: 600;
+    transition: color 0.15s;
+  }
+
+  .footer-credit a:hover {
+    color: #fff;
+  }
+
+  /* ============================================================
+     FLOATING PHONE BUTTON (mobile only)
+     ============================================================ */
+  .floating-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--brandColor);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22), 0 0 0 4px rgba(38, 129, 196, 0.15);
+    z-index: 90;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .floating-phone:hover {
+    background: var(--brandColorHover);
+  }
+
+  .floating-phone:active {
+    transform: scale(0.92);
+  }
+
+  .floating-phone svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .floating-phone {
+      display: none;
+    }
+  }
+
+  /* ============================================================
+     SCROLL REVEAL ANIMATIONS
+     ============================================================ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered children */
+  .reveal.is-visible .stat-item,
+  .reveal.is-visible .service-card,
+  .reveal.is-visible .timeline-step,
+  .reveal.is-visible .review-card,
+  .reveal.is-visible .faq-item {
+    animation: revealUp 0.5s ease forwards;
+    animation-delay: var(--delay, 0s);
+    opacity: 0;
+  }
+
+  @keyframes revealUp {
+    from {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(16px);
     }
-
-    .reveal.visible {
+    to {
       opacity: 1;
       transform: translateY(0);
     }
+  }
 
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-
-    /* --- RESPONSIVE --- */
-    @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-image { height: 50vh; order: -1; }
-      .hero-content { padding: 3rem 2rem 4rem; }
-      .why { grid-template-columns: 1fr; }
-      .about { grid-template-columns: 1fr; }
-      .about-image { height: 50vh; }
-      .testimonials-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
 
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        padding: 1.5rem 2rem;
-        border-bottom: 1px solid var(--mist);
-        gap: 1rem;
+    .reveal.is-visible .stat-item,
+    .reveal.is-visible .service-card,
+    .reveal.is-visible .timeline-step,
+    .reveal.is-visible .review-card,
+    .reveal.is-visible .faq-item {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  // ============================================================
+  // NAV TOGGLE
+  // ============================================================
+  const navToggle = document.getElementById("nav-toggle");
+  const navDropdown = document.getElementById("nav-dropdown");
+
+  if (navToggle && navDropdown) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navDropdown.classList.toggle("is-open");
+      navToggle.classList.toggle("is-active", isOpen);
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    // Close dropdown when a link is clicked
+    navDropdown.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navDropdown.classList.remove("is-open");
+        navToggle.classList.remove("is-active");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Close dropdown on outside click
+    document.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      if (!navToggle.contains(target) && !navDropdown.contains(target)) {
+        navDropdown.classList.remove("is-open");
+        navToggle.classList.remove("is-active");
+        navToggle.setAttribute("aria-expanded", "false");
       }
-      .nav-toggle { display: block; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
-      .stat:nth-child(2)::after { display: none; }
-      .services-grid { grid-template-columns: 1fr; }
-      .trust-grid { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
-      .footer { flex-direction: column; gap: 0.75rem; text-align: center; }
-    }
+    });
+  }
 
-    @media (max-width: 480px) {
-      .stats { grid-template-columns: 1fr; }
-      .stat::after { display: none !important; }
-      .stat {
-        padding: 1.5rem;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-      }
-      .hero-actions { flex-direction: column; align-items: flex-start; }
-    }
+  // ============================================================
+  // SCROLL REVEAL — IntersectionObserver
+  // ============================================================
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
-      html { scroll-behavior: auto; }
-    }
-  </style>
-</head>
-<body>
+  if (!prefersReducedMotion) {
+    const revealElements = document.querySelectorAll(".reveal");
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <img
-      src="https://rdelectricalsw.co.uk/wp-content/uploads/2022/10/rdelectricalsw-logo-2-1.png"
-      alt="RD Electrical (SW)"
-      class="nav-logo"
-    />
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#contact" class="nav-cta">Book Now</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <span class="hero-est reveal">NICEIC Registered</span>
-      <h1 class="reveal reveal-delay-1">Your local electrician in&nbsp;Bristol</h1>
-      <p class="reveal reveal-delay-2">
-        Over 15 years of experience providing domestic and commercial electrical services.
-        Fully qualified, fully insured, and available 24/7 for emergencies.
-      </p>
-      <div class="hero-actions reveal reveal-delay-3">
-        <a href="tel:+447702168225" class="btn-primary">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          Call Now
-        </a>
-        <a href="#services" class="btn-secondary">
-          Our services
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img
-        src="https://rdelectricalsw.co.uk/wp-content/uploads/2018/05/slider-111.jpg"
-        alt="RD Electrical - professional electrical work in Bristol"
-        loading="eager"
-      />
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat reveal">
-      <div class="stat-number">15+</div>
-      <div class="stat-label">Years Experience</div>
-    </div>
-    <div class="stat reveal reveal-delay-1">
-      <div class="stat-number">24/7</div>
-      <div class="stat-label">Emergency Service</div>
-    </div>
-    <div class="stat reveal reveal-delay-2">
-      <div class="stat-number">&pound;2m</div>
-      <div class="stat-label">Public Liability</div>
-    </div>
-    <div class="stat reveal reveal-delay-3">
-      <div class="stat-number">5.0</div>
-      <div class="stat-label">Star Reviews</div>
-    </div>
-  </div>
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="section-label reveal">What We Do</div>
-    <h2 class="section-heading reveal reveal-delay-1">Expert electrical services for homes &amp;&nbsp;businesses</h2>
-    <p class="section-sub reveal reveal-delay-2">No job too small or too big. We handle everything from socket installations to full rewires across Bristol, Clevedon, Nailsea and surrounding areas.</p>
-
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <span class="service-number">01</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4.2 4.2M33.8 33.8l4.2 4.2M38 10l-4.2 4.2M14.2 33.8L10 38" stroke-linecap="round"/>
-          <circle cx="24" cy="24" r="10"/>
-          <path d="M24 18v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>Inspection &amp; Testing</h3>
-        <p>Ensure your home meets current electrical standards. We conduct thorough inspections and testing at regular intervals to check your electrics are safe to continue using.</p>
-      </div>
-
-      <div class="service-card reveal reveal-delay-1">
-        <span class="service-number">02</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <path d="M28 4L18 24h12L20 44" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>Electrical Installations</h3>
-        <p>From new interior fit-outs to property upgrades, we ensure buildings are properly wired and equipped with up-to-date electrical fittings, all to BS 7671 standards.</p>
-      </div>
-
-      <div class="service-card reveal reveal-delay-2">
-        <span class="service-number">03</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <rect x="14" y="6" width="20" height="36" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 14h8M20 20h8M20 26h8" stroke-linecap="round"/>
-          <path d="M22 34h4" stroke-linecap="round"/>
-        </svg>
-        <h3>Consumer Unit Upgrades</h3>
-        <p>Upgrade your old fuse box to a modern consumer unit for improved safety and compliance. We replace aging units to meet current regulations and keep your property safe.</p>
-      </div>
-
-      <div class="service-card reveal reveal-delay-3">
-        <span class="service-number">04</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <path d="M4 24L24 8l20 16" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M8 22v18h12V30h8v10h12V22" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M28 4L22 16h8L24 28" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>Full &amp; Partial Rewires</h3>
-        <p>Whether you need a complete rewire or just part of your property brought up to standard, we handle the job with minimum disruption, leaving your premises clean and tidy.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <span class="service-number">05</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <circle cx="24" cy="14" r="8"/>
-          <path d="M20 22v6l4 4 4-4v-6" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M24 30v10" stroke-linecap="round"/>
-          <path d="M16 44h16" stroke-linecap="round"/>
-          <path d="M24 8v4" stroke-linecap="round"/>
-        </svg>
-        <h3>Lighting Solutions</h3>
-        <p>Specialist, exterior, decking lights, emergency lighting, downlights, LED strip lighting and more. We provide a full range of lighting services for every setting.</p>
-      </div>
-
-      <div class="service-card reveal reveal-delay-1">
-        <span class="service-number">06</span>
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
-          <path d="M16 8h16v32H16z" stroke-linejoin="round"/>
-          <path d="M22 28a2 2 0 104 0 2 2 0 00-4 0z"/>
-          <path d="M22 16h4M22 20h4" stroke-linecap="round"/>
-          <path d="M8 8h8M32 8h8M8 40h8M32 40h8" stroke-linecap="round"/>
-        </svg>
-        <h3>Fault Finding &amp; Repairs</h3>
-        <p>Electrical problems can be difficult to diagnose. Our experienced electricians use systematic testing to quickly locate and resolve faults, restoring power safely.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US -->
-  <section class="why">
-    <div>
-      <div class="section-label reveal">Why Choose Us</div>
-      <h2 class="section-heading reveal reveal-delay-1">Trusted by Bristol<br>homeowners &amp; businesses</h2>
-      <p class="why-text reveal reveal-delay-2">
-        We aim to satisfy our customers' requirements at every stage. With NICEIC registration,
-        City &amp; Guilds accreditation and over 15 years of experience, your project is
-        in safe hands. We always ensure minimum disruption and leave your premises clean and tidy.
-      </p>
-    </div>
-    <div class="trust-grid">
-      <div class="trust-card reveal">
-        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <path d="M9 12l2 2 4-4"/>
-          <path d="M12 3a9 9 0 110 18 9 9 0 010-18z"/>
-        </svg>
-        <h4>NICEIC Registered &amp; City &amp; Guilds Accredited</h4>
-      </div>
-      <div class="trust-card reveal reveal-delay-1">
-        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/>
-        </svg>
-        <h4>5-Star Reviews on Checkatrade &amp; MyBuilder</h4>
-      </div>
-      <div class="trust-card reveal reveal-delay-2">
-        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-        <h4>Fully Insured Up To &pound;2 Million Public Liability</h4>
-      </div>
-      <div class="trust-card reveal reveal-delay-3">
-        <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M12 6v6l4 2"/>
-        </svg>
-        <h4>24/7 Emergency Electrical Assistance</h4>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="gallery">
-    <div class="section-label reveal">Our Work</div>
-    <h2 class="section-heading reveal reveal-delay-1">Quality you can see</h2>
-    <div class="gallery-grid">
-      <img src="https://rdelectricalsw.co.uk/wp-content/uploads/2018/05/slider-111.jpg" alt="Electrical installation work by RD Electrical" class="reveal" loading="lazy" />
-      <img src="https://rdelectricalsw.co.uk/wp-content/uploads/2019/04/slider-2.jpg" alt="Professional wiring and electrical work" class="reveal reveal-delay-1" loading="lazy" />
-      <img src="https://rdelectricalsw.co.uk/wp-content/uploads/2019/04/slider-3.jpg" alt="Electrical testing and inspection" class="reveal reveal-delay-2" loading="lazy" />
-      <img src="https://rdelectricalsw.co.uk/wp-content/uploads/2019/04/Additional-Sockets-768x384.jpg" alt="Additional socket installation" class="reveal reveal-delay-3" loading="lazy" />
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" id="reviews">
-    <div class="section-label reveal">What Our Customers Say</div>
-    <h2 class="section-heading reveal reveal-delay-1">Real reviews from real&nbsp;customers</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-        </div>
-        <blockquote>Riccardo arrived when he said he would and got the job done. He also insured that he cleared up after himself. Genuinely nice guy and reasonable charges. Can't ask for more.</blockquote>
-        <div class="testimonial-author">David Keating</div>
-      </div>
-
-      <div class="testimonial-card reveal reveal-delay-1">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-        </div>
-        <blockquote>We needed someone to diagnose and repair a baffling problem with our downstairs lighting, replace two ancient fuse boxes with a new consumer unit, and install a new double oven. Riccardo did all this with great professionalism. Highly recommended.</blockquote>
-        <div class="testimonial-author">Chris Coy</div>
-      </div>
-
-      <div class="testimonial-card reveal reveal-delay-2">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-        </div>
-        <blockquote>Thank you Riccardo for fitting our lights! Prompt response to all my messages, sound and useful advice, worked extremely quickly and efficiently, neat and tidy. Above all, a really lovely and friendly guy.</blockquote>
-        <div class="testimonial-author">Joanna Latham</div>
-      </div>
-
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-        </div>
-        <blockquote>Professional, reliable, friendly, on time, good value, quality work - would recommend in a heartbeat!</blockquote>
-        <div class="testimonial-author">Simon Hull</div>
-      </div>
-
-      <div class="testimonial-card reveal reveal-delay-1">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-        </div>
-        <blockquote>Perfect service. Riccardo completely overhauled the electrics in my garage to a high quality in a short space of time. He turned up on time, and he's a really nice, well mannered guy. Highly recommend.</blockquote>
-        <div class="testimonial-author">Jack Bruce</div>
-      </div>
-
-      <div class="testimonial-card reveal reveal-delay-2">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-        </div>
-        <blockquote>The work was carried out within budget, on time and without any problems. My rating is not just 5 stars but 5 stars plus. Recommended.</blockquote>
-        <div class="testimonial-author">Keith Harvey</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-image"></div>
-    <div class="about-content">
-      <div class="section-label reveal">About Us</div>
-      <h2 class="section-heading reveal reveal-delay-1">Professional, reliable &amp; fully&nbsp;qualified</h2>
-      <p class="reveal reveal-delay-2">
-        RD Electrical (SW) has been providing domestic and commercial electrical services across Bristol
-        for over 15 years. We are NICEIC registered and City &amp; Guilds accredited, with the most
-        up-to-date IEE BS7671 wiring regulations.
-      </p>
-      <p class="reveal reveal-delay-3">
-        We specialise in everything from general power and lighting to full rewires, consumer unit upgrades,
-        kitchen refurbishments and landlord safety checks. We are fully insured up to two million pounds and
-        provide electrical assistance 24 hours a day, 7 days a week.
-      </p>
-      <div class="about-sig reveal reveal-delay-4">
-        <strong>Riccardo</strong>
-        <span>Founder, RD Electrical (SW)</span>
-      </div>
-      <div class="accreditations reveal reveal-delay-4">
-        <img src="https://rdelectricalsw.co.uk/wp-content/uploads/2021/06/niceic-brand-2.png" alt="NICEIC Registered" />
-        <img src="https://rdelectricalsw.co.uk/wp-content/themes/rdmelectrical/wn-img/2016_12_jpbXp.webp" alt="City & Guilds" />
-        <img src="https://rdelectricalsw.co.uk/wp-content/themes/rdmelectrical/wn-img/2016_12_FIHXP.webp" alt="ECS Card" />
-        <img src="https://rdelectricalsw.co.uk/wp-content/themes/rdmelectrical/wn-img/2016_12_Y2AhL.webp" alt="JIB" />
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="section-label reveal">Get In Touch</div>
-    <h2 class="section-heading reveal reveal-delay-1">Ready to book an electrician?</h2>
-    <p class="contact-sub reveal reveal-delay-2">
-      Call us today for a free, no obligation quote. We cover Bristol, Clevedon, Nailsea,
-      Weston-super-Mare, Backwell and surrounding areas. Available 24/7 for emergencies.
-    </p>
-    <a href="tel:+447702168225" class="contact-phone reveal reveal-delay-2">07702 168 225</a>
-    <div class="contact-email reveal reveal-delay-3">
-      or email <a href="mailto:info@rdelectricalsw.co.uk">info@rdelectricalsw.co.uk</a>
-    </div>
-    <a href="tel:+447702168225" class="btn-primary reveal reveal-delay-3">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      Call For a Free Quote
-    </a>
-    <p class="contact-areas reveal reveal-delay-4">
-      Serving Bristol &middot; Clevedon &middot; Nailsea &middot; Weston-super-Mare &middot; Backwell
-    </p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <span>&copy; 2026 RD Electrical (SW). All rights reserved.</span>
-    <span>Website by <a href="https://highcroftdigital.com" target="_blank" rel="noopener">Highcroft Digital</a></span>
-  </footer>
-
-  <script>
-    // Nav scroll effect
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
-
-    // Mobile toggle
-    const toggle = document.getElementById('navToggle');
-    const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
-
-    // Intersection Observer for reveals
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("is-visible");
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px",
+      }
     );
 
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-  </script>
+    revealElements.forEach((el) => observer.observe(el));
+  } else {
+    // If reduced motion preferred, show everything
+    document.querySelectorAll(".reveal").forEach((el) => {
+      el.classList.add("is-visible");
+    });
+  }
 
-</body>
-</html>
+  // ============================================================
+  // HEADER SHADOW ON SCROLL
+  // ============================================================
+  const header = document.getElementById("site-header");
+
+  if (header) {
+    const onScroll = () => {
+      if (window.scrollY > 8) {
+        header.style.boxShadow = "0 2px 12px rgba(15, 27, 45, 0.08)";
+      } else {
+        header.style.boxShadow = "0 1px 3px rgba(15, 27, 45, 0.04)";
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+</script>
