@@ -1,0 +1,1244 @@
+---
+// ============================================================
+// HM AUTOS — Bespoke Preview Site
+// ============================================================
+// Aggressive, racing-themed design for Leicester automotive specialist
+// Red (#cc2233) + Navy (#1a3a6e) + Orbitron + Rajdhani
+// White canvas with fire gradient accents and clipped race shapes
+// ============================================================
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HM Autos — ECU Remapping, Diagnostics & Security | Leicester</title>
+  <meta name="description" content="Expert ECU remapping, advanced diagnostics, CAN-Phantom immobilisers, and accurate mileage correction for cars, bikes, and vans in Leicester." />
+
+  <!-- OG Tags -->
+  <meta property="og:title" content="HM Autos — Your New Website" />
+  <meta property="og:description" content="Expert ECU remapping, advanced diagnostics, CAN-Phantom immobilisers, and mileage correction across Leicester." />
+  <meta property="og:url" content="https://highcroftdigital.com/preview/mileage-correction" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    "name": "HM Autos",
+    "telephone": "+447873300553",
+    "email": "info@mileagecontrol.co.uk",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Leicester",
+      "postalCode": "LE2 6JQ",
+      "addressRegion": "Leicestershire",
+      "addressCountry": "GB"
+    },
+    "url": "https://highcroftdigital.com/preview/mileage-correction",
+    "description": "Expert ECU remapping, advanced diagnostics, CAN-Phantom immobilisers, and accurate mileage correction for cars, bikes, and vans in Leicester.",
+    "areaServed": ["Leicester", "Loughborough", "Hinckley", "Market Harborough", "Melton Mowbray", "Coalville"],
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "47"
+    }
+  }</script>
+
+  <style is:global>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #cc2233;
+      --red-hot: #ff1a1a;
+      --navy: #1a3a6e;
+      --charcoal: #1a1a2e;
+      --charcoal-deep: #12121f;
+      --white: #ffffff;
+      --grey-light: #f5f5f7;
+      --grey-mid: #f0f0f2;
+      --border-light: #eeeeee;
+      --text-body: #1a1a2e;
+      --text-muted: #5a5a6e;
+      --gold: #f5a623;
+      --gradient-fire: linear-gradient(90deg, #ff1a1a 0%, #cc2233 40%, #1a3a6e 100%);
+      --gradient-fade: linear-gradient(90deg, transparent, var(--red), var(--navy), transparent);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+    body {
+      font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-body);
+      background: var(--white);
+      line-height: 1.65;
+      font-weight: 500;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .rv {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .rv.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rv { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--red);
+      border-left: 3px solid var(--red);
+      padding-left: 0.75rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    /* ===== SECTION HEADING ===== */
+    .section-heading {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-heading::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--red);
+    }
+
+    /* ===== GRADIENT HEADING ===== */
+    .gradient-heading {
+      background: var(--gradient-fire);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn-race {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.85rem 2rem;
+      color: var(--white);
+      background: var(--gradient-fire);
+      clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 8px 100%);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      min-height: 44px;
+      text-decoration: none;
+    }
+    .btn-race:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(204, 34, 51, 0.3); }
+
+    .btn-race-red {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.85rem 2rem;
+      color: var(--white);
+      background: var(--red);
+      clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 8px 100%);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      min-height: 44px;
+      text-decoration: none;
+    }
+    .btn-race-red:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(204, 34, 51, 0.3); }
+
+    .btn-race-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.85rem 2rem;
+      color: var(--white);
+      background: var(--navy);
+      border: none;
+      clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 8px 100%);
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+      min-height: 44px;
+      text-decoration: none;
+    }
+    .btn-race-outline:hover { opacity: 0.85; transform: translateY(-2px); }
+
+    /* ===== FADE DIVIDER ===== */
+    .fade-divider {
+      height: 1px;
+      background: var(--gradient-fade);
+      border: none;
+      margin: 0;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .nav-logo img {
+      height: 42px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--charcoal);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.6rem 1.4rem;
+      color: var(--white);
+      background: var(--red);
+      clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 100%, 6px 100%);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .nav-cta:hover { background: var(--red-hot); transform: translateY(-1px); }
+    .nav-cta svg { width: 14px; height: 14px; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+    .bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--charcoal);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      padding: 2rem 1.5rem;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    .mobile-menu.open { display: flex; flex-direction: column; gap: 1.5rem; }
+    .mobile-menu a {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--charcoal);
+      padding: 0.5rem 0;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      background: var(--white);
+      overflow: hidden;
+      padding: clamp(4rem, 10vw, 7rem) 0 clamp(3rem, 8vw, 5rem);
+      text-align: center;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-logo {
+      height: clamp(100px, 15vw, 160px);
+      width: auto;
+      margin: 0 auto 2rem;
+    }
+    .hero .section-label {
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 3.4rem);
+      margin-bottom: 1.25rem;
+    }
+    .hero-sub {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 500;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== TRUST STRIP ===== */
+    .trust-strip {
+      background: var(--grey-light);
+      padding: clamp(2rem, 4vw, 3rem) 0;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .trust-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+    }
+    .trust-icon svg { width: 22px; height: 22px; }
+    .trust-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--charcoal);
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--white);
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .services-header .section-heading { margin-bottom: 1.5rem; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+      padding: 2rem 1.5rem;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .service-card:hover {
+      box-shadow: 0 8px 32px rgba(26, 26, 46, 0.08);
+      transform: translateY(-3px);
+    }
+    .service-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--red);
+      clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .service-card-icon svg { width: 22px; height: 22px; color: var(--white); stroke: var(--white); fill: none; }
+    .service-card h3 {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+    }
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ===== FEATURE SECTION ===== */
+    .feature {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+    }
+    .feature-img {
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .feature-img img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .feature-text h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    .feature-text h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--red);
+    }
+    .feature-body {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 1.5rem 0;
+    }
+    .feature-checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .feature-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    .feature-checklist li svg {
+      width: 20px;
+      height: 20px;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+
+    /* ===== STATS ===== */
+    .stats {
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+      background: var(--white);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      color: var(--red);
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+
+    /* ===== PROCESS ===== */
+    .process {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--grey-light);
+    }
+    .process-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .process-step {
+      background: var(--grey-mid);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .process-num {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: var(--red);
+      margin-bottom: 0.75rem;
+    }
+    .process-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--charcoal);
+    }
+    .process-arrow {
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--red);
+      z-index: 2;
+    }
+    .process-arrow svg { width: 20px; height: 20px; }
+
+    /* ===== REVIEWS ===== */
+    .reviews {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--grey-light);
+    }
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .review-card {
+      background: var(--white);
+      border-left: 3px solid var(--red);
+      padding: 1.75rem;
+    }
+    .review-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 0.75rem;
+    }
+    .review-stars svg { width: 16px; height: 16px; fill: var(--gold); }
+    .review-quote {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .review-cite {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--red);
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--white);
+    }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .faq-list {
+      max-width: 740px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .faq-item {
+      border: 1px solid var(--border-light);
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    }
+    .faq-item summary {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--charcoal);
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 44px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--red);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item[open] summary::after {
+      content: '-';
+    }
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ===== CTA BLOCK ===== */
+    .cta-block {
+      background: var(--charcoal);
+      border-top: 3px solid var(--red);
+      border-bottom: 3px solid var(--red);
+      padding: clamp(3rem, 6vw, 4.5rem) 0;
+      text-align: center;
+    }
+    .cta-block h2 {
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .cta-phone {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 900;
+      color: var(--white);
+      display: block;
+      margin-bottom: 2rem;
+      text-decoration: none;
+    }
+    .cta-phone:hover { color: var(--red-hot); }
+    .cta-areas {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.5);
+      margin-top: 2rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--charcoal-deep);
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .footer p {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.45rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer a {
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+    .footer a:hover { color: var(--red); }
+
+    /* ===== FLOATING PHONE ===== */
+    .floating-phone {
+      display: none;
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      width: 56px;
+      height: 56px;
+      background: var(--red);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(204, 34, 51, 0.4);
+      z-index: 900;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .floating-phone svg { width: 24px; height: 24px; color: var(--white); }
+    .floating-phone:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(204, 34, 51, 0.5); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .nav-cta-wrap { display: none; }
+      .hamburger { display: flex; }
+
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .feature-grid.reversed .feature-img { order: -1; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-arrow { display: none; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .floating-phone { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: clamp(1.4rem, 6vw, 2rem); }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="/images/preview/mileage-correction/hm-autos-logo.png" alt="HM Autos" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta-wrap">
+        <a href="tel:07873300553" class="nav-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+          07873 300 553
+        </a>
+      </div>
+      <button class="hamburger" aria-label="Menu" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:07873300553" class="btn-race" style="text-align:center;">Call 07873 300 553</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero-content">
+      <img src="/images/preview/mileage-correction/hm-autos-logo.png" alt="HM Autos" class="hero-logo rv" />
+      <div class="section-label rv" style="--d:0.1s">Leicester's Performance Specialists</div>
+      <h1 class="gradient-heading rv" style="--d:0.2s">Remapping. Diagnostics. Security.</h1>
+      <p class="hero-sub rv" style="--d:0.3s">Expert ECU remapping, advanced diagnostics, CAN-Phantom immobilisers, and accurate mileage correction for cars, bikes, and vans.</p>
+      <div class="hero-btns rv" style="--d:0.4s">
+        <a href="#services" class="btn-race-outline">View Services</a>
+        <a href="tel:07873300553" class="btn-race-red">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+          Call Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fade Divider -->
+  <div class="fade-divider"></div>
+
+  <!-- ===== TRUST STRIP ===== -->
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item rv">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z" /></svg>
+          </div>
+          <span class="trust-label">Dealer-Level Diagnostics</span>
+        </div>
+        <div class="trust-item rv" style="--d:0.1s">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+          </div>
+          <span class="trust-label">Performance Tuning Experts</span>
+        </div>
+        <div class="trust-item rv" style="--d:0.2s">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" /></svg>
+          </div>
+          <span class="trust-label">Mobile Service</span>
+        </div>
+        <div class="trust-item rv" style="--d:0.3s">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" /></svg>
+          </div>
+          <span class="trust-label">5-Star Rated</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fade Divider -->
+  <div class="fade-divider"></div>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header">
+        <h2 class="section-heading rv">Our Services</h2>
+      </div>
+      <div class="services-grid">
+
+        <!-- ECU Remapping -->
+        <div class="service-card rv" style="--d:0.1s">
+          <div class="service-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" /></svg>
+          </div>
+          <h3>ECU Remapping</h3>
+          <p>Improve horsepower, torque, and fuel economy with a custom engine remap tailored to your vehicle.</p>
+        </div>
+
+        <!-- Mileage Correction -->
+        <div class="service-card rv" style="--d:0.15s">
+          <div class="service-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <h3>Mileage Correction</h3>
+          <p>Legal digital mileage recalibration to ensure your odometer displays the truth after repairs or cluster replacements.</p>
+        </div>
+
+        <!-- Vehicle Diagnostics -->
+        <div class="service-card rv" style="--d:0.2s">
+          <div class="service-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+          </div>
+          <h3>Vehicle Diagnostics</h3>
+          <p>Find and fix faults quickly with dealer-level diagnostic equipment, without dealership prices.</p>
+        </div>
+
+        <!-- CAN-Phantom Immobiliser -->
+        <div class="service-card rv" style="--d:0.25s">
+          <div class="service-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+          </div>
+          <h3>CAN-Phantom Immobiliser</h3>
+          <p>State-of-the-art anti-theft device installation to protect your car against modern theft methods.</p>
+        </div>
+
+        <!-- DPF & EGR Solutions -->
+        <div class="service-card rv" style="--d:0.3s">
+          <div class="service-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.1-3.06a1.5 1.5 0 01-.765-1.308V7.172a1.5 1.5 0 01.765-1.308l5.1-3.06a1.5 1.5 0 011.56 0l5.1 3.06A1.5 1.5 0 0118.84 7.172v3.63a1.5 1.5 0 01-.765 1.308l-5.1 3.06a1.5 1.5 0 01-1.56 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12v6.75" /><path stroke-linecap="round" stroke-linejoin="round" d="M18.84 7.172L12 12 5.16 7.172" /></svg>
+          </div>
+          <h3>DPF & EGR Solutions</h3>
+          <p>Resolve DPF and EGR issues with professional cleaning, regeneration, and system solutions.</p>
+        </div>
+
+        <!-- Key Programming -->
+        <div class="service-card rv" style="--d:0.35s">
+          <div class="service-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" /></svg>
+          </div>
+          <h3>Key Programming</h3>
+          <p>Replacement and programming of vehicle keys, including proximity and push-start systems.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURE 1 -- ECU REMAPPING ===== -->
+  <section class="feature" id="about" style="background: var(--grey-light);">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-img rv">
+          <img src="/images/preview/mileage-correction/ecu-laptop.png" alt="ECU remapping equipment connected to a vehicle" />
+        </div>
+        <div class="feature-text rv" style="--d:0.15s">
+          <div class="section-label">Performance</div>
+          <h2>Unlock Your Vehicle's Full Potential</h2>
+          <p class="feature-body">Our custom ECU remaps are developed on a rolling road and fine-tuned to your specific engine. Whether you want more power for overtaking or better fuel economy on the daily commute, we deliver measurable results you can feel from the first drive.</p>
+          <ul class="feature-checklist">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              Up to 35% more power
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              Improved throttle response
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              Better fuel economy
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              All makes and models
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="rv">
+          <div class="stat-number">5.0</div>
+          <div class="stat-label">Google Rating</div>
+        </div>
+        <div class="rv" style="--d:0.1s">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Vehicles Tuned</div>
+        </div>
+        <div class="rv" style="--d:0.2s">
+          <div class="stat-number">Same Day</div>
+          <div class="stat-label">Service Available</div>
+        </div>
+        <div class="rv" style="--d:0.3s">
+          <div class="stat-number">Mobile</div>
+          <div class="stat-label">Across Leicestershire</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="process">
+    <div class="container">
+      <div class="process-header">
+        <h2 class="section-heading rv">How It Works</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step rv" style="--d:0.1s">
+          <div class="process-num">01</div>
+          <div class="process-title">Call Us</div>
+          <div class="process-arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+          </div>
+        </div>
+        <div class="process-step rv" style="--d:0.2s">
+          <div class="process-num">02</div>
+          <div class="process-title">We Visit</div>
+          <div class="process-arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+          </div>
+        </div>
+        <div class="process-step rv" style="--d:0.3s">
+          <div class="process-num">03</div>
+          <div class="process-title">We Work</div>
+          <div class="process-arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+          </div>
+        </div>
+        <div class="process-step rv" style="--d:0.4s">
+          <div class="process-num">04</div>
+          <div class="process-title">You Drive</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURE 2 -- DIAGNOSTICS ===== -->
+  <section class="feature" style="background: var(--white);">
+    <div class="container">
+      <div class="feature-grid reversed">
+        <div class="feature-text rv">
+          <div class="section-label">Expertise</div>
+          <h2>Dealer-Level Diagnostics</h2>
+          <p class="feature-body">Our expert technicians use cutting-edge diagnostic tools to find and fix faults that other garages miss. We work with all makes and models.</p>
+          <ul class="feature-checklist">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              Full fault code reading
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              Live data monitoring
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              Component testing
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              Cars, vans, and bikes
+            </li>
+          </ul>
+        </div>
+        <div class="feature-img rv" style="--d:0.15s">
+          <img src="/images/preview/mileage-correction/diagnostics.png" alt="Vehicle diagnostic equipment in use" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fade Divider -->
+  <div class="fade-divider"></div>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="reviews-header">
+        <h2 class="section-heading rv">What Our Customers Say</h2>
+      </div>
+      <div class="reviews-grid">
+
+        <div class="review-card rv" style="--d:0.1s">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-quote">"Had my car remapped by HM Autos. Massive difference in power and the fuel economy has actually improved. Really knows his stuff."</p>
+          <cite class="review-cite">James K, Leicester</cite>
+        </div>
+
+        <div class="review-card rv" style="--d:0.15s">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-quote">"Needed a CAN Phantom fitted after my neighbour's car was stolen. Professional job, fitted at my house. Highly recommend."</p>
+          <cite class="review-cite">Saj P, Loughborough</cite>
+        </div>
+
+        <div class="review-card rv" style="--d:0.2s">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-quote">"Dashboard cluster replaced and mileage was wrong. Sorted it same day, mobile service so didn't even need to leave work."</p>
+          <cite class="review-cite">Dan H, Leicester</cite>
+        </div>
+
+        <div class="review-card rv" style="--d:0.25s">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-quote">"Diagnostic check found the issue two other garages missed. Saved me hundreds. Will definitely use again."</p>
+          <cite class="review-cite">Rachel B, Hinckley</cite>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <h2 class="section-heading rv">Common Questions</h2>
+      </div>
+      <div class="faq-list">
+
+        <details class="faq-item rv" style="--d:0.1s">
+          <summary>Is mileage correction legal?</summary>
+          <div class="faq-answer">Yes, when used for legitimate purposes such as dashboard cluster replacement or repair. We keep full records of all work.</div>
+        </details>
+
+        <details class="faq-item rv" style="--d:0.15s">
+          <summary>What vehicles can you remap?</summary>
+          <div class="faq-answer">We work with most petrol and diesel vehicles including cars, vans, and bikes. Get in touch with your vehicle details for a quote.</div>
+        </details>
+
+        <details class="faq-item rv" style="--d:0.2s">
+          <summary>Will remapping damage my engine?</summary>
+          <div class="faq-answer">Our maps are developed within safe parameters. We use proven, tested calibrations that enhance performance without compromising reliability.</div>
+        </details>
+
+        <details class="faq-item rv" style="--d:0.25s">
+          <summary>Do you offer a mobile service?</summary>
+          <div class="faq-answer">Yes, we come to you. Whether it's your home, workplace, or anywhere convenient in the Leicester area.</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BLOCK ===== -->
+  <section class="cta-block" id="contact">
+    <div class="container">
+      <h2 class="rv">Ready to Unlock Your Vehicle's Potential?</h2>
+      <a href="tel:07873300553" class="cta-phone rv" style="--d:0.1s">07873 300 553</a>
+      <div class="rv" style="--d:0.2s">
+        <a href="tel:07873300553" class="btn-race" style="font-size: 0.75rem; padding: 1rem 2.5rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+          Call Now
+        </a>
+      </div>
+      <p class="cta-areas rv" style="--d:0.3s">Covering Leicester &middot; Loughborough &middot; Hinckley &middot; Market Harborough &middot; Melton Mowbray &middot; Coalville</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>Website by <a href="https://highcroftdigital.com" target="_blank" rel="noopener">Highcroft Digital</a></p>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING PHONE BUTTON ===== -->
+  <a href="tel:07873300553" class="floating-phone" aria-label="Call HM Autos">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+  </a>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+    });
+    // Close menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // IntersectionObserver scroll reveals with stagger
+    const revealElements = document.querySelectorAll('.rv');
+    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.style.getPropertyValue('--d') || '0s';
+            entry.target.style.transitionDelay = delay;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      // Reduced motion: show everything immediately
+      revealElements.forEach(el => el.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
