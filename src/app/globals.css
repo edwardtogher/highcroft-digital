@@ -47,6 +47,16 @@
   --color-garden-cream: #f8f6f0;
   --color-garden-warm: #f0ebe3;
 
+  /* Beautiful Gardens palette */
+  --color-bg-dark: #1a1a1a;
+  --color-bg-card: #242424;
+  --color-bg-elevated: #2a2a2a;
+  --color-sage: #8a9a7b;
+  --color-sage-light: #a3b294;
+  --color-sage-pale: #c5d1ba;
+  --color-cream: #f5f2eb;
+  --color-warm-gray: #9a958d;
+
   --font-sans: var(--font-dm-sans), system-ui, sans-serif;
   --font-serif: var(--font-dm-serif), Georgia, serif;
 }

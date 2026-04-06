@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "gardensofedenlandscaping.co.uk",
       },
+      {
+        protocol: "http",
+        hostname: "beautifulgardensonline.co.uk",
+      },
     ],
   },
 };
