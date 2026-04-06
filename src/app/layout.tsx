@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter, JetBrains_Mono, Space_Grotesk, DM_Sans, DM_Serif_Display } from "next/font/google";
+import { Montserrat, Inter, JetBrains_Mono, Space_Grotesk, DM_Sans, DM_Serif_Display, Oswald } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -41,6 +41,13 @@ const dmSerifDisplay = DM_Serif_Display({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-dm-serif",
+  display: "swap",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-oswald",
   display: "swap",
 });
 
@@ -110,13 +117,20 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} ${dmSans.variable} ${dmSerifDisplay.variable}`}
+      className={`${montserrat.variable} ${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} ${dmSans.variable} ${dmSerifDisplay.variable} ${oswald.variable}`}
     >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* PWA manifest for Scout Chat (/crm) */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Scout" />
+        <link rel="apple-touch-icon" href="/scout-icon-192.svg" />
+        <meta name="theme-color" content="#225095" />
       </head>
       <body>{children}</body>
     </html>

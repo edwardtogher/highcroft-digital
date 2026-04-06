@@ -1,0 +1,25 @@
+{
+  "name": "Scout Chat",
+  "short_name": "Scout",
+  "description": "WhatsApp CRM messaging",
+  "start_url": "/crm",
+  "scope": "/crm",
+  "display": "standalone",
+  "background_color": "#F5F5F0",
+  "theme_color": "#225095",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/scout-icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/scout-icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
