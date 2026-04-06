@@ -37,6 +37,18 @@
   --color-sidebar-accent-foreground: #1A1A1A;
   --color-sidebar-border: rgba(26,26,26,0.08);
   --color-sidebar-ring: #225095;
+
+  /* Garden palette (for Gardens of Eden preview) */
+  --color-garden-primary: #2d6a4f;
+  --color-garden-light: #40916c;
+  --color-garden-pale: #b7e4c7;
+  --color-garden-forest: #1b4332;
+  --color-garden-charcoal: #1a1f16;
+  --color-garden-cream: #f8f6f0;
+  --color-garden-warm: #f0ebe3;
+
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-serif: var(--font-dm-serif), Georgia, serif;
 }
 
 /* =========================================================
@@ -514,4 +526,9 @@ a { color: inherit; }
   .sticky-header {
     transition: none;
   }
+}
+
+/* Smooth scroll-to-section offset for sticky nav */
+html {
+  scroll-padding-top: 5rem;
 }
