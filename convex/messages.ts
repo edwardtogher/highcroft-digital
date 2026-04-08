@@ -183,6 +183,7 @@ export const addOutbound = mutation({
     timestamp: v.number(),
     messageType: v.union(v.literal("text"), v.literal("template")),
     templateName: v.optional(v.string()),
+    businessName: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     let conversation = await ctx.db
@@ -207,10 +208,12 @@ export const addOutbound = mutation({
       ? (canAdvance ? "sent" : contact.contactStatus)
       : "new";
 
+    const displayName = args.businessName || contact?.name || args.phone;
+
     if (!conversation) {
       const id = await ctx.db.insert("conversations", {
         phone: args.phone,
-        businessName: args.phone,
+        businessName: displayName,
         windowExpiry: null,
         unreadCount: 0,
         lastActivity: args.timestamp,

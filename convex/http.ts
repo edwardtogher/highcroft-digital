@@ -49,6 +49,7 @@ http.route({
       timestamp: body.timestamp || Date.now(),
       messageType: body.messageType || "text",
       templateName: body.templateName || undefined,
+      businessName: body.businessName || undefined,
     });
     return Response.json({ ok: true, messageId });
   }),
