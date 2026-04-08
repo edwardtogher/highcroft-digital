@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 
@@ -24,9 +25,8 @@ interface InboxProps {
 }
 
 export default function Inbox({ onSelect }: InboxProps) {
-  const conversations = useQuery(api.conversations.list, {
-    statusFilter: "interested",
-  });
+  const [search, setSearch] = useState("");
+  const conversations = useQuery(api.conversations.list, {});
 
   if (!conversations) {
     return (
@@ -36,6 +36,17 @@ export default function Inbox({ onSelect }: InboxProps) {
     );
   }
 
+  const filtered = search.trim()
+    ? conversations.filter((c) => {
+        const q = search.toLowerCase();
+        return (
+          (c.businessName || "").toLowerCase().includes(q) ||
+          (c.phone || "").replace(/\s/g, "").includes(q.replace(/\s/g, "")) ||
+          (c.lastMessageBody || "").toLowerCase().includes(q)
+        );
+      })
+    : conversations;
+
   return (
     <div className="h-full flex flex-col">
       {/* Header */}
@@ -44,13 +55,24 @@ export default function Inbox({ onSelect }: InboxProps) {
           Scout Chat
         </h1>
         <span className="text-xs font-mono text-muted-foreground bg-secondary px-2 py-1 rounded-md">
-          {conversations.length}
+          {filtered.length}
         </span>
+      </div>
+
+      {/* Search */}
+      <div className="border-b border-border bg-card px-4 py-2.5 shrink-0">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search name, phone, or message..."
+          className="w-full bg-secondary text-foreground text-sm rounded-lg px-3.5 py-2 outline-none placeholder-muted-foreground focus:ring-2 focus:ring-primary/30 transition-shadow"
+        />
       </div>
 
       {/* List */}
       <div className="flex-1 overflow-y-auto">
-        {conversations.map((convo) => {
+        {filtered.map((convo) => {
           const hasUnread = convo.unreadCount > 0;
           return (
             <button
@@ -99,7 +121,7 @@ export default function Inbox({ onSelect }: InboxProps) {
           );
         })}
 
-        {conversations.length === 0 && (
+        {filtered.length === 0 && (
           <div className="text-center text-muted-foreground mt-20 text-sm">
             No conversations
           </div>
