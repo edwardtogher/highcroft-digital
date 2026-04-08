@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter, JetBrains_Mono, Space_Grotesk, DM_Sans, DM_Serif_Display, Oswald } from "next/font/google";
+import { Montserrat, Inter, JetBrains_Mono, Space_Grotesk, DM_Sans, DM_Serif_Display, Oswald, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -41,6 +41,14 @@ const dmSerifDisplay = DM_Serif_Display({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-dm-serif",
+  display: "swap",
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
   display: "swap",
 });
 
@@ -117,7 +125,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} ${dmSans.variable} ${dmSerifDisplay.variable} ${oswald.variable}`}
+      className={`${montserrat.variable} ${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} ${dmSans.variable} ${dmSerifDisplay.variable} ${oswald.variable} ${cormorantGaramond.variable}`}
     >
       <head>
         <script
