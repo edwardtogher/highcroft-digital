@@ -506,7 +506,7 @@ export default function StrongDrivesPage() {
               </Button>
             </Link>
             <Link href="mailto:strongdrive55@gmail.com" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base border-white/20 hover:bg-white/10" style={{ color: '#ffffff' }}>
+              <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-white text-black hover:bg-white/90">
                 <Mail className="size-5" /> Email Us
               </Button>
             </Link>
