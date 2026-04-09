@@ -301,7 +301,7 @@ export default function PHBluePage() {
         </div>
 
         {/* Bottom — trust strip + scroll hint */}
-        <div className="w-full pb-32 md:pb-8 relative z-10 flex flex-col items-center gap-6">
+        <div className="w-full pb-44 md:pb-8 relative z-10 flex flex-col items-center gap-6">
           <div
             className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs font-medium"
             style={{ color: "#B0BEC5" }}
