@@ -123,6 +123,67 @@
   --color-ring: #ffffff;
 }
 
+/* PH Blue — blue plumbing/heating theme */
+[data-theme="ph-blue"] {
+  --color-background: #ffffff;
+  --color-foreground: #0D1B2A;
+  --color-card: #F8FBFF;
+  --color-card-foreground: #0D1B2A;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #0D1B2A;
+  --color-primary: #1565C0;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #E3F2FD;
+  --color-secondary-foreground: #0D1B2A;
+  --color-muted: #F0F7FF;
+  --color-muted-foreground: #64748B;
+  --color-accent: #E3F2FD;
+  --color-accent-foreground: #0D1B2A;
+  --color-destructive: #DD0100;
+  --color-destructive-foreground: #ffffff;
+  --color-border: rgba(21, 101, 192, 0.1);
+  --color-input: rgba(21, 101, 192, 0.1);
+  --color-ring: #1565C0;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+/* PH Blue — scroll-reveal animations */
+.ph-animate {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ph-animate.ph-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ph-animate[data-delay="1"] { transition-delay: 80ms; }
+.ph-animate[data-delay="2"] { transition-delay: 160ms; }
+.ph-animate[data-delay="3"] { transition-delay: 240ms; }
+.ph-animate[data-delay="4"] { transition-delay: 320ms; }
+.ph-animate[data-delay="5"] { transition-delay: 400ms; }
+.ph-animate[data-delay="6"] { transition-delay: 480ms; }
+
+/* PH Blue — quote card slide-up */
+@keyframes ph-slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.ph-slide-up {
+  animation: ph-slide-up 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes ph-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.ph-fade-in {
+  animation: ph-fade-in 0.25s ease forwards;
+}
+
 /* =========================================================
    HIGHCROFT DIGITAL - Original Custom CSS
    ========================================================= */
