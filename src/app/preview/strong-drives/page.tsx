@@ -157,7 +157,7 @@ export default function StrongDrivesPage() {
 
           <div className="flex items-center gap-3">
             <Link href="tel:07535687080" className="hidden sm:block">
-              <Button variant="outline" size="sm" className="border-white/20 text-white hover:bg-white hover:text-black">
+              <Button variant="outline" size="sm" className="border-white/20 hover:bg-white hover:text-black" style={{ color: '#ffffff' }}>
                 <Phone className="size-3.5" />
                 07535 687080
               </Button>
@@ -227,7 +227,7 @@ export default function StrongDrivesPage() {
               </Button>
             </Link>
             <Link href="#gallery" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base border-white/20 text-white hover:bg-white/10 hover:text-white">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base border-white/20 hover:bg-white/10" style={{ color: '#ffffff' }}>
                 View Our Work <ChevronRight className="size-5" />
               </Button>
             </Link>
@@ -506,7 +506,7 @@ export default function StrongDrivesPage() {
               </Button>
             </Link>
             <Link href="mailto:strongdrive55@gmail.com" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base border-white/20 text-white hover:bg-white/10 hover:text-white">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base border-white/20 hover:bg-white/10" style={{ color: '#ffffff' }}>
                 <Mail className="size-5" /> Email Us
               </Button>
             </Link>
