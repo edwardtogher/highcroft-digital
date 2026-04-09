@@ -301,7 +301,7 @@ export default function PHBluePage() {
         </div>
 
         {/* Bottom — trust strip + scroll hint */}
-        <div className="w-full pb-24 md:pb-8 relative z-10 flex flex-col items-center gap-6">
+        <div className="w-full pb-32 md:pb-8 relative z-10 flex flex-col items-center gap-6">
           <div
             className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs font-medium"
             style={{ color: "#B0BEC5" }}
@@ -728,103 +728,48 @@ export default function PHBluePage() {
         </div>
       </section>
 
-      {/* ── MOBILE BOTTOM BAR (morphs into quote card) ─────── */}
+      {/* ── MOBILE BOTTOM BAR ─────────────────────────────────── */}
       <div
-        className="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white"
-        style={{
-          borderTop: "1px solid #E5E7EB",
-          boxShadow: "0 -4px 20px rgba(0,0,0,0.06)",
-        }}
+        className="fixed bottom-0 inset-x-0 z-50 md:hidden px-4 py-3 bg-white/95 backdrop-blur-md"
+        style={{ borderTop: "1px solid #E5E7EB", boxShadow: "0 -4px 20px rgba(0,0,0,0.06)" }}
       >
-        {/* Expandable form — slides up from the bar */}
-        <div
-          className="overflow-hidden"
-          style={{
-            maxHeight: quoteOpen ? 440 : 0,
-            transition: "max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-          }}
-        >
-          <div className="px-5 pt-6 pb-2">
-            <h3
-              className="font-extrabold text-lg mb-1"
-              style={{ fontFamily: "var(--font-mont)" }}
+        <div className="flex gap-3">
+          <Link href="tel:07545125168" className="flex-1">
+            <Button
+              className="w-full h-12 rounded-lg font-bold text-sm border-0"
+              style={{ backgroundColor: "#ffffff", color: "#1976D2", border: "2px solid #1976D2" }}
             >
-              Get a Free Quote
-            </h3>
-            <p className="text-sm mb-5" style={{ color: "#94A3B8" }}>
-              Tell us what you need and we&apos;ll call you back.
-            </p>
-            <div className="space-y-3">
-              <input
-                type="text"
-                placeholder="Your name"
-                className="w-full h-11 px-4 rounded-lg text-sm outline-none focus:ring-2 focus:ring-[#1976D2]"
-                style={{ border: "1px solid #E5E7EB", backgroundColor: "#FAFBFC" }}
-              />
-              <input
-                type="tel"
-                placeholder="Phone number"
-                className="w-full h-11 px-4 rounded-lg text-sm outline-none focus:ring-2 focus:ring-[#1976D2]"
-                style={{ border: "1px solid #E5E7EB", backgroundColor: "#FAFBFC" }}
-              />
-              <textarea
-                rows={2}
-                placeholder="What do you need help with?"
-                className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none focus:ring-2 focus:ring-[#1976D2]"
-                style={{ border: "1px solid #E5E7EB", backgroundColor: "#FAFBFC" }}
-              />
-              <Button
-                className="w-full h-11 text-sm font-bold rounded-lg border-0"
-                style={{ backgroundColor: "#1976D2", color: "#ffffff" }}
-              >
-                Request Callback
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Button bar — always visible */}
-        <div className="px-4 py-3">
-          <div className="flex gap-3">
-            <Link href="tel:07545125168" className="flex-1">
-              <Button
-                className="w-full h-12 rounded-lg font-bold text-sm border-0"
-                style={{ backgroundColor: "#ffffff", color: "#1976D2", border: "2px solid #1976D2" }}
-              >
-                <Phone className="size-4" /> Call Now
-              </Button>
-            </Link>
-            <button onClick={() => setQuoteOpen(!quoteOpen)} className="flex-1">
-              <Button
-                className="w-full h-12 rounded-lg font-bold text-sm border-0"
-                style={{ backgroundColor: "#ffffff", color: "#1976D2", border: "2px solid #1976D2" }}
-              >
-                {quoteOpen ? (
-                  <><X className="size-4" /> Close</>
-                ) : (
-                  "Free Quote"
-                )}
-              </Button>
-            </button>
-          </div>
+              <Phone className="size-4" /> Call Now
+            </Button>
+          </Link>
+          <button onClick={() => setQuoteOpen(true)} className="flex-1">
+            <Button
+              className="w-full h-12 rounded-lg font-bold text-sm border-0"
+              style={{ backgroundColor: "#ffffff", color: "#1976D2", border: "2px solid #1976D2" }}
+            >
+              Free Quote
+            </Button>
+          </button>
         </div>
       </div>
 
-      {/* ── DESKTOP QUOTE MODAL ───────────────────────────────── */}
+      {/* ── QUOTE SHEET (iOS style) ───────────────────────────── */}
       {quoteOpen && (
-        <div className="fixed inset-0 z-[60] hidden md:flex items-center justify-center">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center px-5">
+          {/* Backdrop */}
           <div
             className="absolute inset-0 ph-fade-in"
-            style={{ backgroundColor: "rgba(0,0,0,0.4)", backdropFilter: "blur(4px)" }}
+            style={{ backgroundColor: "rgba(0,0,0,0.5)", backdropFilter: "blur(6px)" }}
             onClick={() => setQuoteOpen(false)}
           />
+          {/* Card */}
           <div
-            className="relative bg-white max-w-md w-full rounded-2xl p-8 ph-slide-up"
-            style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.2)" }}
+            className="relative bg-white w-full max-w-md rounded-2xl p-7 sm:p-8 ph-slide-up"
+            style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.25)" }}
           >
             <button
               onClick={() => setQuoteOpen(false)}
-              className="absolute top-4 right-4 p-1 rounded-full hover:bg-gray-100 transition-colors"
+              className="absolute top-4 right-4 p-1.5 rounded-full hover:bg-gray-100 transition-colors"
               style={{ color: "#94A3B8" }}
             >
               <X className="size-5" />
@@ -840,46 +785,34 @@ export default function PHBluePage() {
               Tell us what you need and we&apos;ll call you back.
             </p>
 
-            <div className="space-y-4">
-              <div>
-                <label className="block text-xs font-medium mb-1.5" style={{ color: "#64748B" }}>
-                  Your name
-                </label>
-                <input
-                  type="text"
-                  className="w-full h-12 px-4 rounded-lg text-sm outline-none focus:ring-2 focus:ring-[#1976D2]"
-                  style={{ border: "1px solid #E5E7EB", backgroundColor: "#FAFBFC" }}
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium mb-1.5" style={{ color: "#64748B" }}>
-                  Phone number
-                </label>
-                <input
-                  type="tel"
-                  className="w-full h-12 px-4 rounded-lg text-sm outline-none focus:ring-2 focus:ring-[#1976D2]"
-                  style={{ border: "1px solid #E5E7EB", backgroundColor: "#FAFBFC" }}
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium mb-1.5" style={{ color: "#64748B" }}>
-                  What do you need help with?
-                </label>
-                <textarea
-                  rows={3}
-                  className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none focus:ring-2 focus:ring-[#1976D2]"
-                  style={{ border: "1px solid #E5E7EB", backgroundColor: "#FAFBFC" }}
-                />
-              </div>
+            <div className="space-y-3">
+              <input
+                type="text"
+                placeholder="Your name"
+                className="w-full h-12 px-4 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#1976D2]"
+                style={{ border: "1px solid #E5E7EB", backgroundColor: "#F9FAFB" }}
+              />
+              <input
+                type="tel"
+                placeholder="Phone number"
+                className="w-full h-12 px-4 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#1976D2]"
+                style={{ border: "1px solid #E5E7EB", backgroundColor: "#F9FAFB" }}
+              />
+              <textarea
+                rows={3}
+                placeholder="What do you need help with?"
+                className="w-full px-4 py-3 rounded-xl text-sm outline-none resize-none focus:ring-2 focus:ring-[#1976D2]"
+                style={{ border: "1px solid #E5E7EB", backgroundColor: "#F9FAFB" }}
+              />
               <Button
-                className="w-full h-12 text-sm font-bold rounded-lg border-0"
+                className="w-full h-12 text-sm font-bold rounded-xl border-0"
                 style={{ backgroundColor: "#1976D2", color: "#ffffff" }}
               >
                 Request Callback
               </Button>
             </div>
 
-            <div className="mt-5 text-center">
+            <div className="mt-4 text-center">
               <p className="text-xs" style={{ color: "#94A3B8" }}>
                 Or call us directly:{" "}
                 <Link href="tel:07545125168" className="font-bold" style={{ color: "#1976D2" }}>
