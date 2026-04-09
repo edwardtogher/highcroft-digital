@@ -19,7 +19,7 @@ export default function StrongDrivesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div style={{ background: "#0C0C0C", minHeight: "100vh" }}>
+    <div style={{ background: "#ffffff", minHeight: "100vh" }}>
       {children}
     </div>
   );
