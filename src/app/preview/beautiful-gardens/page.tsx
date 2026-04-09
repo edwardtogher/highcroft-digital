@@ -365,14 +365,13 @@ export default function BeautifulGardensPage() {
               <div
                 key={img.src}
                 className="group relative overflow-hidden rounded-xl"
-                style={{ aspectRatio: "4/3" }}
               >
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={img.src}
                   alt={img.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 50vw, 33vw"
+                  loading="eager"
+                  className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div
                   className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -466,21 +465,13 @@ export default function BeautifulGardensPage() {
               <div
                 key={src}
                 className="group relative overflow-hidden rounded-xl"
-                style={{ aspectRatio: "4/3" }}
               >
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={src}
                   alt={`Beautiful Gardens project ${i + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                />
-                <div
-                  className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  style={{
-                    background:
-                      "linear-gradient(to top, rgba(26,26,26,0.5) 0%, transparent 50%)",
-                  }}
+                  loading="lazy"
+                  className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
             ))}
@@ -606,23 +597,12 @@ export default function BeautifulGardensPage() {
             </div>
           </div>
 
-          <div
-            className="relative overflow-hidden rounded-xl"
-            style={{ aspectRatio: "4/3" }}
-          >
-            <Image
+          <div className="overflow-hidden rounded-xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/images/beautiful-gardens/DJI_0174.jpg"
               alt="Beautiful Gardens aerial view of completed garden project"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(138,154,123,0.15) 0%, transparent 60%)",
-              }}
+              className="w-full aspect-[4/3] object-cover"
             />
           </div>
         </div>
