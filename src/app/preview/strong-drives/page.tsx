@@ -227,7 +227,7 @@ export default function StrongDrivesPage() {
               </Button>
             </Link>
             <Link href="#gallery" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base border-white/20 hover:bg-white/10" style={{ color: '#ffffff' }}>
+              <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-white text-black hover:bg-white/90">
                 View Our Work <ChevronRight className="size-5" />
               </Button>
             </Link>
