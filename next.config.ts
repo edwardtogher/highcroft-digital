@@ -5,11 +5,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "gardensofedenlandscaping.co.uk",
+        hostname: "**",
       },
       {
-        protocol: "https",
-        hostname: "beautifulgardensonline.co.uk",
+        protocol: "http",
+        hostname: "**",
       },
     ],
   },

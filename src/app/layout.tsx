@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter, JetBrains_Mono, Space_Grotesk, DM_Sans, DM_Serif_Display, Oswald, Cormorant_Garamond } from "next/font/google";
+import { Montserrat, Inter, JetBrains_Mono, Space_Grotesk, DM_Sans, DM_Serif_Display, Oswald, Cormorant_Garamond, Sora, Manrope, Plus_Jakarta_Sans, Barlow } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -56,6 +56,34 @@ const oswald = Oswald({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-oswald",
+  display: "swap",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sora",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+});
+
+const barlow = Barlow({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-barlow",
   display: "swap",
 });
 
@@ -125,7 +153,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} ${dmSans.variable} ${dmSerifDisplay.variable} ${oswald.variable} ${cormorantGaramond.variable}`}
+      className={`${montserrat.variable} ${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} ${dmSans.variable} ${dmSerifDisplay.variable} ${oswald.variable} ${cormorantGaramond.variable} ${sora.variable} ${manrope.variable} ${plusJakartaSans.variable} ${barlow.variable}`}
     >
       <head>
         <script
