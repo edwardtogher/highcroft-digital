@@ -259,41 +259,51 @@ export default function YorkCityDrainagePage() {
       </header>
 
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="pt-24 pb-14 sm:pt-32 sm:pb-20 px-5 bg-gradient-to-b from-muted/30 to-background">
-        <div className="max-w-5xl mx-auto text-center">
-          <Badge className="bg-[#f07800]/10 text-[#f07800] border-[#f07800]/30 hover:bg-[#f07800]/15 px-3.5 py-1.5 mb-5 sm:mb-6 text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase">
-            <Zap className="size-3 mr-1" />
-            Rapid Response Across York
-          </Badge>
+      <section className="min-h-[100svh] sm:min-h-0 flex flex-col pt-20 pb-6 sm:pt-32 sm:pb-20 px-5 bg-gradient-to-b from-muted/30 to-background">
+        <div className="max-w-5xl mx-auto text-center flex flex-col flex-1 w-full">
 
-          <h1 className="text-[2.5rem] sm:text-6xl lg:text-7xl font-black text-foreground tracking-tight uppercase leading-[1.02] sm:leading-[0.95]">
-            Blocked Drain?
-            <br />
-            <span className="text-primary">We&apos;ll Clear It </span>
-            <span className="text-[#f07800]">Today.</span>
-          </h1>
-
-          <p className="mt-5 sm:mt-8 text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            York&apos;s trusted drainage specialists. Fully guaranteed work, transparent pricing from just <span className="font-bold text-foreground">£45</span>, and a free no-obligation estimate on every call.
-          </p>
-
-          <div className="mt-7 sm:mt-10 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
-            <Link href="tel:01904339434" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-[#f07800] hover:bg-[#d66a00] text-white font-bold uppercase tracking-wide">
-                <Phone className="size-5" /> Call 01904 339 434
-              </Button>
-            </Link>
-            <Link href="#services" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base font-bold uppercase tracking-wide border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                Our Services <ChevronRight className="size-5" />
-              </Button>
-            </Link>
+          {/* Top: badge */}
+          <div className="pt-4 sm:pt-0">
+            <Badge className="bg-[#f07800]/10 text-[#f07800] border-[#f07800]/30 hover:bg-[#f07800]/15 px-3.5 py-1.5 text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase">
+              <Zap className="size-3 mr-1" />
+              Rapid Response Across York
+            </Badge>
           </div>
 
-          <div className="mt-7 sm:mt-10 flex flex-wrap justify-center gap-x-5 sm:gap-x-8 gap-y-2.5 text-[11px] sm:text-xs font-semibold tracking-[0.12em] sm:tracking-[0.15em] uppercase text-muted-foreground">
-            <span className="flex items-center gap-1.5 sm:gap-2"><CheckCircle2 className="size-3.5 sm:size-4 text-primary" /> No Call-Out Fee</span>
-            <span className="flex items-center gap-1.5 sm:gap-2"><CheckCircle2 className="size-3.5 sm:size-4 text-primary" /> Fully Guaranteed</span>
-            <span className="flex items-center gap-1.5 sm:gap-2"><CheckCircle2 className="size-3.5 sm:size-4 text-primary" /> 24/7 Emergency</span>
+          {/* Middle: headline + subtitle — flex-1 fills available height, content centered */}
+          <div className="flex-1 flex flex-col justify-center py-8 sm:py-12">
+            <h1 className="text-[3rem] sm:text-6xl lg:text-7xl font-black text-foreground tracking-tight uppercase leading-[1] sm:leading-[0.95]">
+              Blocked Drain?
+              <br />
+              <span className="text-primary">We&apos;ll Clear It </span>
+              <span className="text-[#f07800]">Today.</span>
+            </h1>
+
+            <p className="mt-6 sm:mt-8 text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              York&apos;s trusted drainage specialists. Fully guaranteed work, transparent pricing from just <span className="font-bold text-foreground">£45</span>, and a free no-obligation estimate on every call.
+            </p>
+          </div>
+
+          {/* Bottom: buttons + trust checkmarks (thumb zone on mobile) */}
+          <div className="flex flex-col gap-5 sm:gap-7">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto w-full sm:w-auto">
+              <Link href="tel:01904339434" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-[#f07800] hover:bg-[#d66a00] text-white font-bold uppercase tracking-wide">
+                  <Phone className="size-5" /> Call 01904 339 434
+                </Button>
+              </Link>
+              <Link href="#services" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base font-bold uppercase tracking-wide border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                  Our Services <ChevronRight className="size-5" />
+                </Button>
+              </Link>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-x-5 sm:gap-x-8 gap-y-2.5 text-[11px] sm:text-xs font-semibold tracking-[0.12em] sm:tracking-[0.15em] uppercase text-muted-foreground">
+              <span className="flex items-center gap-1.5 sm:gap-2"><CheckCircle2 className="size-3.5 sm:size-4 text-primary" /> No Call-Out Fee</span>
+              <span className="flex items-center gap-1.5 sm:gap-2"><CheckCircle2 className="size-3.5 sm:size-4 text-primary" /> Fully Guaranteed</span>
+              <span className="flex items-center gap-1.5 sm:gap-2"><CheckCircle2 className="size-3.5 sm:size-4 text-primary" /> 24/7 Emergency</span>
+            </div>
           </div>
         </div>
       </section>
