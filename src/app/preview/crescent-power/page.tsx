@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Phone,
@@ -200,22 +201,15 @@ export default function CrescentPowerPage() {
       {/* ── NAV ─────────────────────────────────────────────── */}
       <header className="fixed top-0 inset-x-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
         <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-5">
-          <Link href="#" className="flex items-center gap-2.5">
-            <div className="size-9 rounded-lg bg-primary flex items-center justify-center">
-              <Zap
-                className="size-5 text-[#f5b820]"
-                strokeWidth={2.5}
-                fill="#f5b820"
-              />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-[15px] font-bold text-foreground tracking-tight uppercase">
-                Crescent
-              </span>
-              <span className="text-[10px] font-semibold text-primary tracking-[0.25em] uppercase">
-                Power Ltd
-              </span>
-            </div>
+          <Link href="#" className="flex items-center">
+            <Image
+              src="/crescent-power-logo.png"
+              alt="Crescent Power Ltd"
+              width={130}
+              height={56}
+              priority
+              className="h-11 w-auto"
+            />
           </Link>
 
           <nav className="hidden md:flex items-center gap-7">
