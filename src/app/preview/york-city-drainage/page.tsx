@@ -259,26 +259,25 @@ export default function YorkCityDrainagePage() {
       </header>
 
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="pt-32 pb-20 px-5 bg-gradient-to-b from-muted/30 to-background">
+      <section className="pt-24 pb-14 sm:pt-32 sm:pb-20 px-5 bg-gradient-to-b from-muted/30 to-background">
         <div className="max-w-5xl mx-auto text-center">
-          <Badge className="bg-[#f07800]/10 text-[#f07800] border-[#f07800]/30 hover:bg-[#f07800]/15 px-4 py-1.5 mb-6 text-[11px] font-bold tracking-[0.2em] uppercase">
+          <Badge className="bg-[#f07800]/10 text-[#f07800] border-[#f07800]/30 hover:bg-[#f07800]/15 px-3.5 py-1.5 mb-5 sm:mb-6 text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase">
             <Zap className="size-3 mr-1" />
             Rapid Response Across York
           </Badge>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-foreground tracking-tight uppercase leading-[0.95]">
+          <h1 className="text-[2.5rem] sm:text-6xl lg:text-7xl font-black text-foreground tracking-tight uppercase leading-[1.02] sm:leading-[0.95]">
             Blocked Drain?
             <br />
-            <span className="text-primary">We&apos;ll Clear It</span>
-            <br />
+            <span className="text-primary">We&apos;ll Clear It </span>
             <span className="text-[#f07800]">Today.</span>
           </h1>
 
-          <p className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-5 sm:mt-8 text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             York&apos;s trusted drainage specialists. Fully guaranteed work, transparent pricing from just <span className="font-bold text-foreground">£45</span>, and a free no-obligation estimate on every call.
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4 max-w-lg sm:max-w-none mx-auto">
+          <div className="mt-7 sm:mt-10 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
             <Link href="tel:01904339434" className="w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-[#f07800] hover:bg-[#d66a00] text-white font-bold uppercase tracking-wide">
                 <Phone className="size-5" /> Call 01904 339 434
@@ -291,10 +290,10 @@ export default function YorkCityDrainagePage() {
             </Link>
           </div>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground">
-            <span className="flex items-center gap-2"><CheckCircle2 className="size-4 text-primary" /> No Call-Out Fee</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="size-4 text-primary" /> Fully Guaranteed</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="size-4 text-primary" /> 24/7 Emergency</span>
+          <div className="mt-7 sm:mt-10 flex flex-wrap justify-center gap-x-5 sm:gap-x-8 gap-y-2.5 text-[11px] sm:text-xs font-semibold tracking-[0.12em] sm:tracking-[0.15em] uppercase text-muted-foreground">
+            <span className="flex items-center gap-1.5 sm:gap-2"><CheckCircle2 className="size-3.5 sm:size-4 text-primary" /> No Call-Out Fee</span>
+            <span className="flex items-center gap-1.5 sm:gap-2"><CheckCircle2 className="size-3.5 sm:size-4 text-primary" /> Fully Guaranteed</span>
+            <span className="flex items-center gap-1.5 sm:gap-2"><CheckCircle2 className="size-3.5 sm:size-4 text-primary" /> 24/7 Emergency</span>
           </div>
         </div>
       </section>
